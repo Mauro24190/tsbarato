@@ -1,14 +1,14 @@
 <?php
-class producto
+class articulo
 {
 //Atributo para conexión a SGBD
  private $pdo;
 //Atributos del objeto proveedor 
- public $idProducto;
+ public $id_art;
  public $nit;
- public $nomprod;
- public $precioU;
- public $descrip;
+ public $nom_art;
+ public $pre_art;
+ public $des_art;
 //Método de conexión a SGBD.
  public function __CONSTRUCT()
  {
@@ -27,7 +27,7 @@ class producto
 	 try
 	 {
 	 $result = array();
-	  $stm = $this->pdo->prepare('SELECT * FROM producto');
+	  $stm = $this->pdo->prepare('SELECT * FROM articulo');
 	 $stm->execute();
 
 	 return $stm->fetchAll(PDO::FETCH_OBJ);
@@ -38,12 +38,12 @@ class producto
 	 }
  }
 
- public function Obtener($idProducto)
+ public function Obtener($id_art)
  {
  try
  {
- $stm = $this->pdo->prepare('SELECT * FROM producto WHERE idProducto = ?');
- $stm->execute(array($idProducto));
+ $stm = $this->pdo->prepare('SELECT * FROM articulo WHERE id_art = ?');
+ $stm->execute(array($id_art));
  return $stm->fetch(PDO::FETCH_OBJ);
  } catch (Exception $e)
  {
@@ -51,13 +51,13 @@ class producto
  }
  }
 
- public function Eliminar($idProducto)
+ public function Eliminar($id_art)
  {
  try
  {
  $stm = $this->pdo
- ->prepare('DELETE FROM producto WHERE idProducto = ?');
- $stm->execute(array($idProducto));
+ ->prepare('DELETE FROM articulo WHERE id_art = ?');
+ $stm->execute(array($id_art));
  } catch (Exception $e)
  {
  die($e->getMessage());
@@ -68,18 +68,18 @@ class producto
  {
  try
  {
- $sql = 'UPDATE producto SET
- nomprod = ?,
- precioU = ?,
- descrip = ?
- WHERE idProducto = ?';
+ $sql = 'UPDATE articulo SET
+ nom_art = ?,
+ pre_art = ?,
+ des_art = ?
+ WHERE id_art = ?';
  $this->pdo->prepare($sql)
   ->execute(
  array(
- $data->nomprod,
- $data->precioU,
- $data->descrip,
- $data->idProducto
+ $data->nom_art,
+ $data->pre_art,
+ $data->des_art,
+ $data->id_art
  )
  );
  } catch (Exception $e)
@@ -88,20 +88,20 @@ class producto
  }
  }
 
- public function Registrar(producto $data)
+ public function Registrar(articulo $data)
  {
  try
  {
- $sql = 'INSERT INTO producto (idProducto,nit,nomprod,precioU,descrip)
+ $sql = 'INSERT INTO articulo (id_art,nit,nom_art,pre_art,des_art)
  VALUES (?, ?, ?, ?,?)';
  $this->pdo->prepare($sql)
  ->execute(
  array(
- $data->idProducto,
+ $data->id_art,
  $data->nit,
- $data->nomprod,
- $data->precioU,
- $data->descrip
+ $data->nom_art,
+ $data->pre_art,
+ $data->des_art
  )
  );
  } catch (Exception $e)
