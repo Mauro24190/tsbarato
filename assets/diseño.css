@@ -1,0 +1,265 @@
+/*HEADER*/
+.logoheader{
+    width: 100px;
+    height: 100px;
+    
+}
+.lolo{
+  padding-left: 50px;
+}
+.navlist{
+  padding-top: 0%;
+  padding-bottom: 0%;
+  padding-right: 10px;
+  color: white;
+  font-size: 2rem;
+}
+ /* INICIO VENTANA FLOTANTE CATEGORIAS */
+ .trans {
+  transition: 0.5s;
+}
+
+#ventana.show {
+  left: 0;
+}
+
+#ventana p {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+#ventana {
+  position: absolute;
+  z-index: 2;
+  top: 100px;
+  left: -400px;
+  width: 400px;
+  height: 600px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.ventana-cuerpo{
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.ventana_cuerpo p {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+
+.ventana_cuerpo>div>div:nth-child(2) {
+  color: #ff1010;
+}
+
+.ventana_cuerpo>div>div:nth-child(1) {
+  margin-bottom: 20px;
+}
+
+.ventana_cuerpo>div {
+  cursor: pointer;
+}
+
+button>a {
+  text-decoration: none;
+  color: #FF8119;
+
+}
+/* FIN VENTANA FLOTANTE CATEGORIAS */
+/*responsive menu*/
+@media (max-width: 800px) {
+  #ventana {
+    width: 50%;
+    /* Otros estilos... */
+  }
+  
+  .ventana_cuerpo {
+    flex-direction: column;
+    /* Otros estilos... */
+  }
+  
+  .menucategoria {
+    width: 100%;
+    /* Otros estilos... */
+  }
+  .titlemain{
+    margin-left: auto;
+    margin-right: auto;
+    color: rgb(255, 255, 255); 
+    font-size: 20px;
+    font-family: serif;
+    font-weight: bold;
+  }
+  .menucategoria{
+    display: flex;
+    font-size: 14px;
+    padding-left: 10%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
+    padding-top: 5px;
+  }
+}
+/* FIN VENTANA FLOTANTE CATEGORIAS */
+
+
+/* productos */
+.nomproducto{
+  font-size: 15px;
+}
+.producto_filas{
+  padding-left: 250px;
+  display: flex;
+  padding-top: 60px;
+  padding-bottom: 45px;
+  justify-content: center;
+  width: 250px;
+}
+.producto_item{
+  border: 1px solid rgba(0, 0, 0, 0.267);
+  box-shadow:  0px 0px 4px 4px rgba(85, 81, 81, 0.274);
+  border-radius: 20px;
+  justify-content: center;
+  text-align: center;
+  background-color: whitesmoke;
+  margin-right: 10rem;
+  width: 300px;
+}
+.producto_precio{
+  display: inline-flex;
+}
+.producto_precio i{
+  padding-top: 23px;
+  padding-right: 3px ;
+}
+.producto_precio p{
+  padding-top: 12px;
+}
+.producto_img img{
+  width: 220px;
+  height: 220px;
+}
+.producto_item_pie{
+  text-align: center;
+  padding-left: 35px;
+}
+.producto_item_pie div{
+  display: flex;
+}
+.producto_item_pie div i{
+  padding-top: 35px;
+}
+.producto_item_btn{
+  display: inline-flex;
+}
+.producto_item_btn button{
+  background-color: #FF8119;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  font-size: 12pt;
+  padding: 5px;
+  padding-right: 25px;
+  padding-left: 25px;
+  margin-bottom: 10px;
+}
+.producto_item_btn button:hover{
+  transform: scale(1.05);
+  transition: 0.1s;
+}
+.producto_item_btn i{
+  padding-top: 15px;
+  padding-right: 15px;
+}
+.container-producto{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+/*BODY*/
+.oferta{
+  width: 100%;
+}
+.carru{
+  display: flex;
+}
+.carrusel{
+  width: 50%;
+  height: 50%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-right: 5%;
+}
+.carrulado{
+  width: 50%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+.categoriainicio{
+  display: flex;
+  justify-content: center;
+}
+.imgcategoria{
+  width:300px;
+  height:300px;
+}
+.textcategoria{
+  text-align: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+@media screen and (max-width: 767px) {
+  .textcategoria {
+      text-align: center;
+      font-size: 5px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*FOOTER*/
+
+.piepagina{
+  color: white;
+}
+.logofooter{
+  width: 100px;
+  height: 100px;
+}
+
+/* Estilos para dispositivos de pantalla pequeña */
+@media screen and (max-width: 767px) {
+  .footer-column {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 10px;
+      padding: 10px;
+      font-size: 5px;
+  }
+}
+
+/* Estilos para dispositivos de pantalla mediana y grande */
+@media screen and (min-width: 768px) {
+  .footer-column {
+      width: 25%;
+      text-align: center;
+      display: inline-block;
+      padding: 20px;
+      box-sizing: border-box;
+  }
+}
+.navbar {
+  text-align: center;
+}
