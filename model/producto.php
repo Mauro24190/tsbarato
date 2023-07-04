@@ -6,7 +6,9 @@ class articulo
 //Atributos del objeto proveedor 
  public $id_art;
  public $nit;
+public $cat_id;
  public $nom_art;
+ public $cod_art;
  public $pre_art;
  public $des_art;
 //Método de conexión a SGBD.
@@ -92,16 +94,17 @@ class articulo
  {
  try
  {
- $sql = 'INSERT INTO articulo (id_art,nit,nom_art,pre_art,des_art)
- VALUES (?, ?, ?, ?,?)';
+ $sql = 'INSERT INTO articulo (nom_art,cod_art,des_art,pre_art,img_art,cat_id)
+ VALUES (?,?,?,?,?,?)';
  $this->pdo->prepare($sql)
  ->execute(
  array(
- $data->id_art,
- $data->nit,
  $data->nom_art,
+ $data->cod_art,
+ $data->des_art,
  $data->pre_art,
- $data->des_art
+ "ci",
+ $data->cat_id
  )
  );
  } catch (Exception $e)

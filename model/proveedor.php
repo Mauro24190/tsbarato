@@ -4,10 +4,12 @@ class proveedor
 //Atributo para conexión a SGBD
 private $pdo;
 //Atributos del objeto proveedor 
-public $nit;
-public $razonS;
- public $dir;
- public $tel;
+public $nit_pro;
+public $rzs_pro;
+public $cor_pro;
+ public $dir_pro;
+ public $cel_pro;
+
 //Método de conexión a SGBD.
 public function __CONSTRUCT()
 {
@@ -40,17 +42,17 @@ public function Listar()
  }
 }
 
-//Este método obtiene los datos del proveedor a partir del nit
+//Este método obtiene los datos del proveedor a partir del nit_pro
 //utilizando SQL.
-public function Obtener($nit)
+public function Obtener($nit_pro)
 {
  try
  {
  //Sentencia SQL para selección de datos utilizando
- //la cláusula Where para especificar el nit del proveedor.
- $stm = $this->pdo->prepare("SELECT * FROM proveedor WHERE nit = ?");
- //Ejecución de la sentencia SQL utilizando el parámetro nit.
- $stm->execute(array($nit));
+ //la cláusula Where para especificar el nit_pro del proveedor.
+ $stm = $this->pdo->prepare("SELECT * FROM proveedor WHERE nit_pro = ?");
+ //Ejecución de la sentencia SQL utilizando el parámetro nit_pro.
+ $stm->execute(array($nit_pro));
  return $stm->fetch(PDO::FETCH_OBJ);
  } catch (Exception $e)
  {
@@ -58,15 +60,15 @@ public function Obtener($nit)
  }
 }
 
-//Este método elimina la tupla proveedor dado un nit.
-public function Eliminar($nit)
+//Este método elimina la tupla proveedor dado un nit_pro.
+public function Eliminar($nit_pro)
 {
  try
  {
  //Sentencia SQL para eliminar una tupla utilizando
  //la cláusula Where.
- $stm = $this->pdo->prepare("DELETE FROM proveedor WHERE nit = ?");
- $stm->execute(array($nit));
+ $stm = $this->pdo->prepare("DELETE FROM proveedor WHERE nit_pro = ?");
+ $stm->execute(array($nit_pro));
  } catch (Exception $e)
  {
  die($e->getMessage());
@@ -74,25 +76,25 @@ public function Eliminar($nit)
 }
 
 //Método que actualiza una tupla a partir de la cláusula
-//Where y el nit del proveedor.
+//Where y el nit_pro del proveedor.
 public function Actualizar($data)
 {
  try
  {
  //Sentencia SQL para actualizar los datos.
  $sql = "UPDATE proveedor SET
- 	razonS = ?,
-	dir = ?,
- 	tel = ?
- 	WHERE nit = ?";
+ 	rzs_pro = ?,
+	dir_pro = ?,
+ 	cel_pro = ?
+ 	WHERE nit_pro = ?";
  //Ejecución de la sentencia a partir de un arreglo.
  $this->pdo->prepare($sql)
  ->execute(
  array(
- $data->razonS,
- $data->dir,
- $data->tel,
- $data->nit
+ $data->rzs_pro,
+ $data->dir_pro,
+ $data->cel_pro,
+ $data->nit_pro
  )
  );
  } catch (Exception $e)
@@ -107,15 +109,16 @@ public function Registrar(proveedor $data)
  try
  {
  //Sentencia SQL.
- $sql = "INSERT INTO proveedor (nit,razonS,dir,tel)
- VALUES (?, ?, ?, ?)";
+ $sql = "INSERT INTO proveedor (nit_pro,rzs_pro,cor_pro,dir_pro,cel_pro)
+ VALUES (?, ?, ?, ?, ?)";
  $this->pdo->prepare($sql)
  ->execute(
  	array(
-		 $data->nit,
-		 $data->razonS,
-		 $data->dir,
-		 $data->tel,
+		 $data->nit_pro,
+		 $data->rzs_pro,
+		 $data->cor_pro,
+		 $data->dir_pro,
+		 $data->cel_pro,
 		 )
  );
  } catch (Exception $e)

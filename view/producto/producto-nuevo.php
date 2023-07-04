@@ -9,27 +9,33 @@
 form-data">
     <div class="form-group">
         <label>Código Producto</label>
-        <input type="text" style="margin-bottom:30px;" name="id_art" value="<?php echo $prod->id_art; ?>" class="-
+        <input type="text" style="margin-bottom:30px;" name="cod_art" value="" class="-
 form-control" placeholder="Ingrese Código Producto" data-validacion-tipo="requerido|min:20" />
     </div>
-    <div class="form-group">
-        <label>Nit Proveedor</label>
-        <input type="text" style="margin-bottom:15px;" name="nit" value="<?php echo $prod->nit; ?>" class="form-control" place- holder="Ingrese NIT Proveedor" data-validacion-tipo="requerido|min:20" />
+    <div class="form-group mb-3">
+        <label>Razón Social Proveedor</label>
+        <!-- <input type="text" style="margin-bottom:15px;" name="nit" value="<?php echo $prod->nit; ?>" class="form-control" place- holder="Ingrese NIT Proveedor" data-validacion-tipo="requerido|min:20" />}
+     -->
+        <select class="form-select" name="id_pro">
+            <option selected value="0">Seleccione el proveedor</option>
+            <?php foreach ($proveedor as $p) {
+                ?>
+                <option value="<?= $p->id_pro ?>"><?= $p->rzs_pro ?></option>
+                <?php
+            } ?>
+        </select>
     </div>
-   <div class="mb-3">
-    <label for="cat">Categoria</label>
-   <select class="form-select" aria-label="Default select example">
-        <option selected>Seleccione la categoria</option>
-        <option value="3">Aseo</option>
-        <option value="4">Bebidas</option>
-        <option value="5">Carnicos</option>
-        <option value="6">Despensa</option>
-        <option value="7">Lacteos</option>
-        <option value="8">Medicina</option>
-        <option value="9">Panaderia</option>
-        <option value="10">Vegetales</option>
-    </select>
-   </div>
+    <div class="mb-3">
+        <label for="cat">Categoria</label>
+        <select class="form-select" aria-label="Default select example" name="cat_id">
+            <option selected value="0">Seleccione la categoria</option>
+            <?php foreach ($categoria as $p) {
+                ?>
+                <option value="<?= $p->id_cat ?>"><?= $p->nom_cat ?></option>
+                <?php
+            } ?>
+        </select>
+    </div>
     <div class="form-group">
         <label>Nombre Producto</label>
         <input type="text" style="margin-bottom:30px;" name="nom_art" value="<?php echo $prod->nom_art; ?>" class="-
@@ -58,8 +64,8 @@ form-control" placeholder="Ingrese descripción producto" data-validacion-tipo="
     </div>
 </form>
 <script>
-    $(document).ready(function() {
-        $("#frm-producto").submit(function() {
+    $(document).ready(function () {
+        $("#frm-producto").submit(function () {
             return $(this).validate();
         });
     })

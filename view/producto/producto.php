@@ -13,7 +13,7 @@
                 <div class="producto_item">
                     <div>
                         <p class="nomproducto">
-                            <?php echo $r->nomprod; ?>
+                            <?php echo $r->nom_art; ?>
                         </p>
                     </div>
                     <div class="producto_img">
@@ -24,7 +24,7 @@
                         <div><i class="bi bi-currency-dollar"></i></div>
                         <div>
                             <p>
-                                <?php echo $r->precioU; ?>
+                                <?php echo $r->pre_art; ?>
                             </p>
                         </div>
                     </div>

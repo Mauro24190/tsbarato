@@ -127,6 +127,11 @@
                 <ul class="navbar-nav ml-lg-auto">
                     <li class="nav-item ">
                         <a class="nav-link active text-light me-md-3" aria-current="page" href="?c=producto">
+                        <i class="bi bi-house-gear-fill"></i><br>Administrador
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link active text-light me-md-3" aria-current="page" href="?c=producto">
                             <i class="bi bi-cart3"></i><br>Mi carrito
                         </a>
                     </li>
