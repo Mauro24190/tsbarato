@@ -1,0 +1,17 @@
+{
+    "name": "guanki/tsbarato",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Guanki\\Lib\\": "Lib/"
+        }
+    },
+    "authors": [
+        {
+            "name": "GUANKI",
+            "email": "jm065726@gmail.com"
+        }
+    ],
+    "require": {}
+}
