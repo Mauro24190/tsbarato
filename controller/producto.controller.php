@@ -45,7 +45,7 @@ class ProductoController
             $_REQUEST['des_art'] != "" ||
             $_REQUEST['cod_art'] != ""
         ) {
-            setcookie("notificacion","Todos los campos deben ser llenados",time()+5,"/");
+            setcookie("notificacion","error-Todos los campos deben ser llenados",time()+5,"/");
             header("location:?c=producto&a=Nuevo");
         }
         if(strlen($_REQUEST['des_art'])>20){

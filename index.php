@@ -1,28 +1,25 @@
 <?php
+require_once 'libraries/helper.php';
+require_once 'model/database.php';
 
- require_once 'model/database.php';
 
- 
- $controller = 'body';
- 
+$controller = 'body';
 
- if(!isset($_REQUEST['c']))
- {
- 
- require_once "controller/$controller.controller.php";
- $controller = ucwords($controller) . 'Controller';
- $controller = new $controller;
- $controller->Index();
- }
- else
- {
- 
- $controller = strtolower($_REQUEST['c']);
- $accion = isset($_REQUEST['a']) ? $_REQUEST['a'] : 'Index';
 
- require_once "controller/$controller.controller.php";
- $controller = ucwords($controller) . 'Controller';
- $controller = new $controller;
+if (!isset($_REQUEST['c'])) {
 
- call_user_func( array( $controller, $accion ) );
- }
+    require_once "controller/$controller.controller.php";
+    $controller = ucwords($controller) . 'Controller';
+    $controller = new $controller;
+    $controller->Index();
+} else {
+
+    $controller = strtolower($_REQUEST['c']);
+    $accion = isset($_REQUEST['a']) ? $_REQUEST['a'] : 'Index';
+
+    require_once "controller/$controller.controller.php";
+    $controller = ucwords($controller) . 'Controller';
+    $controller = new $controller;
+
+    call_user_func(array($controller, $accion));
+}

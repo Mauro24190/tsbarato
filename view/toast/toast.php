@@ -20,14 +20,14 @@ if (isset($_COOKIE["notificacion"])) {
 
 ?>
 <script>
-  var segundos = 58;
+  var segundos = 0;
   const timeValue = document.querySelector("#time-value")
   const timeText = document.querySelector("#time-text")
 
   setInterval(function(){
     if (segundos < 60) {
       
-      timeValue.innerHTML = segundos
+      timeValue.innerHTML = segundos;
       timeText.innerHTML = "sec"
     }
     else if (segundos < 3600) {

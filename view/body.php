@@ -1,3 +1,4 @@
+<div class="container">
 <link rel="stylesheet" href="diseño.css">
 <div>
   <img src="assets/img_contenido/hero.png" class="img-fluid oferta" alt="...">
@@ -62,3 +63,5 @@
   </div>
 </div>
 
+
+</div>

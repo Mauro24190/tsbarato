@@ -1,19 +1,42 @@
-<div class="registro">
-        <img src="logoproyecto.png" alt="Logo Tienda" class="logo">
-        <h1 class="regis">Registro</h1>
-        <form>
-            <label for="username">Nombres</label>
-            <input type="text" placeholder="Escriba sus nombres">
-            <label for="username">Apellidos</label>
-            <input type="text" placeholder="Escriba sus apellidos">
-            <label for="username">Fecha de nacimiento</label>
-            <input type="date" placeholder="Escriba su fecha de nacimiento">
-            <label for="username">Correo electrónico</label>
-            <input type="text" placeholder="Escriba su correo electrónico">
-            <label for="username">Teléfono</label>
-            <input type="text" placeholder="Escriba su número de teléfono">
-            <label for="password">Contraseña</label>
-            <input type="password" placeholder="Escriba su contraseña">
-            <a href="/Inicio/inicio.html"><input class="a_resgitrarse" value="Registrarse"></a>
-        </form>
+<div class="container py-4">
+        <div>
+            <div style="justify-content: center ;" class="d-flex">
+                <img style="width: 120px; height: 100px;" src="logo proyecto.png" alt="">
+            </div>
+        </div>
+        <div>
+            <form  class="row mt-2" action="#">
+                <div class="col-6">
+                    <label class="form-label" for="nom_cli">Nombres</label>
+                    <input class="form-control" type="text">
+                </div>
+                <div class="col-6 mb-3">
+                    <label class="form-label" for="ape_cli">Apellidos</label>
+                    <input class="form-control" type="text">
+                </div>
+                <div class="col-6" >
+                    <label class="form-label" for="cor_cli">Correo Electrónico</label>
+                    <input class="form-control" type="text">
+                </div>
+                <div class="col-6 mb-3">
+                    <label class="form-label" for="pas_cli">Contraseña</label>
+                    <input class="form-control" type="text">
+                </div>
+                <div class="col-4">
+                    <label class="form-label" for="fch_cli">Fecha de nacimiento</label>
+                    <input class="form-control" type="date">
+                </div>
+                <div class="col-4">
+                    <label class="form-label" for="cel_cli">Número de Celular</label>
+                    <input class="form-control" type="text" maxlength="10">
+                </div>
+                <div class="col-4 mb-3">
+                    <label class="form-label" for="dir_cli">Dirección de Domicilio</label>
+                    <input class="form-control" type="text">
+                </div>
+                <div class="d-flex justify-content-center">
+                    <button class="btn btn-success">Registrarme</button>
+                </div>
+            </form>
+        </div>
     </div>
