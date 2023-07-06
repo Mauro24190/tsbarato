@@ -1,3 +1,6 @@
 <?php
 
-include_once "App/Views/base.php";
+    $app = require_once "Lib/app.php";
+    $app->start();
+
+?>

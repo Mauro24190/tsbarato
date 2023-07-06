@@ -4,7 +4,8 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Guanki\\Lib\\": "Lib/"
+            "Guanki\\Lib\\": "Lib/",
+            "Guanki\\App\\": "App/"
         }
     },
     "authors": [
@@ -13,5 +14,7 @@
             "email": "jm065726@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        
+    }
 }
