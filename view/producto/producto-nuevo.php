@@ -1,4 +1,4 @@
-<main>
+<main class="container-sm">
     <h1 class="page-header" style="margin-bottom: 25px; margin-top: 25px;">
         Nuevo Producto
     </h1>

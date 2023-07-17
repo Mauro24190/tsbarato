@@ -1,12 +1,12 @@
-<main>
+<main class="container-lg">
     <h1 class="page-header" style="margin-bottom: 25px; margin-top: 25px;">Productos </h1>
     <nav class="navbar navbar-light bg-light">
         <div class="well well-sm text-right">
             <a class="btn btn-primary" href="?c=proveedor&a=Nuevo">Nuevo Proveedor</a>
             <a class="btn btn-primary" href="?c=producto&a=Nuevo">Nuevo Producto</a>
         </div>
-    </nav>
-    <div class="container-producto">
+    </nav><br><br>
+    <div class="container-producto container-fluid">
 
         <?php foreach ($this->model->Listar() as $r): ?>
             <div class="popo">

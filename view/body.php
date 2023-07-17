@@ -1,22 +1,22 @@
 <div class="container">
 <link rel="stylesheet" href="diseño.css">
-<div>
+<div><br>
   <img src="assets/img_contenido/hero.png" class="img-fluid oferta" alt="...">
 </div>
 <div class="carru">
 <div id="carouselExampleFade" class="carousel slide carousel-fade carrusel" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="assets/img_contenido/carrusel1.png" class="d-block w-100" alt="...">
+      <img src="assets/img_contenido/carrusel-1.png" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="assets/img_contenido/carrusel2.png" class="d-block w-100" alt="...">
+      <img src="assets/img_contenido/carrusel-2.png" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="assets/img_contenido/carrusel3.png" class="d-block w-100" alt="...">
+      <img src="assets/img_contenido/carrusel-3.png" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="assets/img_contenido/carrusel4.png" class="d-block w-100" alt="...">
+      <img src="assets/img_contenido/carrusel-4.png" class="d-block w-100" alt="...">
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
@@ -36,29 +36,29 @@
     <p class="textcategoria">Despensa</p>
   </div>
   <div>
-    <img src="assets/img_categorias/frutas.png" class="img-fluid imgcategoria">
+    <img src="assets/img_categorias/frutasverduras.png" class="img-fluid imgcategoria">
     <p class="textcategoria">Frutas y verdudras</p>
   </div>
   <div>
-    <img src="assets/img_categorias/farmacia.png" class="img-fluid imgcategoria">
+    <img src="assets/img_categorias/farmaciaa.png" class="img-fluid imgcategoria">
     <p class="textcategoria">Farmacia</p>
   </div>
   <div>
-    <img src="assets/img_categorias/lacteos.png" class="img-fluid imgcategoria">
+    <img src="assets/img_categorias/lacteo.png" class="img-fluid imgcategoria">
     <p class="textcategoria">Lacteos</p>
   </div>
 </div>
 <div class="categoriainicio">
   <div>
-    <img src="assets/img_categorias/carnicos.png" class="img-fluid imgcategoria">
+    <img src="assets/img_categorias/carnico.png" class="img-fluid imgcategoria">
     <p class="textcategoria">Carnicos</p>
   </div>
   <div>
-    <img src="assets/img_categorias/aseo.png" class="img-fluid imgcategoria">
+    <img src="assets/img_categorias/aseoo.png" class="img-fluid imgcategoria">
     <p class="textcategoria">Aseo</p>
   </div>
   <div>
-    <img src="assets/img_categorias/bebidas.png" class="img-fluid imgcategoria">
+    <img src="assets/img_categorias/bebida.png" class="img-fluid imgcategoria">
     <p class="textcategoria">Bebidas</p>
   </div>
 </div>
