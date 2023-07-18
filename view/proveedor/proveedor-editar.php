@@ -1,4 +1,4 @@
-<main>
+<main class="container-sm">
     <h1 class="page-header" style="margin-bottom: 25px; margin-top: 25px;">
         <!-- <?php echo $pvd->nit != null ? $pvd->rzs_pro : 'Nuevo Registro'; ?> -->
     </h1>
@@ -11,8 +11,7 @@
             <?php echo $pvd->nit_pro != null ? "Editar los datos de: " . $pvd->rzs_pro : ''; ?>
         </li>
     </ol>
-    <form id="frm-proveedor" action="?c=proveedor&a=Editar" method="post" enctype="multipart/
-form-data">
+    <form id="frm-proveedor" action="?c=proveedor&a=Editar" method="post" enctype="multipart/form-data">
         <input type="hidden" name="nit_pro" value="<?php echo $pvd->nit_pro; ?>" />
         <div class="form-group">
             <label>Razón Social</label>

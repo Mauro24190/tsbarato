@@ -5,7 +5,6 @@ class WebController{
     function carrito(){
         plantilla("carrito.php");
     }
-
     function ingreso(){
         plantilla("cuenta/ingreso.php");
     }
@@ -14,5 +13,8 @@ class WebController{
     }
     function perfil(){
         plantilla("cuenta/perfil.php");
+    }
+    function categorias(){
+        plantilla("categorias/aseo.php");
     }
 }

@@ -1,5 +1,4 @@
-<main>
-
+<main class="container-sm">
     <h1 class="page-header" style="margin-bottom: 25px; margin-top: 25px;">Proveedores</h1>
     <nav class="navbar navbar-light bg-light">
         <div class="container">
@@ -52,6 +51,4 @@
             <?php endforeach; ?>
         </tbody>
     </table>
-
-
 </main>

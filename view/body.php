@@ -50,7 +50,7 @@
 </div>
 <div class="categoriainicio">
   <div>
-    <img src="assets/img_categorias/carnico.png" class="img-fluid imgcategoria">
+    <img src="assets/img_categorias/carnicos.png" class="img-fluid imgcategoria">
     <p class="textcategoria">Carnicos</p>
   </div>
   <div>
@@ -58,10 +58,11 @@
     <p class="textcategoria">Aseo</p>
   </div>
   <div>
-    <img src="assets/img_categorias/bebida.png" class="img-fluid imgcategoria">
+    <img src="assets/img_categorias/bebidas.png" class="img-fluid imgcategoria">
     <p class="textcategoria">Bebidas</p>
   </div>
 </div>
 
 
+<li><a href="?c=web&a=categorias"><button type="button" class="btn btn-warning"> Ver Proveedores</button></a></li>
 </div>
