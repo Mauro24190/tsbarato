@@ -40,27 +40,31 @@ class ProductoController
         if (
             $_REQUEST['id_pro'] == "0" ||
             $_REQUEST['cat_id'] == "0" ||
-            $_REQUEST['nom_art'] != "" ||
-            $_REQUEST['pre_art'] != "" ||
-            $_REQUEST['des_art'] != "" ||
-            $_REQUEST['cod_art'] != ""
+            $_REQUEST['nom_art'] == "" ||
+            $_REQUEST['pre_art'] == "" ||
+            $_REQUEST['des_art'] == "" ||
+            $_REQUEST['cod_art'] == ""
         ) {
-            setcookie("notificacion","error-Todos los campos deben ser llenados",time()+5,"/");
+            setcookie("notificacion", "Todos los campos deben ser llenados", time() + 5, "/");
             header("location:?c=producto&a=Nuevo");
         }
-        if(strlen($_REQUEST['des_art'])>20){
-            setcookie("notificacion","Descripcion maxima de 20 caracteres",time()+5,"/");
+        else if (strlen($_REQUEST['des_art']) > 20) {
+            setcookie("notificacion", "Descripcion maxima de 20 caracteres", time() + 5, "/");
             header("location:?c=producto&a=Nuevo");
+        } else {
+            $prod = new articulo();
+            $prod->nit = $_REQUEST['id_pro'];
+            $prod->cat_id = $_REQUEST['cat_id'];
+            $prod->nom_art = $_REQUEST['nom_art'];
+            $prod->pre_art = $_REQUEST['pre_art'];
+            $prod->des_art = $_REQUEST['des_art'];
+            $prod->cod_art = $_REQUEST['cod_art'];
+            setcookie("notificación", "Exito al guardar", time() + 5, "/");
+            $this->model->Registrar($prod);
+            header('Location:?c=producto&a=Nuevo');
+            
         }
-        $prod = new articulo();
-        $prod->nit = $_REQUEST['id_pro'];
-        $prod->cat_id = $_REQUEST['cat_id'];
-        $prod->nom_art = $_REQUEST['nom_art'];
-        $prod->pre_art = $_REQUEST['pre_art'];
-        $prod->des_art = $_REQUEST['des_art'];
-        $prod->cod_art = $_REQUEST['cod_art'];
-        $this->model->Registrar($prod);
-        // header('Location: index.php?c=producto');
+
     }
 
     public function Editar()
