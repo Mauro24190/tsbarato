@@ -1,7 +1,5 @@
 <div class="container py-4">
-    <?php
-    ?>
-    <div id="IrVentanaFlotante" class=" show w-[500px] mx-auto md:w-[600px] lg:w-[900px] bg-gray-500 hover:bg-black">
+    <!-- <div id="IrVentanaFlotante" class=" show w-[500px] mx-auto md:w-[600px] lg:w-[900px] bg-gray-500 hover:bg-black">
         <div class="ventana_carrito">
             <div class="recua">
                 <a href="#" class="xamm" style='text-decoration:none;'> X </a>
@@ -32,5 +30,30 @@
                 </div>
             </div>
         </div>
+    </div> -->
+
+
+    <div class="ventana">
+     <div class="Titulo"><h1>Tu Carrito</h1>
+        <div class="Titulo2">
+        <i class="bi bi-geo-alt-fill ubicacion"></i><input type="text" class="form-control" placeholder="Tu direccion" aria-label="Nombre de usuario" aria-describedby="addon-wrapping">
+        </div>
+     </div>
+     
+     <div class="Titulo">Nombre de la Categoria
+        <div>
+            <button type="button" class="btn btn-outline-warning">Volver al inicio</button>
+        </div>
+     </div>
+
+     <div class="Titulo"><img src="" class="imagen"><br>Nombre del producto
+     <div><i class="bi bi-currency-dollar"></i><p>1,200</p><button type="button" class="btn btn-outline-warning">Pagar Todo</button></div>
     </div>
+    
+    <div class="Titulo">
+        <div><i class="bi bi-trash3-fill delete"></i><button type="button" class="btn btn-outline-warning">Vaciar Mi Carrito</button></div>
+    </div>
+    </div>
+
+
 </div class="container py-4">
