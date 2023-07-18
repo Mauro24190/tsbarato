@@ -34,25 +34,31 @@
 
 
     <div class="ventana">
-     <div class="Titulo"><h1>Tu Carrito</h1>
-        <div class="Titulo2">
-        <i class="bi bi-geo-alt-fill ubicacion"></i><input type="text" class="form-control" placeholder="Tu direccion" aria-label="Nombre de usuario" aria-describedby="addon-wrapping">
+        <div class="Titulo">
+            <h1>Tu Carrito</h1>
+            <div class="Titulo2">
+                <i class="bi bi-geo-alt-fill ubicacion"></i><input type="text" class="form-control" placeholder="Tu direccion" aria-label="Nombre de usuario" aria-describedby="addon-wrapping">
+            </div>
         </div>
-     </div>
-     
-     <div class="Titulo">Nombre de la Categoria
-        <div>
-            <button type="button" class="btn btn-outline-warning">Volver al inicio</button>
-        </div>
-     </div>
 
-     <div class="Titulo"><img src="" class="imagen"><br>Nombre del producto
-     <div><i class="bi bi-currency-dollar"></i><p>1,200</p><button type="button" class="btn btn-outline-warning">Pagar Todo</button></div>
-    </div>
-    
-    <div class="Titulo">
-        <div><i class="bi bi-trash3-fill delete"></i><button type="button" class="btn btn-outline-warning">Vaciar Mi Carrito</button></div>
-    </div>
+        <div class="Titulo">Nombre de la Categoria
+            <div>
+                <button type="button" class="btn btn-outline-warning">Volver al inicio</button>
+            </div>
+        </div>
+
+        <div class="Titulo"><img src="assets/img/carrito/empanada.jpg" class="imagen"><br>Nombre del producto
+                <div style="display: flex;"><b><i class="bi bi-currency-dollar dinero"></i></b>
+                    <p>1,200</p>
+                </div>
+                <div>
+                     <button type="button" class="btn btn-outline-warning">Pagar Todo</button>
+                </div>
+        </div>
+
+        <div class="Titulo">
+            <div><i class="bi bi-trash3-fill delete"></i><button type="button" class="btn btn-outline-warning">Vaciar Mi Carrito</button></div>
+        </div>
     </div>
 
 

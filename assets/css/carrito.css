@@ -21,6 +21,11 @@
     height: 100px;
     width: 100px;
 }
-.p{
-    font-size: 40px; 
+.Titulo{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.dinero{
+    
+    color: black;
+    font-size: 15px;
 }
