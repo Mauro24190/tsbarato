@@ -105,7 +105,8 @@ button>a {
 
 /* productos */
 .nomproducto{
-  font-size: 15px;
+  padding-top: 20px;
+  font-size: 20px;
 }
 .producto_filas{
   padding-left: 250px;
@@ -125,30 +126,29 @@ button>a {
   margin-right: 10rem;
   width: 300px;
 }
-.producto_precio{
-  display: inline-flex;
-}
 .producto_precio i{
-  padding-top: 23px;
+  padding-top: 3px;
   padding-right: 3px ;
 }
 .producto_precio p{
   padding-top: 12px;
+  font-size: 18px;
+}
+.descripcion_arti{
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .producto_img img{
   width: 220px;
   height: 220px;
 }
+/*
 .producto_item_pie{
-  text-align: center;
   padding-left: 35px;
 }
 .producto_item_pie div{
   display: flex;
-}
-.producto_item_pie div i{
-  padding-top: 35px;
-}
+}*/
 .producto_item_btn{
   display: inline-flex;
 }
