@@ -1,11 +1,11 @@
 <main>
     <h1 class="page-header" style="margin-bottom: 25px; margin-top: 25px;">
-        <?php echo $prod->idProducto != null ? $prod->nomprod : 'Nuevo Registro'; ?>
+        <?php echo $prod->id_art != null ? $prod->nom_art : 'Nuevo Registro'; ?>
     </h1>
     <ol class="breadcrumb">
         <li><a href="?c=producto" class="btn btn-primary">Productos</a></li>
         <li class="active" style="margin-left: 50px; margin-top: auto; margin-bottom: auto;">
-            <?php echo $prod->idProducto != null ? $prod->nomprod : 'Nuevo Registro';
+            <?php echo $prod->id_art != null ? $prod->nom_art : 'Nuevo Registro';
             ?>
         </li>
     </ol>
@@ -19,7 +19,7 @@ form-data">
         </div>
         <div class="form-group">
             <label>Nombre Producto</label>
-            <input type="text" style="margin-bottom:30px;" name="nomprod" value="<?php echo $prod->nomprod; ?>" class="-
+            <input type="text" style="margin-bottom:30px;" name="nom_art" value="<?php echo $prod->nom_art; ?>" class="-
 form-control" placeholder="Ingrese nombre producto" data-validacion-tipo="requerido|min:100" />
         </div>
         <div class="form-group">

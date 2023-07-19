@@ -44,11 +44,12 @@
                     </td>
                     <td>
                         <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');"
-                            href="?c=proveedor&a=Eliminar&nit=<?php echo $r->nit_pro; ?>"><button type="button"
-                                class="btn btn-danger"><i class="bi bi-trash-fill"></i></button></a>
+                            href="?c=proveedor&a=Eliminar&nit_pro=<?php echo $r->nit_pro; ?> &redirect=proveedor.php"><button type="button"
+                            class="btn btn-danger"><i class="bi bi-trash-fill"></i></button></a>
                     </td>
                 </tr>
             <?php endforeach; ?>
         </tbody>
     </table>
 </main>
+
