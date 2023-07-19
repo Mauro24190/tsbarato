@@ -20,7 +20,7 @@
                 </div>
                 <div class="col-6 mb-3">
                     <label class="form-label" for="pas_cli">Contraseña</label>
-                    <input class="form-control" type="text" name="pas_cli">
+                    <input class="form-control" type="password" name="pas_cli">
                 </div>
                 <div class="col-4">
                     <label class="form-label" for="fch_cli">Fecha de nacimiento</label>

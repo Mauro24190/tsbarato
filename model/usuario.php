@@ -32,9 +32,9 @@ class usuario
         }
     }
    
-    function registro(usuario $data){
+    function Registro(usuario $data){
         try {
-            //Sentencia SQL.
+            //Sentencia SQL.8
             $sql = "INSERT INTO cliente (nom_cli,ape_cli,cor_cli,pas_cli,fch_cli,cel_cli,dir_cli)
                                     VALUES (?, ?, ?, ?, ?, ?, ?)";
             $this->pdo->prepare($sql)

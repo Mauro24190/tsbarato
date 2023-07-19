@@ -29,17 +29,35 @@
 
         function Registrar(){
 
-            $user = new usuario();
+           
+                $user = new usuario();
+                if($_REQUEST["nom_cli"] == "" ||
+                $_REQUEST["ape_cli"] == "" ||
+                $_REQUEST["cor_cli"] == "" ||
+                $_REQUEST["pas_cli"] == "" ||
+                $_REQUEST["fch_cli"] == "" ||
+                $_REQUEST["cel_cli"] == "" ||
+                $_REQUEST["dir_cli"] == ""){
+                    setcookie("notificacion", "Por favor llenar todos los campos", time()+5, "/");
+                    header("location: ?c=usuario&a=Registrar");
+                }
+                $user->nom_cli=$_REQUEST["nom_cli"];
+                $user->ape_cli=$_REQUEST["ape_cli"];
+                $user->cor_cli=$_REQUEST["cor_cli"];
+                $user->pas_cli=$_REQUEST["pas_cli"];
+                $user->fch_cli=$_REQUEST["fch_cli"];
+                $user->cel_cli=$_REQUEST["cel_cli"];
+                $user->dir_cli=$_REQUEST["dir_cli"];
+    
+                $this->model->Registro($user);
+                header("location: ?c=usuario&a=Nuevo");
+            
 
-            $user->nom_cli=$_REQUEST["nom_cli"];
-            $user->ape_cli=$_REQUEST["ape_cli"];
-            $user->cor_cli=$_REQUEST["cor_cli"];
-            $user->pas_cli=$_REQUEST["pas_cli"];
-            $user->fch_cli=$_REQUEST["fch_cli"];
-            $user->cel_cli=$_REQUEST["cel_cli"];
-            $user->dir_cli=$_REQUEST["dir_cli"];
 
-            $this->model->registro($user);
-            header("location: ?");
+           
+        }
+
+        function Nuevo(){
+            plantilla("cuenta/exito.php");
         }
     }
