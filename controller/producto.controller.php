@@ -46,7 +46,7 @@ class ProductoController
             $_REQUEST['cod_art'] == ""
         ) {
             setcookie("notificacion", "Todos los campos deben ser llenados", time() + 5, "/");
-            header("location:?c=producto&a=Nuevo");
+            header("location:?c=producto");
         }
         else if (strlen($_REQUEST['des_art']) > 20) {
             setcookie("notificacion", "Descripcion maxima de 20 caracteres", time() + 5, "/");

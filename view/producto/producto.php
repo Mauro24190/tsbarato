@@ -48,6 +48,15 @@
                                 </div>
                             </div>
                         </div>
+                        <td>
+                        <a href="?c=producto&a=Crud&id_art=<?php echo $r->id_art; ?>"><button type="button"
+                                class="btn btn-success"><i class="bi bi-pencil-fill"></i></button></a>
+                    </td>
+                    <td>
+                        <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');"
+                            href="?c=producto&a=Eliminar&id_art=<?php echo $r->id_art; ?> &redirect=proveedor.php"><button type="button"
+                            class="btn btn-danger"><i class="bi bi-trash-fill"></i></button></a>
+                    </td>
                     </div>
                 </div>
             </div>
