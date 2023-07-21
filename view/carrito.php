@@ -41,23 +41,23 @@
             </div>
         </div>
 
-        <div class="Titulo">Nombre de la Categoria
+        <div class="Titulo3"><h2 class="nombre" >Nombre de la Categoria</h2> 
             <div>
-                <button type="button" class="btn btn-outline-warning">Volver al inicio</button>
+            <button type="button" class="btn btn-primary texto">Volver al Inicio</button>
             </div>
         </div>
 
-        <div class="Titulo"><img src="assets/img/carrito/empanada.jpg" class="imagen"><br>Nombre del producto
-                <div style="display: flex;"><b><i class="bi bi-currency-dollar dinero"></i></b>
-                    <p>1,200</p>
+        <div class="Titulo4"><img src="assets/img/carrito/empanada.jpg" class="imagen"><br><h2 class="nombrep" >Nombre del producto</h2> 
+                <div>
+                    <p class="numero"><b><i class="bi bi-currency-dollar dinero"></i></b> 1,200</p>
                 </div>
                 <div>
-                     <button type="button" class="btn btn-outline-warning">Pagar Todo</button>
+                <button type="button" class="btn btn-primary pago">Pagar Todo</button>
                 </div>
         </div>
 
-        <div class="Titulo">
-            <div><i class="bi bi-trash3-fill delete"></i><button type="button" class="btn btn-outline-warning">Vaciar Mi Carrito</button></div>
+        <div class="Titulo5">
+            <div><i class="bi bi-trash3-fill delete"></i><br><button type="button" class="btn btn-primary vaciar">Vaciar mi Carrito</button></div>
         </div>
     </div>
 
