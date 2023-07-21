@@ -9,6 +9,7 @@ class usuario
     public $fch_cli;
     public $cel_cli;
     public $dir_cli;
+    public $user_cli;
 
     private $pdo;
     public function __CONSTRUCT()
@@ -20,21 +21,53 @@ class usuario
         }
     }
 
-    function obtenerxuser($user_cli)
+    public function obtenerxuser($user_cli)
     {
-        $sql =  $this->pdo->prepare('SELECT user_cli, pas_cli FROM cliente WHERE user_cli=?');
-        $res = $sql->execute(array($user_cli));
+        // $sql = $this->pdo->prepare('SELECT user_cli, pas_cli FROM cliente WHERE user_cli = ?');
+        // $res = $sql->execute(array($user_cli));
+    
+        // if ($sql->rowCount() != 0) {
+        //     $usuario = $sql->fetch(PDO::FETCH_OBJ);
+        //     $usuario->pas_cli = $usuario->pas_cli; // Asigna el valor a la propiedad "pas_cli"
+        //     return $usuario;
+        // } else {
+        //     return false;
+        // }
 
-        if ($sql->rowCount() != 0) {
-            return $sql->fetch(PDO::FETCH_OBJ);
-        } else {
-            return false;
-        }
+
+        // if ($sql->rowCount() != 0) {
+        //     return $sql->fetch(PDO::FETCH_OBJ);
+        // } else {
+        //     return false;
+        // }
+
+        
+    }
+
+    public function obtenerPorUsuario($nombreUsuario)
+    {
+        $sql = 'SELECT * FROM cliente WHERE user_cli = :nombreUsuario';
+        $statement = $this->pdo->prepare($sql);
+        $statement->bindParam(':nombreUsuario', $nombreUsuario);
+        $statement->execute();
+
+        return $statement->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function guardarUsuario($nombreUsuario, $contrasena)
+    {
+        $hashContrasena = password_hash($contrasena, PASSWORD_DEFAULT);
+
+        $sql = 'INSERT INTO cliente (user_cli, pas_cli) VALUES (:nombreUsuario, :contrasena)';
+        $statement = $this->pdo->prepare($sql);
+        $statement->bindParam(':nombreUsuario', $nombreUsuario);
+        $statement->bindParam(':contrasena', $hashContrasena);
+        $statement->execute();
     }
    
-    function registro(usuario $data){
+    function Registro(usuario $data){
         try {
-            //Sentencia SQL.
+            //Sentencia SQL.8
             $sql = "INSERT INTO cliente (nom_cli,ape_cli,cor_cli,pas_cli,fch_cli,cel_cli,dir_cli)
                                     VALUES (?, ?, ?, ?, ?, ?, ?)";
             $this->pdo->prepare($sql)

@@ -9,7 +9,7 @@
                 <i class="bi bi-shop"></i>
                 <p>Sobre Nosotros<br>
                     Colombiana de comercio S.A<br>
-                    NIT:00000-0</p>
+                    NIT: 00000-0</p>
             </div>
             <div class="footer-column piepagina">
                 <i class="bi bi-envelope"></i>
@@ -21,8 +21,10 @@
                 <p>Venta telefónica<br>
                     Servicio al cliente: 3117505835</p>
             </div>
-          
-            </div>
+            <p class="text-light footer-column">Metodos de pago aceptados</p>
+            <!-- <div>
+                <img src="" class="img-thumbnail" alt="...">
+            </div> -->
         </div>
     </nav>
     <div class="bg-dark">
