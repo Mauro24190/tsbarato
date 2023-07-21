@@ -1,4 +1,5 @@
 <?php
+require_once 'config.php';
 require_once 'libraries/helper.php';
 require_once 'model/database.php';
 

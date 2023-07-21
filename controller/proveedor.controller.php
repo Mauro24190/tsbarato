@@ -55,7 +55,7 @@ class ProveedorController
     //”Location:” No solamente envía el encabezado al navegador, sino que 
     //también devuelve el código de status (302) REDIRECT al 
     //navegador
-    header('Location: index.php');
+    header('Location: ?c=proveedor');
   }
   //Método que modifica el modelo de un proveedor.
   public function Editar()
@@ -66,12 +66,12 @@ class ProveedorController
     $pvd->dir_pro = $_REQUEST['dir_pro'];
     $pvd->cel_pro = $_REQUEST['cel_pro'];
     $this->model->Actualizar($pvd);
-    header('Location: index.php');
+    header('Location: ?c=proveedor');
   }
   //Método que elimina la tupla proveedor con el NIT_nit_pro dado.
   public function Eliminar()
   {
     $this->model->Eliminar($_REQUEST['nit_pro']);
-    header('Location: index.php');
+    header('Location: ?c=proveedor');
   }
 } //no borrar ya que es la llave que cierra el class.

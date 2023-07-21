@@ -9,10 +9,11 @@ class Database
  //’’ = contraseña del root (solo para fines académicos).
  public static function Conectar()
  {
- $pdo = new PDO('mysql:host=localhost:1002;dbname=tsbarato;charset=utf8', 'root', '');
+ $pdo = new PDO('mysql:host=' . constant("HOST") . ':' . constant("PORT") . ';dbname=' . constant("NAME") . ';charset=utf8', constant("USER"), constant("PASS"));
  //Filtrando posibles errores de conexión.
  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
  return $pdo;
  }
 }
 
+    

@@ -17,4 +17,5 @@ class WebController{
     function categorias(){
         plantilla("categorias/aseo.php");
     }
+
 }
