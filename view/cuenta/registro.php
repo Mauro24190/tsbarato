@@ -39,4 +39,7 @@
                 </div>
             </form>
         </div>
+        <?php
+
+        ?>
     </div>
