@@ -14,17 +14,13 @@
             <div class="footer-column piepagina">
                 <i class="bi bi-envelope"></i>
                 <p>Email<br>
-                    tiendasuperbarato@hotmail.com</p>
+                    tsbarato@gmail.com</p>
             </div>
             <div class="footer-column piepagina">
                 <i class="bi bi-telephone"></i>
                 <p>Venta telefónica<br>
                     Servicio al cliente: 3117505835</p>
             </div>
-            <p class="text-light footer-column">Metodos de pago aceptados</p>
-            <!-- <div>
-                <img src="" class="img-thumbnail" alt="...">
-            </div> -->
         </div>
     </nav>
     <div class="bg-dark">
