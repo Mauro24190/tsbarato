@@ -238,6 +238,18 @@ button>a {
   width: 100px;
   height: 100px;
 }
+.img_footer{
+  width: 60px;
+  height: 60px;
+}
+.img_footer1{
+  display: flex; /* Establece el contenedor como flexbox */
+  justify-content: center; /* Centra horizontalmente el contenido dentro del contenedor */
+  align-items: center; /* Centra verticalmente el contenido dentro del contenedor */
+}
+.img_footer1 div {
+  margin: 20px; /* Opcional: Agrega un margen entre las imágenes para que no estén demasiado juntas */
+}
 
 /* Estilos para dispositivos de pantalla pequeña */
 @media screen and (max-width: 767px) {
