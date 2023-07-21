@@ -82,6 +82,6 @@ class ProductoController
     public function Eliminar()
     {
         $this->model->Eliminar($_REQUEST['id_art']);
-        header('Location: index.php');
+        header('Location: index.php?c=producto');
     }
 } //no eliminar esta llave ya que cierra el class. 
