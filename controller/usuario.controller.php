@@ -1,5 +1,4 @@
 <?php
-
 require_once "model/usuario.php";
 
 
@@ -20,87 +19,25 @@ class UsuarioController
 
     function ingresar()
     {
-        //     $usuario = new usuario();
-        //     $usuario= $usuario->obtenerxuser($_REQUEST["user_cli"]);
-        //     $password = $_REQUEST["pas_cli"];
+        session_start();
 
-        //     if($usuario){
-        //         if (password_verify($_REQUEST["pas_cli"], $usuario->pas_cli)) {
-        //             setcookie("notificacion", "Ingreso exitoso", time() + 5, "/");
-        //             header("location: ?");
-        //         // setcookie("notificacion","Usuario sí existe",time()+5,"/");
-        //         // header("location:?c=web&a=ingreso");
-
-        //     }else{
-        //         setcookie("notificacion","Usuario no existe",time()+5,"/");
-        //         header("location:?c=web&a=ingreso");
-        //     }
-        // // }
-        // if($_SERVER['REQUEST_METHOD']  === 'POST'){
-        //     $user_cli = $_POST['user_cli'];
-        //     $pas_cli = $_POST['pas_cli'];
-
-
-        //     $usuario = $this->usuario->obtenerxuser($user_cli);
-        //     if ($usuario && password_verify($pas_cli, $usuario['pas_cli'])) {
-        //         // Iniciar sesión o redirigir a la página de inicio
-        //         echo 'Inicio de sesión exitoso';
-        //         return;
-        //     } else {
-        //         $error="fallo";
-        //     }
-        // }
-
-        // $usuario = new usuario();
-        // $usuario = $usuario->obtenerxuser($_REQUEST["user_cli"]);
-
-        // if ($usuario) {
-        //     if (password_verify($_REQUEST["pas_cli"], $usuario->pas_cli)) {
-        //         setcookie("notificacion", "Ingreso exitoso", time() + 5, "/");
-        //         header("location: ?");
-        //     } else {
-        //         setcookie("notificacion", "Contraseña incorrecta", time() + 5, "/");
-        //         header("location:?c=web&a=ingreso");
-        //     }
-        // } else {
-        //     setcookie("notificacion", "Usuario no existe", time() + 5, "/");
-        //     header("location:?c=web&a=ingreso");
-        // }
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $nombreUsuario = $_POST['usuario'];
             $contrasena = $_POST['contrasena'];
-
-            // Obtener el usuario por el nombre de usuario
             $usuario = $this->usuario->obtenerPorUsuario($nombreUsuario);
 
             if ($usuario && password_verify($contrasena, $usuario['pas_cli'])) {
-                // Inicio de sesión exitoso
-                echo 'Inicio de sesión exitoso';
-                return;
+                $_SESSION['nombreUsuario'] = $nombreUsuario;
+                $_SESSION['rol'] = $nombreUsuario;
+                setcookie("notificacion", "Ingreso exitoso", time() + 5, "/");
+                header("location: ?");
             } else {
-                // Nombre de usuario o contraseña incorrectos
-                echo 'Nombre de usuario o contraseña incorrectos';
-                return;
+                setcookie("notificacion", "Nombre de usuario o Contraseña incorrectos", time() + 5, "/");
+                header("location: ?c=web&a=ingreso");
             }
         }
     }
-
-    public function ci()
-    {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $nombreUsuario = $_POST['usuario'];
-            $contrasena = $_POST['contrasena'];
-
-            // Guardar el usuario en la base de datos
-            $this->usuario->guardarUsuario($nombreUsuario, $contrasena);
-
-            // Redirigir a la página de inicio de sesión
-            header("Location: ?c=web&a=ingreso");
-            return;
-        }
-    }
-
 
 
     function Registrar()
@@ -116,6 +53,7 @@ class UsuarioController
             $_REQUEST["pas_cli"] == "" ||
             $_REQUEST["fch_cli"] == "" ||
             $_REQUEST["cel_cli"] == "" ||
+            $_REQUEST["user_cli"] == "" ||
             $_REQUEST["dir_cli"] == ""
         ) {
             setcookie("notificacion", "Por favor llenar todos los campos", time() + 5, "/");
@@ -137,18 +75,35 @@ class UsuarioController
             $user->nom_cli = $_REQUEST["nom_cli"];
             $user->ape_cli = $_REQUEST["ape_cli"];
             $user->cor_cli = $_REQUEST["cor_cli"];
-            $user->pas_cli = $_REQUEST["pas_cli"];
+            $user->pas_cli = password_hash($_REQUEST["pas_cli"], PASSWORD_DEFAULT);
             $user->fch_cli = $_REQUEST["fch_cli"];
             $user->cel_cli = $_REQUEST["cel_cli"];
             $user->dir_cli = $_REQUEST["dir_cli"];
+            $user->user_cli = $_REQUEST["user_cli"];
 
             $this->model->Registro($user);
             header("location: ?c=usuario&a=Nuevo");
         }
     }
 
-    function Nuevo()
-    {
-        plantilla("cuenta/exito.php");
+
+    function Cerrar(){
+        session_destroy();
+        header("location: ?");
     }
+
+    function mostrarVista() {
+        $cliente_id = obtenerIdClienteActual();
+    
+        $rol_id = $this->model->obtenerRolIdPorClienteId($cliente_id);
+    
+        if ($rol_id === 1) {
+            require_once 'vista_rol_1.php';
+        } else if ($rol_id === 2) {
+            require_once 'vista_rol_2.php';
+        } else {
+            require_once 'vista_predeterminada.php';
+        }
+    }
+    
 }

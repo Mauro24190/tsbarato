@@ -21,28 +21,6 @@ class usuario
         }
     }
 
-    public function obtenerxuser($user_cli)
-    {
-        // $sql = $this->pdo->prepare('SELECT user_cli, pas_cli FROM cliente WHERE user_cli = ?');
-        // $res = $sql->execute(array($user_cli));
-    
-        // if ($sql->rowCount() != 0) {
-        //     $usuario = $sql->fetch(PDO::FETCH_OBJ);
-        //     $usuario->pas_cli = $usuario->pas_cli; // Asigna el valor a la propiedad "pas_cli"
-        //     return $usuario;
-        // } else {
-        //     return false;
-        // }
-
-
-        // if ($sql->rowCount() != 0) {
-        //     return $sql->fetch(PDO::FETCH_OBJ);
-        // } else {
-        //     return false;
-        // }
-
-        
-    }
 
     public function obtenerPorUsuario($nombreUsuario)
     {
@@ -64,12 +42,12 @@ class usuario
         $statement->bindParam(':contrasena', $hashContrasena);
         $statement->execute();
     }
-   
-    function Registro(usuario $data){
+
+    function Registro(usuario $data)
+    {
         try {
-            //Sentencia SQL.8
-            $sql = "INSERT INTO cliente (nom_cli,ape_cli,cor_cli,pas_cli,fch_cli,cel_cli,dir_cli)
-                                    VALUES (?, ?, ?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO cliente (nom_cli,ape_cli,cor_cli,pas_cli,fch_cli,cel_cli,dir_cli,user_cli)
+                                    VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
             $this->pdo->prepare($sql)
                 ->execute(
                     array(
@@ -80,10 +58,47 @@ class usuario
                         $data->fch_cli,
                         $data->cel_cli,
                         $data->dir_cli,
+                        $data->user_cli,
                     )
                 );
+            $usuario_id = $this->pdo->lastInsertId();
+
+            $rol_id = 1;
+            $sqlClientexRol = "INSERT INTO clientexrol (cli_id, rol_id) VALUES (?, ?)";
+            $stmtClientexRol = $this->pdo->prepare($sqlClientexRol);
+            $stmtClientexRol->execute(array($usuario_id, $rol_id));
         } catch (Exception $e) {
             die($e->getMessage());
+        }
+    }
+
+    function obtenerIdClienteActual()
+    {
+
+        session_start();
+
+        if (isset($_SESSION['cliente_id'])) {
+            return $_SESSION['cliente_id'];
+        } else {
+            return null;
+        }
+    }
+
+    function obtenerRolIdPorClienteId($cliente_id)
+    {
+        try {
+            $sql = "SELECT rol_id FROM clientexrol WHERE cli_id = ?";
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute([$cliente_id]);
+
+            if ($stmt->rowCount() > 0) {
+                $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                return $row['rol_id'];
+            } else {
+                return null;
+            }
+        } catch (PDOException $e) {
+            die("Error al obtener el ID del rol del cliente: " . $e->getMessage());
         }
     }
 }

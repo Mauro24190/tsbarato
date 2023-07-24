@@ -14,11 +14,15 @@
                     <label class="form-label" for="ape_cli">Apellidos</label>
                     <input class="form-control" type="text" name="ape_cli">
                 </div>
-                <div class="col-6" >
+                <div class="col-3" >
+                    <label class="form-label" for="cor_cli">Nombre de usuario</label>
+                    <input class="form-control" type="text" name="user_cli">
+                </div>
+                <div class="col-4" >
                     <label class="form-label" for="cor_cli">Correo Electrónico</label>
                     <input class="form-control" type="text" name="cor_cli">
                 </div>
-                <div class="col-6 mb-3">
+                <div class="col-5 mb-3">
                     <label class="form-label" for="pas_cli">Contraseña</label>
                     <input class="form-control" type="password" name="pas_cli">
                 </div>

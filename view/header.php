@@ -139,7 +139,11 @@
                     </form>
                     <ul class="navbar-nav ml-lg-auto">
                         <li class="nav-item ">
-                            <a class="nav-link active text-light me-md-3" aria-current="page" href="?c=producto">
+                            <?php
+                                if(isset($_SESSION))
+                            ?>
+                        
+                        <a class="nav-link active text-light me-md-3" aria-current="page" href="?c=producto">
                                 <i class="bi bi-house-gear-fill"></i><br>Administrador
                             </a>
                         </li>
@@ -150,8 +154,8 @@
                         </li>
                         <li class="nav-item ">
                             <a class="nav-link active text-light me-md-3" aria-current="page"
-                                href="<?= checksession() ? "?c=web&a=perfil" : "?c=web&a=ingreso" ?>">
-                                <i class="bi bi-person-circle"></i><br>Mi cuenta
+                                href="<?= isset($_SESSION['nombreUsuario']) ? "?c=web&a=perfil" : "?c=web&a=ingreso" ?>">
+                                <i class="bi bi-person-circle"></i><br><p><?= isset($_SESSION['nombreUsuario']) ? $_SESSION['nombreUsuario'] : "Mi Cuenta" ?></p>
                             </a>
                         </li>
                         <!-- <li class="nav-item ">
@@ -255,9 +259,16 @@
                         </div>
                         <!-- FIN VENTANA FLOTANTE AYUDA -->
                         <li class="nav-item ">
-                            <a class="nav-link active text-light me-md-3" aria-current="page" href="#">
-                                <i class="bi bi-box-arrow-right"></i><br>Cerrar Sesion
-                            </a>
+                            <?php
+                                   if (isset($_SESSION["nombreUsuario"])){
+                                    echo ' <a class="nav-link active text-light me-md-3" aria-current="page" href="?c=usuario&a=Cerrar">
+                                    <i class="bi bi-box-arrow-right"></i><br>Cerrar Sesion
+                                </a>';
+                                   }else{
+                                    echo "no";
+                                   }
+                            ?>
+                           
                         </li>
                     </ul>
                 </div>
