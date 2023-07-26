@@ -17,4 +17,7 @@ class WebController{
     function categorias(){
         plantilla("categorias/aseo.php");
     }
+    function ayuda(){
+        plantilla("view/ayuda/preguntasf.html");
+    }
 }

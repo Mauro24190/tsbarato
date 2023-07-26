@@ -65,10 +65,11 @@ a{
 
 .img_noti{
     float: right;
-    width: 120px;
-    height: auto;
+    width: 65px;
+    height: 65px;
     margin-right: 15px;
     border-radius: 70%;
+    transform: translateY(-10px);
 }
 
 .notificacion-container {

@@ -231,25 +231,33 @@
 
                         <!-- INICIO VENTANA FLOTANTE AYUDA -->
                         <div class="notificacion-container">
-                            <svg id="cerrar1" xmlns="http://www.w3.org/2000/svg" width="35" height="35"
+                            <svg id="cerrar1" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                 fill="currentColor" class="bi bi-x-lg close" viewBox="0 0 16 16">
                                 <path
                                     d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
                             </svg>
 
                             <div class="fila-noti">
-                                <IMG class="img_noti" SRC="IMG/logo proyecto.png" ALIGN=RIGHT WIDTH=75 HEIGHT=50>
+                                <IMG class="img_noti" SRC="logo proyecto.png"></div>
                                 <main>
-                                    <h1>Centro de Ayuda</h1>
-                                    <p>Preguntas Frecuentes</p>
-                                    <p>Politicas de cambios y devoluciones</p>
-                                    <p>Solicitu de Garantia</p>
-                                    <p>Contacto</p>
-                                    <p>Cambia tu producto facil</p>
-                                    <p>Almacenes</p>
-                                    <p>Escribenos</p>
-                                    <p>¿Como gestionar mi pedido?</p>
-                                    <p>Actualizar mis datos</p>
+                                    <div ><h2>Centro de Ayuda</h2><br>
+                                    </div>
+                                    <div class="boton1">
+                                    <button class="border-0 btn"><a href="view/ayuda/preguntasf.html">
+                                        <h5>Preguntas frecuentes</h5><br></button>
+                                    </div>
+                                    <div class="boton2">
+                                    <button class="border-0 btn"><a href="view/ayuda/Contacto.html">
+                                        <h5>Contacto</h5><br></button>
+                                    </div></a>
+                                    <div class="boton4">
+                                    <button class="border-0 btn"><a href="view/ayuda/Escribenos.html">
+                                        <h5>Escribenos</h5><br></button>
+                                    </div></a>
+                                    <div class="boton5">
+                                    <button class="border-0 btn"><a href="view/ayuda/gestionpedido.html">
+                                        <h5>¿Como gestionar mi pedido?</h5><br></button>
+                                    </div></a>
                                 </main>
                             </div>
                         </div>
