@@ -23,7 +23,7 @@
             </div>
         </div>
     </nav>
-    <div class="bg-dark">
+<!--<div class="bg-dark">
     <div class="container-sm">
             <p class="text-light footer-column" >Metodos de pago aceptados</p>
                 <div class="img_footer1">
@@ -36,7 +36,7 @@
                     <div class="footer-column"><img src="assets/img_footer/Banco-de-Bogota.png" class="img-fluid img_footer" alt="..."></div>
                 </div>
             </div>
-    </div>
+    </div>-->
 </footer>
 <?php
 

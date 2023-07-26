@@ -37,7 +37,7 @@
                             </div>
                             <div class="producto_item_btn">
                                 <div>
-                                    <button><i class="bi bi-cart3"></i>AGREGAR</button>
+                                    <button type="button" ><i class="bi bi-cart3"></i>AGREGAR</button>
                                 </div>
                             </div>
                         </div>
