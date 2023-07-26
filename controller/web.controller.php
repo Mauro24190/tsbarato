@@ -1,6 +1,20 @@
 <?php
   require_once "controller/producto.controller.php";
+
+  require_once "model/producto.php";
+
+  require_once "controller/usuario.controller.php";
+
+  require_once "model/usuario.php";
 class WebController{
+
+    public articulo $productos;
+    public usuario $user;
+
+    public function __construct() {
+        $this->productos = new articulo();
+        $this->user = new usuario();
+    }
 
     function carrito(){
         plantilla("carrito.php");
@@ -15,7 +29,20 @@ class WebController{
         plantilla("cuenta/perfil.php");
     }
     function categorias(){
-        plantilla("categorias/aseo.php");
+        plantilla("categorias/aseo.php", [
+            "listaProductos" => $this->productos->Listar()
+        ]);
     }
+    function bebidas(){
+        plantilla("categorias/bebidas.php", [
+            "listaProductos" => $this->productos->Listar()
+        ]);
+    }
+    function crud(){
+        plantilla("admin/usuarios.php",[
+            "listaUser" => $this->user->Tabla()
+        ]);
+    }
+
 
 }

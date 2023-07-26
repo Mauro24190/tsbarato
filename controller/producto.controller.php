@@ -22,6 +22,11 @@ class ProductoController
         require_once 'view/categorias/aseo.php';
         require_once 'view/footer.php';
     }
+    public function bebidas(){
+        require_once 'view/header.php';
+        require_once 'view/categorias/bebidas.php';
+        require_once 'view/footer.php';
+    }
     public function Crud()
     {
         $prod = new articulo();

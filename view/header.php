@@ -148,13 +148,13 @@
                             </a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link active text-light me-md-3" aria-current="page" href="?c=usuario&a=mostrarVista">
+                            <a class="nav-link active text-light me-md-3" aria-current="page" href="?c=web&a=carrito">
                                 <i class="bi bi-cart3"></i><br>Mi carrito
                             </a>
                         </li>
                         <li class="nav-item ">
                             <a class="nav-link active text-light me-md-3" aria-current="page"
-                                href="<?= isset($_SESSION['nombreUsuario']) ? "?c=web&a=perfil" : "?c=web&a=ingreso" ?>">
+                                href="<?= isset($_SESSION['nombreUsuario']) ? "?c=usuario&a=mostrarVista" : "?c=web&a=ingreso" ?>">
                                 <i class="bi bi-person-circle"></i><br><p><?= isset($_SESSION['nombreUsuario']) ? $_SESSION['nombreUsuario'] : "Mi Cuenta" ?></p>
                             </a>
                         </li>
