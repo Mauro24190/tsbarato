@@ -148,7 +148,7 @@
                             </a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link active text-light me-md-3" aria-current="page" href="?c=web&a=carrito">
+                            <a class="nav-link active text-light me-md-3" aria-current="page" href="?c=usuario&a=mostrarVista">
                                 <i class="bi bi-cart3"></i><br>Mi carrito
                             </a>
                         </li>

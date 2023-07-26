@@ -72,17 +72,7 @@ class usuario
         }
     }
 
-    function obtenerIdClienteActual()
-    {
-
-        session_start();
-
-        if (isset($_SESSION['cliente_id'])) {
-            return $_SESSION['cliente_id'];
-        } else {
-            return null;
-        }
-    }
+    
 
     function obtenerRolIdPorClienteId($cliente_id)
     {

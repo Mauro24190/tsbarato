@@ -1,5 +1,5 @@
 <?php
-
+  require_once "controller/producto.controller.php";
 class WebController{
 
     function carrito(){

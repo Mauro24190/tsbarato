@@ -29,7 +29,6 @@ class UsuarioController
 
             if ($usuario && password_verify($contrasena, $usuario['pas_cli'])) {
                 $_SESSION['nombreUsuario'] = $nombreUsuario;
-                $_SESSION['rol'] = $nombreUsuario;
                 setcookie("notificacion", "Ingreso exitoso", time() + 5, "/");
                 header("location: ?");
             } else {
@@ -93,16 +92,25 @@ class UsuarioController
     }
 
     function mostrarVista() {
-        $cliente_id = obtenerIdClienteActual();
-    
-        $rol_id = $this->model->obtenerRolIdPorClienteId($cliente_id);
-    
-        if ($rol_id === 1) {
-            require_once 'vista_rol_1.php';
-        } else if ($rol_id === 2) {
-            require_once 'vista_rol_2.php';
+        function obtenerIdClienteActual()
+    {
+
+
+
+        if (isset($_SESSION['cliente_id'])) {
+            return $_SESSION['cliente_id'];
         } else {
-            require_once 'vista_predeterminada.php';
+            return null;
+        }
+    }
+        $cliente_id = obtenerIdClienteActual();
+        $rol_id = $this->model->obtenerRolIdPorClienteId($cliente_id);
+        if ($rol_id === 1) {
+            header("location: ?c=weba&=carrito");
+        } else if ($rol_id === 2) {
+            header("location:?c=weba&=ingreso");
+        } else {
+            header("location: ?");
         }
     }
     
