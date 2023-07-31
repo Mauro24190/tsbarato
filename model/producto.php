@@ -99,4 +99,17 @@ class articulo
 		}
 	}
 
+	public function listarAseo()
+	{
+		try {
+			$result = array();
+			$stm = $this->pdo->prepare('SELECT * FROM articulo WHERE cat_id = 3');
+			$stm->execute();
+
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		} catch (Exception $e) {
+			die($e->getMessage());
+		}
+	}
+
 }

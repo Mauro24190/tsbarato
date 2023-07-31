@@ -28,9 +28,9 @@ class WebController{
     function perfil(){
         plantilla("cuenta/perfil.php");
     }
-    function categorias(){
+    function aseo(){
         plantilla("categorias/aseo.php", [
-            "listaProductos" => $this->productos->Listar()
+            "listaProductos" => $this->productos->listarAseo()
         ]);
     }
     function bebidas(){
