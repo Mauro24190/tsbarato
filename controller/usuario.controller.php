@@ -28,7 +28,12 @@ class UsuarioController
             $usuario = $this->usuario->obtenerPorUsuario($nombreUsuario);
 
             if ($usuario && password_verify($contrasena, $usuario['pas_cli'])) {
+
+                $cliente_id = $usuario['id_cli'];
+                $_SESSION['cliente_id'] = $cliente_id;
+                
                 $_SESSION['nombreUsuario'] = $nombreUsuario;
+             
                 setcookie("notificacion", "Ingreso exitoso", time() + 5, "/");
                 header("location: ?");
             } else {
@@ -105,13 +110,14 @@ class UsuarioController
     }
         $cliente_id = obtenerIdClienteActual();
         $rol_id = $this->model->obtenerRolIdPorClienteId($cliente_id);
-        if ($rol_id === 1) {
-            header("location: ?c=weba&=carrito");
-        } else if ($rol_id === 2) {
-            header("location:?c=weba&=ingreso");
-        } else {
-            header("location: ?");
+
+        foreach($rol_id as $val) {
+            if ($val["rol_id"] === 2) {
+                header("location: ?c=web&a=crud");
+            }
         }
+
+        header("location: ?c=web&a=perfil");    
     }
     
 }

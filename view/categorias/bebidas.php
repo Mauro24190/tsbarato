@@ -8,7 +8,7 @@
         </div>
     </nav><br><br>
     <div class="container-producto container-fluid">
-        <?php foreach ($this->model->Listar() as $r): ?>
+        <?php foreach ($listaProductos as $r): ?>
             <div class="popo">
                 <div class="pipi">
                     <div class="producto_item">
@@ -37,7 +37,7 @@
                             </div>
                             <div class="producto_item_btn">
                                 <div>
-                                    <button type="button" ><i class="bi bi-cart3"></i>AGREGAR</button>
+                                    <button><i class="bi bi-cart3"></i>AGREGAR</button>
                                 </div>
                             </div>
                         </div>

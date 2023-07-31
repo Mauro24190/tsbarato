@@ -16,17 +16,6 @@ class ProductoController
         require_once 'view/producto/producto.php';
         require_once 'view/footer.php';
     }
-
-    public function aseo(){
-        require_once 'view/header.php';
-        require_once 'view/categorias/aseo.php';
-        require_once 'view/footer.php';
-    }
-    public function bebida(){
-        require_once 'view/header.php';
-        require_once 'view/categorias/bebidas.php';
-        require_once 'view/footer.php';
-    }
     public function Crud()
     {
         $prod = new articulo();

@@ -66,6 +66,9 @@ button>a {
   color: #FF8119;
 
 }
+button>a:hover{
+  color: rgb(24, 90, 255);
+}
 /* FIN VENTANA FLOTANTE CATEGORIAS */
 /*responsive menu*/
 @media (max-width: 800px) {
@@ -172,8 +175,8 @@ button>a {
   padding-right: 15px;
 }
 .container-producto{
-    display: flex;
-    flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
     gap: 3rem;
 }
 

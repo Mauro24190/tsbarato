@@ -8,7 +8,7 @@
         </div>
     </nav><br><br>
     <div class="container-producto container-fluid">
-        <?php foreach ($this->model->Listar() as $r): ?>
+        <?php foreach ($listaProductos as $r): ?>
             <div class="popo">
                 <div class="pipi">
                     <div class="producto_item">

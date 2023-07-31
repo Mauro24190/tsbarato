@@ -99,4 +99,101 @@ class articulo
 		}
 	}
 
+	public function listarAseo()
+	{
+		try {
+			$result = array();
+			$stm = $this->pdo->prepare('SELECT * FROM articulo WHERE cat_id = 3');
+			$stm->execute();
+
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		} catch (Exception $e) {
+			die($e->getMessage());
+		}
+	}
+	public function listarbebidas()
+	{
+		try {
+			$result = array();
+			$stm = $this->pdo->prepare('SELECT * FROM articulo WHERE cat_id = 4');
+			$stm->execute();
+
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		} catch (Exception $e) {
+			die($e->getMessage());
+		}
+	}
+	public function listarfrutasverduras()
+	{
+		try {
+			$result = array();
+			$stm = $this->pdo->prepare('SELECT * FROM articulo WHERE cat_id = 11');
+			$stm->execute();
+
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		} catch (Exception $e) {
+			die($e->getMessage());
+		}
+	}
+	public function listarcarnicos()
+	{
+		try {
+			$result = array();
+			$stm = $this->pdo->prepare('SELECT * FROM articulo WHERE cat_id = 5');
+			$stm->execute();
+
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		} catch (Exception $e) {
+			die($e->getMessage());
+		}
+	}
+	public function listarlacteos()
+	{
+		try {
+			$result = array();
+			$stm = $this->pdo->prepare('SELECT * FROM articulo WHERE cat_id = 7');
+			$stm->execute();
+
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		} catch (Exception $e) {
+			die($e->getMessage());
+		}
+	}
+	public function listardespensa()
+	{
+		try {
+			$result = array();
+			$stm = $this->pdo->prepare('SELECT * FROM articulo WHERE cat_id = 6');
+			$stm->execute();
+
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		} catch (Exception $e) {
+			die($e->getMessage());
+		}
+	}
+	public function listarpanaderia()
+	{
+		try {
+			$result = array();
+			$stm = $this->pdo->prepare('SELECT * FROM articulo WHERE cat_id = 9');
+			$stm->execute();
+
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		} catch (Exception $e) {
+			die($e->getMessage());
+		}
+	}
+	public function listarmedicina()
+	{
+		try {
+			$result = array();
+			$stm = $this->pdo->prepare('SELECT * FROM articulo WHERE cat_id = 8');
+			$stm->execute();
+
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		} catch (Exception $e) {
+			die($e->getMessage());
+		}
+	}
+
 }

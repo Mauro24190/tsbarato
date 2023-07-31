@@ -1,6 +1,6 @@
 <main class="container-lg">
     <link rel="stylesheet" href="">
-    <h1 class="page-header" style="margin-bottom: 25px; margin-top: 25px;">Frutas y verduras</h1>
+    <h1 class="page-header" style="margin-bottom: 25px; margin-top: 25px;">Carnicos</h1>
     <nav class="navbar navbar-light bg-light">
         <div class="well well-sm text-right">
             <a class="btn btn-primary" href="?c=proveedor">Ver Proveedores</a>
@@ -8,7 +8,7 @@
         </div>
     </nav><br><br>
     <div class="container-producto container-fluid">
-        <?php foreach ($this->model->Listar() as $r): ?>
+        <?php foreach ($listaProductos as $r): ?>
             <div class="popo">
                 <div class="pipi">
                     <div class="producto_item">
