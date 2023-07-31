@@ -1,6 +1,6 @@
 <main class="container-lg">
     <link rel="stylesheet" href="">
-    <h1 class="page-header" style="margin-bottom: 25px; margin-top: 25px;">Despensa</h1>
+    <h1 class="page-header" style="margin-bottom: 25px; margin-top: 25px;">Aseo</h1>
     <nav class="navbar navbar-light bg-light">
         <div class="well well-sm text-right">
             <a class="btn btn-primary" href="?c=proveedor">Ver Proveedores</a>

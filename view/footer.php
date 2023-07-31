@@ -8,7 +8,6 @@
             <div class="footer-column piepagina">
                 <i class="bi bi-shop"></i>
                 <p>Sobre Nosotros<br>
-                    Colombiana de comercio S.A<br>
                     NIT: 00000-0</p>
             </div>
             <div class="footer-column piepagina">
