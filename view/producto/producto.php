@@ -1,20 +1,18 @@
 <main class="container-lg">
     <link rel="stylesheet" href="">
-    <center>
-        <h1 class="page-header" style="margin-bottom: 25px; margin-top: 25px;">ADMINISTRADOR </h1>
-    </center>
+        <h1 class="page-header text-center text-wrap" style="margin-bottom: 25px; margin-top: 25px;"><b>ADMINISTRADOR</b> </h1>
     <div class="mb-5">
         <div class="d-flex">
             <div class="card me-5" style="width: 18rem;">
                 <div class="card-body">
-                    <h5 class="card-title">PROVEEDORES</h5>
+                    <h5 class="card-title"><b>PROVEEDORES <i class="bi bi-caret-right-fill"></i></b></h5>
                     <p class="card-text">Espacio para ver y editar los proveedores registrados. Además de poder agregar proveedores nuevos.</p>
                     <a class="btn btn-primary" href="?c=proveedor">Ver Proveedores</a>
                 </div>
             </div>
             <div class="card" style="width: 18rem;">
                     <div class="card-body">
-                        <h5 class="card-title">PRODUCTOS</h5>
+                        <h5 class="card-title"><b>PRODUCTOS <i class="bi bi-caret-right-fill"></i></b></h5>
                         <p class="card-text">Espacio para agregar productos nuevos.</p>
                         <a class="btn btn-primary" href="?c=producto&a=Nuevo">Nuevo Producto</a>
                     </div>
@@ -52,7 +50,7 @@
                             </div>
                             <div class="producto_item_btn">
                                 <div>
-                                    <button><i class="bi bi-cart3"></i>AGREGAR</button>
+                                    <button type="button" ><i class="bi bi-cart3"></i>AGREGAR</button>
                                 </div>
                             </div>
                         </div>

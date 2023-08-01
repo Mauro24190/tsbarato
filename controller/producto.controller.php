@@ -16,17 +16,6 @@ class ProductoController
         require_once 'view/producto/producto.php';
         require_once 'view/footer.php';
     }
-
-    public function aseo(){
-        require_once 'view/header.php';
-        require_once 'view/categorias/aseo.php';
-        require_once 'view/footer.php';
-    }
-    public function bebidas(){
-        require_once 'view/header.php';
-        require_once 'view/categorias/bebidas.php';
-        require_once 'view/footer.php';
-    }
     public function Crud()
     {
         $prod = new articulo();
@@ -56,11 +45,11 @@ class ProductoController
             $_REQUEST['des_art'] == "" ||
             $_REQUEST['cod_art'] == ""
         ) {
-            setcookie("notificacion", "Todos los campos deben ser llenados", time() + 5, "/");
+            setcookie("notificacion", "Error-Todos los campos deben ser llenados", time() + 5, "/");
             header("location:?c=producto");
         }
         else if (strlen($_REQUEST['des_art']) > 20) {
-            setcookie("notificacion", "Descripcion maxima de 20 caracteres", time() + 5, "/");
+            setcookie("notificacion", "Error-Descripcion maxima de 20 caracteres", time() + 5, "/");
             header("location:?c=producto&a=Nuevo");
         } else {
             $prod = new articulo();
@@ -70,7 +59,7 @@ class ProductoController
             $prod->pre_art = $_REQUEST['pre_art'];
             $prod->des_art = $_REQUEST['des_art'];
             $prod->cod_art = $_REQUEST['cod_art'];
-            setcookie("notificación", "Exito al guardar", time() + 5, "/");
+            setcookie("notificación", "Exito-Exito al guardar", time() + 5, "/");
             $this->model->Registrar($prod);
             header('Location:?c=producto&a=Nuevo');
             

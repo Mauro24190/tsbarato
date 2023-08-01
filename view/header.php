@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="assets/css/carrito.css">
     <link rel="icon" href="logo proyecto.png" type="image/x-icon">
 </head>
+
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-dark d-flex justify-content-center">
@@ -50,78 +51,75 @@
                             </div>
                             <!-- LINKS VENTANA FLOTANTE CATEGORIAS -->
                             <div class="ventana_cuerpo">
-                                <button type="button" class="btn w-100"><a href="../Productos/VEGETALES/index.html">
+                                <button type="button" class="btn w-100"><a href="index.php?c=web&a=frutasverduras">
                                         <div style="display: flex;">
                                             <div>
                                                 <p>Frutas y verduras</p>
                                             </div>
-                                            <div style="padding-left: 51px;">></div>
+                                            <div style="padding-left: 51px;"><i class="bi bi-caret-right-fill"></i></div>
                                         </div>
                                     </a></button>
-                                <button type="button" class="btn w-100"><a href="../Productos/CARNICOS/index.html">
+                                <button type="button" class="btn w-100"><a href="index.php?c=web&a=carnicos">
                                         <div style="display: flex;">
                                             <div>
                                                 <p>Carnicos</p>
                                             </div>
-                                            <div style="padding-left: 139px;">></div>
+                                            <div style="padding-left: 139px;"><i class="bi bi-caret-right-fill"></i></div>
                                         </div>
                                     </a></button>
-                                <button type="button" class="btn w-100"><a href="../Productos/LACTEOS/index.html">
+                                <button type="button" class="btn w-100"><a href="index.php?c=web&a=lacteos">
                                         <div style="display: flex;">
                                             <div>
                                                 <p>Lacteos</p>
                                             </div>
-                                            <div style="padding-left: 146px;">></div>
+                                            <div style="padding-left: 146px;"><i class="bi bi-caret-right-fill"></i></div>
                                         </div>
                                     </a></button>
-                                <button type="button" class="btn w-100"><a href="../Productos/DESPENSA/index.html">
+                                <button type="button" class="btn w-100"><a href="index.php?c=web&a=despensa">
                                         <div style="display: flex;">
                                             <div>
                                                 <p>Despensa y Snacks</p>
                                             </div>
-                                            <div style="padding-left: 49px;">></div>
+                                            <div style="padding-left: 49px;"><i class="bi bi-caret-right-fill"></i></div>
                                         </div>
                                     </a></button>
-                                <button type="button" class="btn w-100"><a href="../Productos/ASEO/index.html">
+                                <button type="button" class="btn w-100"><a href="index.php?c=web&a=aseo">
                                         <div style="display: flex;">
                                             <div>
                                                 <p>Aseo</p>
                                             </div>
-                                            <dx|iv style="padding-left: 174px;">>
+                                            <dx|iv style="padding-left: 174px;"><i class="bi bi-caret-right-fill"></i></div>
+                                    </a></button>
+                                <button type="button" class="btn w-100"><a href="index.php?c=web&a=bebidas">
+                                        <div style="display: flex;">
+                                            <div>
+                                                <p>Bebidas</p>
+                                            </div>
+                                            <div style="padding-left: 144px;"><i class="bi bi-caret-right-fill"></i></div>
                                         </div>
-                                        <button type="button" class="btn w-100"><a
-                                                href="../Productos/BEBIDAS/index.html">
-                                                <div style="display: flex;">
-                                                    <div>
-                                                        <p>Bebidas</p>
-                                                    </div>
-                                                    <div style="padding-left: 144px;">></div>
-                                                </div>
-                                            </a></button>
-                                        <button type="button" class="btn w-100"><a
-                                                href="../Productos/PANADERIA/index.html">
-                                                <div style="display: flex;">
-                                                    <div>
-                                                        <p>Panaderia</p>
-                                                    </div>
-                                                    <div style="padding-left: 125px;">></div>
-                                                </div>
-                                            </a></button>
-                                        <button type="button" class="btn w-100"><a
-                                                href="../Productos/MEDICINA/index.html">
-                                                <div style="display: flex;">
-                                                    <div>
-                                                        <p>Medicina</p>
-                                                    </div>
-                                                    <div style="padding-left: 135px;">></div>
-                                                </div>
-                                            </a></button>
+                                    </a></button>
+                                <button type="button" class="btn w-100"><a href="index.php?c=web&a=panaderia">
+                                        <div style="display: flex;">
+                                            <div>
+                                                <p>Panaderia</p>
+                                            </div>
+                                            <div style="padding-left: 125px;"><i class="bi bi-caret-right-fill"></i></div>
+                                        </div>
+                                    </a></button>
+                                <button type="button" class="btn w-100"><a href="index.php?c=web&a=medicina">
+                                        <div style="display: flex;">
+                                            <div>
+                                                <p>Medicina</p>
+                                            </div>
+                                            <div style="padding-left: 135px;"><i class="bi bi-caret-right-fill"></i></div>
+                                        </div>
+                                    </a></button>
                             </div>
                         </div>
                     </div>
                     <div>
                         <a class="d-flex align-items-center" href="?">
-                            <img src="logo proyecto.png" class="logoheader" style="">
+                            <img src="logo proyecto.png" class="logoheader">
                             <p class="ms-3" style="color: white;">Tienda<br> Super Barato</p>
                         </a>
                     </div>
@@ -139,11 +137,9 @@
                     </form>
                     <ul class="navbar-nav ml-lg-auto">
                         <li class="nav-item ">
-                            <?php
-                                if(isset($_SESSION))
-                            ?>
-                        
-                        <a class="nav-link active text-light me-md-3" aria-current="page" href="?c=producto">
+
+
+                            <a class="nav-link active text-light me-md-3" aria-current="page" href="?c=producto">
                                 <i class="bi bi-house-gear-fill"></i><br>Administrador
                             </a>
                         </li>
@@ -155,7 +151,10 @@
                         <li class="nav-item ">
                             <a class="nav-link active text-light me-md-3" aria-current="page"
                                 href="<?= isset($_SESSION['nombreUsuario']) ? "?c=usuario&a=mostrarVista" : "?c=web&a=ingreso" ?>">
-                                <i class="bi bi-person-circle"></i><br><p><?= isset($_SESSION['nombreUsuario']) ? $_SESSION['nombreUsuario'] : "Mi Cuenta" ?></p>
+                                <i class="bi bi-person-circle"></i><br>
+                                <p>
+                                    <?= isset($_SESSION['nombreUsuario']) ? $_SESSION['nombreUsuario'] : "Mi Cuenta" ?>
+                                </p>
                             </a>
                         </li>
                         <!-- <li class="nav-item ">
@@ -259,15 +258,15 @@
                         <!-- FIN VENTANA FLOTANTE AYUDA -->
                         <li class="nav-item ">
                             <?php
-                                   if (isset($_SESSION["nombreUsuario"])){
-                                    echo ' <a class="nav-link active text-light me-md-3" aria-current="page" href="?c=usuario&a=Cerrar">
+                            if (isset($_SESSION["nombreUsuario"])) {
+                                echo ' <a class="nav-link active text-light me-md-3" aria-current="page" href="?c=usuario&a=Cerrar">
                                     <i class="bi bi-box-arrow-right"></i><br>Cerrar Sesion
                                 </a>';
-                                   }else{
-                                    echo "no";
-                                   }
+                            } else {
+                                echo "no";
+                            }
                             ?>
-                           
+
                         </li>
                     </ul>
                 </div>

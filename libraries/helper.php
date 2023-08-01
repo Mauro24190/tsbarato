@@ -1,5 +1,5 @@
 <?php
-
+require_once "controller/producto.controller.php";
 function plantilla($ruta, $parametros=[]){
     extract($parametros);
     include_once "view/header.php";

@@ -35,13 +35,56 @@ class WebController{
     }
     function bebidas(){
         plantilla("categorias/bebidas.php", [
-            "listaProductos" => $this->productos->Listar()
+            "listaProductos" => $this->productos->listarbebidas()
         ]);
     }
+    function frutasverduras(){
+        plantilla("categorias/frutasverduras.php", [
+            "listaProductos" => $this->productos->listarfrutasverduras()
+        ]);
+    }
+    function carnicos(){
+        plantilla("categorias/carnicos.php", [
+            "listaProductos" => $this->productos->listarcarnicos()
+        ]);
+    }
+    function lacteos(){
+        plantilla("categorias/lacteos.php", [
+            "listaProductos" => $this->productos->listarlacteos()
+        ]);
+    }
+    function despensa(){
+        plantilla("categorias/despensa.php", [
+            "listaProductos" => $this->productos->listardespensa()
+        ]);
+    }
+    function panaderia(){
+        plantilla("categorias/panaderia.php", [
+            "listaProductos" => $this->productos->listarpanaderia()
+        ]);
+    }
+    function medicina(){
+        plantilla("categorias/medicina.php", [
+            "listaProductos" => $this->productos->listarmedicina()
+        ]);
+    }
+
+
+
+
+
+
+
+
+
+
     function crud(){
         plantilla("admin/usuarios.php",[
             "listaUser" => $this->user->Tabla()
         ]);
     }
+
+
+
 
 }

@@ -1,6 +1,6 @@
 <main class="container-lg">
     <link rel="stylesheet" href="">
-    <h1 class="page-header" style="margin-bottom: 25px; margin-top: 25px;">Productos </h1>
+    <h1 class="page-header" style="margin-bottom: 25px; margin-top: 25px;">Aseo</h1>
     <nav class="navbar navbar-light bg-light">
         <div class="well well-sm text-right">
             <a class="btn btn-primary" href="?c=proveedor">Ver Proveedores</a>
@@ -37,7 +37,7 @@
                             </div>
                             <div class="producto_item_btn">
                                 <div>
-                                    <button><i class="bi bi-cart3"></i>AGREGAR</button>
+                                    <button type="button" ><i class="bi bi-cart3"></i>AGREGAR</button>
                                 </div>
                             </div>
                         </div>
