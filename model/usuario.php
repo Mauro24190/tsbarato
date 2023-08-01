@@ -60,6 +60,7 @@ class usuario
                         $data->cel_cli,
                         $data->dir_cli,
                         $data->user_cli,
+                        // Privilegios::User
                     )
                 );
             $usuario_id = $this->pdo->lastInsertId();

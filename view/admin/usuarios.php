@@ -2,11 +2,10 @@
     <div>
         <div class="mb-3">
             <form action="#" class="d-flex">
-                  <input class="form-control me-2" type="search" placeholder="Buscar Usuario" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Buscar Usuario</button>
+                <input class="form-control me-2" type="search" placeholder="Buscar Usuario" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Buscar Usuario</button>
             </form>
         </div>
-
         <div>
             <table class="table">
                 <thead>
@@ -24,17 +23,18 @@
                 <tbody>
                     <tr>
                         <?php foreach ($listaUser as $r) : ?>
-                            <td><?php echo $r->id_cli; ?></td>
-                            <td><?php echo $r->nom_cli; ?></td>
-                            <td><?php echo $r->ape_cli; ?></td>
-                            <td><?php echo $r->user_cli; ?></td>
-                            <td><?php echo $r->cor_cli; ?></td>
-                            <td><?php echo $r->dir_cli; ?></td>
-                            <td><?php echo "aqui ira el rol"; ?></td>
+                        <td><?php echo $r->id_cli; ?></td>
+                        <td><?php echo $r->nom_cli; ?></td>
+                        <td><?php echo $r->ape_cli; ?></td>
+                        <td><?php echo $r->user_cli; ?></td>
+                        <td><?php echo $r->cor_cli; ?></td>
+                        <td><?php echo $r->dir_cli; ?></td>
+                        <td><?php echo "aqui ira el rol"; ?>
+                    </td>
 
                     </tr>
                 </tbody>
-            <?php endforeach  ?>
+                <?php endforeach  ?>
             </table>
         </div>
     </div>

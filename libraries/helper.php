@@ -9,3 +9,11 @@ function plantilla($ruta, $parametros=[]){
 function checksession(){
     return false;
 }
+
+function redirect($link, $message = null) {
+    if ($message) {
+        setcookie("notificacion", $message, time() + 5, "/");
+    }
+    header("location: $link");
+    exit;
+}

@@ -169,7 +169,6 @@
                                 <i class="bi bi-bell"></i><br>Notificaciones
                             </span>
                         </li>
-
                         <!-- INICIIO VENTANA DE NOTIFICACIONES -->
                         <div id="ventana3" class="notificaciones-container">
                             <div class="notificacion-header">
