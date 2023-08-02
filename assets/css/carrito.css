@@ -1,31 +1,115 @@
 .ventana{
-    border: 1px solid rgb(0, 0, 0) ;
-    margin: 10px;
+    border: 1px solid rgb(230, 112, 44) ;
+    margin: 20px;
     width: 40%;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    margin:auto;
+    background-color: rgba(247, 172, 102, 0.404);
 }
 .Titulo{
     padding: 20px;
-    border: 1px solid black;
+    border: 2px solid rgb(230, 132, 67);
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+.Titulo3{
+    padding: 20px;
+    border: 2px solid rgb(230, 131, 74);
+    text-align: center;
+    
+}
+.Titulo4{
+    padding: 20px;
+    border: 2px solid rgb(230, 131, 65);
+    
+}
+.Titulo5{
+    padding: 5px;
+    border: 2px solid rgb(230, 109, 62);
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+
 }
 .Titulo2{
     display: flex;
 }
 .ubicacion{
     font-size: 40px;
+    color: rgb(0, 123, 238);
 }
 .delete{
-    font-size: 30px;
+  color: rgba(0, 0, 0, 0.699);
+  font-size: 30px;
+ display: flex;
+ align-items:center;
+ justify-content: center;
+
 }
+
+
 .imagen{
     border-radius: 100%;
     height: 100px;
     width: 100px;
+    border-color: coral;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
 }
 .Titulo{
+    
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .dinero{
     
-    color: black;
-    font-size: 15px;
+   color: rgb(6, 10, 14);
+    font-size: 20px;
+}
+.color{
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(0, 0, 0);
+    
+} 
+.nombre{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serifs;
+    font-size:x-large;
+    color: rgb(32, 30, 30);
+}
+.nombrep{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serifs;
+    font-size:x-large;
+    color: rgb(32, 30, 30);
+    display: grid;
+    justify-content: center;
+    
+}
+.numero{
+    font-size: large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+}
+.texto{
+    display: block;
+  padding: 0.5rem 1rem;
+  width: 200px;
+  margin: 0 auto;
+
+}
+.pago{
+    display: block;
+  padding: 0.5rem 1rem;
+  width: 200px;
+  margin: 0 auto;
+}
+.vaciar{
+    display: block;
+  padding: 0.5rem 1rem;
+  width: 200px;
+  margin: 0 auto;
+  
 }

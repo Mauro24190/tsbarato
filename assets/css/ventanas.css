@@ -78,6 +78,7 @@ a{
     top: 10px;
     right: 10px;
     width: 350px;
+    height: 400px;
     background-color: whitesmoke;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -96,3 +97,45 @@ a{
 
 
   /* FIN VENTANA FLOTANTE AYUDA */
+
+  /* INICIO VENTANA DE HE ¿OLVIDADO MI CONTRASEÑA? */
+  
+  .ventana {
+    width: 450px;
+    height: 450px;
+    background-color: #00ffdd7e;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 50px auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+  }
+  
+  .img-noti {
+      width: 50px;
+      height: 50px;
+      padding-left: 10px;
+      padding-top: 10px;
+  }
+  .flex{
+      display: flex;
+      margin: 0%;
+      width: 50%;
+  }
+  .btn {
+    width: 100px;
+    height: 50px;
+    
+  }
+.botones{
+  text-align: center;
+}
+
+body {
+  background-image: url(https://media.informabtl.com/wp-content/uploads/2016/09/bigstock-supermarket-103018157.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+  /* FIN VENTANA DE HE ¿OLVIDADO MI CONTRASEÑA? */
