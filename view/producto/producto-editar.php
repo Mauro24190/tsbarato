@@ -33,8 +33,8 @@ form-control" placeholder="Ingrese nombre producto" data-validacion-tipo="requer
         </div>
     </form>
     <script>
-        $(document).ready(function () {
-            $("#frm-producto").submit(function () {
+        $(document).ready(function() {
+            $("#frm-producto").submit(function() {
                 return $(this).validate();
             });
         })

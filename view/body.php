@@ -34,17 +34,11 @@
   });
 </script> -->
 
-<?php
 
 
 
-// if ($this->model->obtenerRolIdPorClienteId($cliente_id) === 2) {
-//   echo "ci";
-// }else{
-//   echo "no";
-// }
 
-?>
+
 
 
 <div class="container">

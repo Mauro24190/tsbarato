@@ -9,7 +9,7 @@ enum Privilegios: int
     {
         return match ($this) {
             static::User => 1,
-            static::Admin => 2,
+            static::Admin => 2,                                                                                             
             static::Master => 4
         };
     }

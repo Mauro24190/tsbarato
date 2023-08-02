@@ -11,6 +11,7 @@ class usuario
     public $dir_cli;
     public $user_cli;
     public $id_cli;
+    public $pri_cli;
 
     private $pdo;
     public function __CONSTRUCT()
@@ -21,6 +22,8 @@ class usuario
             die($e->getMessage());
         }
     }
+
+
 
 
     public function obtenerPorUsuario($nombreUsuario)
@@ -47,8 +50,8 @@ class usuario
     function Registro(usuario $data)
     {
         try {
-            $sql = "INSERT INTO cliente (nom_cli,ape_cli,cor_cli,pas_cli,fch_cli,cel_cli,dir_cli,user_cli)
-                                    VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO cliente (nom_cli,ape_cli,cor_cli,pas_cli,fch_cli,cel_cli,dir_cli,user_cli, pri_cli)
+                                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
             $this->pdo->prepare($sql)
                 ->execute(
                     array(
@@ -60,7 +63,7 @@ class usuario
                         $data->cel_cli,
                         $data->dir_cli,
                         $data->user_cli,
-                        // Privilegios::User
+                        Privilegios::User->get()
                     )
                 );
             $usuario_id = $this->pdo->lastInsertId();
@@ -96,6 +99,21 @@ class usuario
             die("Error al obtener el ID del rol del cliente: " . $e->getMessage());
         }
     }
+
+
+
+    public function existeUsuario($user_cli)
+    {
+        $sql = 'SELECT COUNT(*) as total FROM cliente WHERE user_cli = :user_cli';
+        $statement = $this->pdo->prepare($sql);
+        $statement->bindParam(':user_cli', $user_cli);
+        $statement->execute();
+
+        $resultado = $statement->fetch(PDO::FETCH_ASSOC);
+        return $resultado['total'] > 0;
+     
+    }
+
 
 
     public function Tabla()
@@ -155,24 +173,24 @@ class usuario
         }
     }
 
-//     public function Registrar(usuario $data)
-//     {
-//         try {
-//             $sql = 'INSERT INTO cliente (nom_art,cod_art,des_art,pre_art,img_art,cat_id)
-//  VALUES (?,?,?,?,?,?)';
-//             $this->pdo->prepare($sql)
-//                 ->execute(
-//                     array(
-//                         $data->nom_art,
-//                         $data->cod_art,
-//                         $data->des_art,
-//                         $data->pre_art,
-//                         "ci",
-//                         $data->cat_id
-//                     )
-//                 );
-//         } catch (Exception $e) {
-//             die($e->getMessage());
-//         }
-//     }
+    //     public function Registrar(usuario $data)
+    //     {
+    //         try {
+    //             $sql = 'INSERT INTO cliente (nom_art,cod_art,des_art,pre_art,img_art,cat_id)
+    //  VALUES (?,?,?,?,?,?)';
+    //             $this->pdo->prepare($sql)
+    //                 ->execute(
+    //                     array(
+    //                         $data->nom_art,
+    //                         $data->cod_art,
+    //                         $data->des_art,
+    //                         $data->pre_art,
+    //                         "ci",
+    //                         $data->cat_id
+    //                     )
+    //                 );
+    //         } catch (Exception $e) {
+    //             die($e->getMessage());
+    //         }
+    //     }
 }

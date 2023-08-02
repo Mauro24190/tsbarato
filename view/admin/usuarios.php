@@ -16,7 +16,8 @@
                         <th scope="col">Nombre de Usuario</th>
                         <th scope="col">Correo</th>
                         <th scope="col">Dirección</th>
-                        <th scope="col">Rol</th>
+                        <th scope="col">Nivel</th>
+                        <th scope="col">Acciones</th>
 
                     </tr>
                 </thead>
@@ -29,7 +30,8 @@
                         <td><?php echo $r->user_cli; ?></td>
                         <td><?php echo $r->cor_cli; ?></td>
                         <td><?php echo $r->dir_cli; ?></td>
-                        <td><?php echo "aqui ira el rol"; ?>
+                        <td><?php echo $r->pri_cli; ?>
+                        <td> <i style="cursor: pointer;" class="bi bi-pencil">  <i class="bi bi-trash ms-4"></i></i></td>
                     </td>
 
                     </tr>

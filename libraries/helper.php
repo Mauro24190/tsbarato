@@ -1,5 +1,6 @@
 <?php
 require_once "controller/producto.controller.php";
+require_once "controller/usuario.controller.php";
 function plantilla($ruta, $parametros=[]){
     extract($parametros);
     include_once "view/header.php";
@@ -17,3 +18,16 @@ function redirect($link, $message = null) {
     header("location: $link");
     exit;
 }
+
+
+function obtenerIdClienteActual()
+    {
+
+
+
+        if (isset($_SESSION['cliente_id'])) {
+            return $_SESSION['cliente_id'];
+        } else {
+            return null;
+        }
+    }
