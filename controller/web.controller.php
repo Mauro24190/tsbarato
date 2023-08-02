@@ -1,6 +1,20 @@
 <?php
+  require_once "controller/producto.controller.php";
 
+  require_once "model/producto.php";
+
+  require_once "controller/usuario.controller.php";
+
+  require_once "model/usuario.php";
 class WebController{
+
+    public articulo $productos;
+    public usuario $user;
+
+    public function __construct() {
+        $this->productos = new articulo();
+        $this->user = new usuario();
+    }
 
     function carrito(){
         plantilla("carrito.php");
@@ -14,10 +28,63 @@ class WebController{
     function perfil(){
         plantilla("cuenta/perfil.php");
     }
-    function categorias(){
-        plantilla("categorias/aseo.php");
+    function aseo(){
+        plantilla("categorias/aseo.php", [
+            "listaProductos" => $this->productos->listarAseo()
+        ]);
     }
-    function ayuda(){
-        plantilla("view/ayuda/preguntasf.html");
+    function bebidas(){
+        plantilla("categorias/bebidas.php", [
+            "listaProductos" => $this->productos->listarbebidas()
+        ]);
     }
+    function frutasverduras(){
+        plantilla("categorias/frutasverduras.php", [
+            "listaProductos" => $this->productos->listarfrutasverduras()
+        ]);
+    }
+    function carnicos(){
+        plantilla("categorias/carnicos.php", [
+            "listaProductos" => $this->productos->listarcarnicos()
+        ]);
+    }
+    function lacteos(){
+        plantilla("categorias/lacteos.php", [
+            "listaProductos" => $this->productos->listarlacteos()
+        ]);
+    }
+    function despensa(){
+        plantilla("categorias/despensa.php", [
+            "listaProductos" => $this->productos->listardespensa()
+        ]);
+    }
+    function panaderia(){
+        plantilla("categorias/panaderia.php", [
+            "listaProductos" => $this->productos->listarpanaderia()
+        ]);
+    }
+    function medicina(){
+        plantilla("categorias/medicina.php", [
+            "listaProductos" => $this->productos->listarmedicina()
+        ]);
+    }
+
+
+
+
+
+
+
+
+
+
+    function crud(){
+        plantilla("admin/usuarios.php",[
+            "listaUser" => $this->user->Tabla()
+        ]);
+    }
+
+
+
+
 }

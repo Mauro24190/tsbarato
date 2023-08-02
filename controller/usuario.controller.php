@@ -28,11 +28,16 @@ class UsuarioController
             $usuario = $this->usuario->obtenerPorUsuario($nombreUsuario);
 
             if ($usuario && password_verify($contrasena, $usuario['pas_cli'])) {
+
+                $cliente_id = $usuario['id_cli'];
+                $_SESSION['cliente_id'] = $cliente_id;
+                
                 $_SESSION['nombreUsuario'] = $nombreUsuario;
-                setcookie("notificacion", "Ingreso exitoso", time() + 5, "/");
+             
+                setcookie("notificacion", "Exito-Ingreso exitoso", time() + 5, "/");
                 header("location: ?");
             } else {
-                setcookie("notificacion", "Nombre de usuario o Contraseña incorrectos", time() + 5, "/");
+                setcookie("notificacion", "Error-Nombre de usuario o Contraseña incorrectos", time() + 5, "/");
                 header("location: ?c=web&a=ingreso");
             }
         }
@@ -55,20 +60,15 @@ class UsuarioController
             $_REQUEST["user_cli"] == "" ||
             $_REQUEST["dir_cli"] == ""
         ) {
-            setcookie("notificacion", "Por favor llenar todos los campos", time() + 5, "/");
-            header("location: ?c=web&a=registro");
+            redirect("?c=web&a=registro", "Error-Por favor llenar todos los campos");
         } else if (!filter_var($_REQUEST["cor_cli"], FILTER_VALIDATE_EMAIL)) {
-            setcookie("notificacion", "Correo Electronico Invalido", time() + 5, "/");
-            header("location: ?c=web&a=registro");
+            redirect("?c=web&a=registro", "Error-Correo Electronico Invalido");
         } else if (!is_numeric($_REQUEST["cel_cli"])) {
-            setcookie("notificacion", "El Número de Celular Solo Puede Contener Valores Numericos", time() + 5, "/");
-            header("location: ?c=web&a=registro");
+            redirect("?c=web&a=registro", "Error-El Número de Celular Solo Puede Contener Valores Numericos");
         } else if (strlen($_REQUEST["pas_cli"]) < 8 || !preg_match('`[A-Z]`', $_REQUEST["pas_cli"])) {
-            setcookie("notificacion", "Extensión de la Contraseña Minima de 8 Caracteres, Además Debe Contener Minino una Mayucusla", time() + 5, "/");
-            header("location: ?c=web&a=registro");
+            redirect("?c=web&a=registro", "Error-Extensión de la Contraseña Minima de 8 Caracteres, Además Debe Contener Minino una Mayucusla");
         }else if(strtotime($_REQUEST["fch_cli"]) >= strtotime($today)){
-            setcookie("notificacion", "La fecha debe ser anterior a la de hoy", time() + 5, "/");
-            header("location: ?c=web&a=registro");
+            redirect("?c=web&a=registro", "Error-La fecha debe ser anterior a la de hoy");
         }
          else {
             $user->nom_cli = $_REQUEST["nom_cli"];
@@ -81,18 +81,19 @@ class UsuarioController
             $user->user_cli = $_REQUEST["user_cli"];
 
             $this->model->Registro($user);
-            header("location: ?c=usuario&a=Nuevo");
+            redirect("?", "Exito-Registro de usuario exitoso");
         }
     }
 
 
     function Cerrar(){
         session_destroy();
-        header("location: ?");
+        redirect("?");
     }
 
     function mostrarVista() {
-        function obtenerIdClienteActual()
+
+          function obtenerIdClienteActual()
     {
 
 
@@ -105,13 +106,16 @@ class UsuarioController
     }
         $cliente_id = obtenerIdClienteActual();
         $rol_id = $this->model->obtenerRolIdPorClienteId($cliente_id);
-        if ($rol_id === 1) {
-            header("location: ?c=weba&=carrito");
-        } else if ($rol_id === 2) {
-            header("location:?c=weba&=ingreso");
-        } else {
-            header("location: ?");
+
+        foreach($rol_id as $val) {
+            if ($val["rol_id"] === 2) {
+                redirect("?c=web&a=crud");
+                $_SESSION["rol_id"] == 2;
+            }
         }
+
+        redirect("?c=web&a=perfil");
+        $_SESSION["rol_id"] == 1;
     }
     
 }

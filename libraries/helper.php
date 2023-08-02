@@ -1,5 +1,5 @@
 <?php
-
+require_once "controller/producto.controller.php";
 function plantilla($ruta, $parametros=[]){
     extract($parametros);
     include_once "view/header.php";
@@ -8,4 +8,12 @@ function plantilla($ruta, $parametros=[]){
 }
 function checksession(){
     return false;
+}
+
+function redirect($link, $message = null) {
+    if ($message) {
+        setcookie("notificacion", $message, time() + 5, "/");
+    }
+    header("location: $link");
+    exit;
 }

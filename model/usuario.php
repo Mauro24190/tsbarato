@@ -10,6 +10,7 @@ class usuario
     public $cel_cli;
     public $dir_cli;
     public $user_cli;
+    public $id_cli;
 
     private $pdo;
     public function __CONSTRUCT()
@@ -59,6 +60,7 @@ class usuario
                         $data->cel_cli,
                         $data->dir_cli,
                         $data->user_cli,
+                        // Privilegios::User
                     )
                 );
             $usuario_id = $this->pdo->lastInsertId();
@@ -72,7 +74,7 @@ class usuario
         }
     }
 
-    
+
 
     function obtenerRolIdPorClienteId($cliente_id)
     {
@@ -82,8 +84,11 @@ class usuario
             $stmt->execute([$cliente_id]);
 
             if ($stmt->rowCount() > 0) {
-                $row = $stmt->fetch(PDO::FETCH_ASSOC);
-                return $row['rol_id'];
+                $items = [];
+                while ($item = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                    array_push($items, $item);
+                }
+                return $items;
             } else {
                 return null;
             }
@@ -91,4 +96,83 @@ class usuario
             die("Error al obtener el ID del rol del cliente: " . $e->getMessage());
         }
     }
+
+
+    public function Tabla()
+    {
+        try {
+            $result = array();
+            $stm = $this->pdo->prepare('SELECT * FROM cliente');
+            $stm->execute();
+
+            return $stm->fetchAll(PDO::FETCH_OBJ);
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
+
+    public function Obtener($id_cli)
+    {
+        try {
+            $stm = $this->pdo->prepare('SELECT * FROM cliente WHERE id_cli = ?');
+            $stm->execute(array($id_cli));
+            return $stm->fetch(PDO::FETCH_OBJ);
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
+
+    public function Eliminar($id_cli)
+    {
+        try {
+            $stm = $this->pdo
+                ->prepare('DELETE FROM cliente WHERE id_cli = ?');
+            $stm->execute(array($id_cli));
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
+
+    public function Actualizar($data)
+    {
+        try {
+            $sql = 'UPDATE cliente SET
+                nom_art = ?,
+                 pre_art = ?,
+                des_art = ?
+                WHERE id_cli = ?';
+            $this->pdo->prepare($sql)
+                ->execute(
+                    array(
+                        $data->nom_art,
+                        $data->pre_art,
+                        $data->des_art,
+                        $data->id_cli
+                    )
+                );
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
+
+//     public function Registrar(usuario $data)
+//     {
+//         try {
+//             $sql = 'INSERT INTO cliente (nom_art,cod_art,des_art,pre_art,img_art,cat_id)
+//  VALUES (?,?,?,?,?,?)';
+//             $this->pdo->prepare($sql)
+//                 ->execute(
+//                     array(
+//                         $data->nom_art,
+//                         $data->cod_art,
+//                         $data->des_art,
+//                         $data->pre_art,
+//                         "ci",
+//                         $data->cat_id
+//                     )
+//                 );
+//         } catch (Exception $e) {
+//             die($e->getMessage());
+//         }
+//     }
 }
