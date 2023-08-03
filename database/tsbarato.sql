@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 31-07-2023 a las 15:18:50
+-- Tiempo de generación: 03-08-2023 a las 18:44:10
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
 
@@ -95,51 +95,17 @@ CREATE TABLE `cliente` (
   `cel_cli` varchar(10) DEFAULT NULL COMMENT 'numero de contacto del cliente',
   `pas_cli` varchar(255) DEFAULT NULL COMMENT 'contraseña del cliente',
   `ciu_cli` varchar(255) DEFAULT NULL COMMENT 'ciudad de residencia del cliente',
-  `dir_cli` varchar(255) DEFAULT NULL COMMENT 'direccion de residencia del cliente'
+  `dir_cli` varchar(255) DEFAULT NULL COMMENT 'direccion de residencia del cliente',
+  `pri_cli` int(11) NOT NULL COMMENT 'Privilegios del cliente\r\n'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `cliente`
 --
 
-INSERT INTO `cliente` (`id_cli`, `nom_cli`, `user_cli`, `ape_cli`, `fch_cli`, `cor_cli`, `cel_cli`, `pas_cli`, `ciu_cli`, `dir_cli`) VALUES
-(1, 'Julian', 'guanki', 'Muñoz Garcia', '2004-07-20', 'jm65726@gmail.com', '3117813045', '$2y$10$h2PzY3CL5BBazMt/MsulbOHEW/.BnwlyOZlzES33/flhFB0AprqKW', 'La Plata', 'Cra 5 # 5-38'),
-(49, 'Ejemplo', 'ejemplo', 'Hash', '2023-07-20', 'jm@gmail.com', '3117813045', '$2y$10$eCe4ujAO1cREwsFE0IDhQOL7UZRGVEbrarGZk5GpLi7ALF00M5Hn2', NULL, 'alla'),
-(50, 'Brayan', 'Bry', 'Papa', '2023-07-20', 'guanki@gmail.com', '3117813045', '$2y$10$smZoVfxPuiy4gQGcVbgCgOfLTJ39dc3dYL8Cn1cUS2dtcz7XIXsVC', NULL, 'mas alla aun '),
-(51, 'Tabla', 'Ejemplito', 'Ejemplo', '2023-07-20', 'jm@gmail.com', '3117813045', '$2y$10$svuj1gqFCAzQdxlHA37JYO84lGUyxR0xngJ1DY/AkUdw3I4bs/ZGu', NULL, 'mas alla aun '),
-(52, 'Tablita', 'cicici', 'Ejemplito', '2023-07-12', 'jm@gmail.com', '3117813045', '$2y$10$QGgIHIhfWGtWIsX4Zl2TUe58UMtQZzi7pVK/wCqzGbxrEp1n6i28u', NULL, 'alla'),
-(53, 'Ejemplo', 'guanki', 'Celular', '2023-07-13', 'guanki@gmail.com', '3117813045', '$2y$10$CpqpFz/ZhTQaCkuKLx0vne/QYST5CYrwN9Y.IACi0FHSiHRBgXtZG', NULL, 'alla'),
-(54, 'ejemplo', 'user', 'ingreso', '2023-07-19', 'jm@gmail.com', '3117813045', '$2y$10$Y0prKIJsx/hXtOAWaTA8z.oNKeJ5efDekz3RFagBSADU3Y28tbXxW', NULL, 'alla'),
-(55, 'Ejemplo', 'cliente', 'No sé', '2023-07-19', 'jm@gmail.com', '3117813045', '$2y$10$C4oOgJNlKXr8M0/InKnPlOA.x.UZ/SreNDmr.SFQHYJb0BgRfPYFm', NULL, 'alla');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `clientexrol`
---
-
-CREATE TABLE `clientexrol` (
-  `cli_id` int(11) NOT NULL,
-  `rol_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `clientexrol`
---
-
-INSERT INTO `clientexrol` (`cli_id`, `rol_id`) VALUES
-(51, 1),
-(52, 1),
-(53, 1),
-(1, 1),
-(1, 1),
-(1, 2),
-(1, 2),
-(54, 1),
-(54, 2),
-(55, 1),
-(55, 2),
-(55, 2);
+INSERT INTO `cliente` (`id_cli`, `nom_cli`, `user_cli`, `ape_cli`, `fch_cli`, `cor_cli`, `cel_cli`, `pas_cli`, `ciu_cli`, `dir_cli`, `pri_cli`) VALUES
+(61, 'Ejemplo', 'Priv', 'cambios', '2023-08-01', 'jm@gmail.com', '3117813045', '$2y$10$JT6JYQ36UMTZrWrNInQ54OOkm2BDshHlXgo3defcGhBOOPQ8WJVP.', NULL, 'alla', 2),
+(63, 'Julian', 'user', 'Muñoz', '2023-08-01', 'jm@gmail.com', '3117505835', '$2y$10$lbEzL0b36LDNDFrYFkQJ0O1R1WO5G1QDRr/9ABdO/jc5r/9YJqwcK', NULL, 'alla', 1);
 
 -- --------------------------------------------------------
 
@@ -246,13 +212,6 @@ ALTER TABLE `cliente`
   ADD PRIMARY KEY (`id_cli`);
 
 --
--- Indices de la tabla `clientexrol`
---
-ALTER TABLE `clientexrol`
-  ADD KEY `cli_id` (`cli_id`),
-  ADD KEY `rol_id` (`rol_id`);
-
---
 -- Indices de la tabla `producto`
 --
 ALTER TABLE `producto`
@@ -297,7 +256,7 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id_cli` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Id del cliente', AUTO_INCREMENT=56;
+  MODIFY `id_cli` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Id del cliente', AUTO_INCREMENT=64;
 
 --
 -- AUTO_INCREMENT de la tabla `producto`
@@ -326,13 +285,6 @@ ALTER TABLE `rol`
 --
 ALTER TABLE `articulo`
   ADD CONSTRAINT `articulo_ibfk_1` FOREIGN KEY (`cat_id`) REFERENCES `categoria` (`id_cat`);
-
---
--- Filtros para la tabla `clientexrol`
---
-ALTER TABLE `clientexrol`
-  ADD CONSTRAINT `clientexrol_ibfk_1` FOREIGN KEY (`cli_id`) REFERENCES `cliente` (`id_cli`),
-  ADD CONSTRAINT `clientexrol_ibfk_2` FOREIGN KEY (`rol_id`) REFERENCES `rol` (`id_rol`);
 
 --
 -- Filtros para la tabla `proveedorxarticulo`
