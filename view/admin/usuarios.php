@@ -1,3 +1,9 @@
+<style>
+    a{
+        text-decoration: none !important;
+    }
+</style>
+
 <main class="container py-3">
     <div>
         <div class="mb-3">
@@ -31,7 +37,7 @@
                         <td><?php echo $r->cor_cli; ?></td>
                         <td><?php echo $r->dir_cli; ?></td>
                         <td><?php echo $r->pri_cli; ?>
-                        <td> <i style="cursor: pointer;" class="bi bi-pencil">  <i class="bi bi-trash ms-4"></i></i></td>
+                        <td> <a href="?c=usuario&a=traer&id_cli=<?php echo $r->id_cli; ?>" style="color: orange;"><i style="cursor: pointer;" class="bi bi-pencil"> </i></a>  <a href="?c=usuario&a=Eliminar&id_cli=<?php echo $r->id_cli; ?>" onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" style="color: red;"><i class="bi bi-trash ms-4"></i></a></td>
                     </td>
 
                     </tr>

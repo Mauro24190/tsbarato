@@ -39,7 +39,19 @@
 
 
 
+<?php
 
+// if (checksession()) {
+//   if (Privilegios::User->get() & $_SESSION["pri_cli"] == Privilegios::User->get()) {
+//     echo "user";
+//   } else {
+//     echo "admin";
+//   }
+// }else{
+//   echo "Por favor incie sesion";
+// }
+
+?>
 
 <div class="container">
   <link rel="stylesheet" href="diseño.css">

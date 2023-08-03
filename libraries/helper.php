@@ -8,7 +8,7 @@ function plantilla($ruta, $parametros=[]){
     include_once "view/footer.php";
 }
 function checksession(){
-    return false;
+    return isset($_SESSION["nombreUsuario"]) ? true : false;
 }
 
 function redirect($link, $message = null) {

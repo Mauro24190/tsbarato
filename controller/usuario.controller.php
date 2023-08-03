@@ -19,9 +19,22 @@ class UsuarioController
         $this->usuario = new usuario();
     }
 
+
+    public function traer()
+    {
+     $user = new usuario();
+      if (isset($_REQUEST['id_cli'])) {
+       $user = $this->model->almacenar($_REQUEST['id_cli']);
+      }
+
+      require_once 'view/header.php';
+      require_once 'view/admin/editar.php';
+      require_once 'view/footer.php';
+    }
+
     function ingresar()
     {
-        session_start();
+       
 
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -149,8 +162,8 @@ class UsuarioController
     {
 
 
-        $cliente_id = obtenerIdClienteActual();
-        $rol_id = $this->model->obtenerRolIdPorClienteId($cliente_id);
+        // $cliente_id = obtenerIdClienteActual();
+        // $rol_id = $this->model->obtenerRolIdPorClienteId($cliente_id);
 
         // foreach ($rol_id as $val) {
         //     if ($val["rol_id"] === 2) {
@@ -177,17 +190,15 @@ class UsuarioController
         $user->ape_cli = $_REQUEST['ape_cli'];
         $user->user_cli = $_REQUEST['user_cli'];
         $user->cor_cli = $_REQUEST['cor_cli'];
-        $user->pas_cli = $_REQUEST['pas_cli'];
         $user->pri_cli = $_REQUEST['pri_cli'];
-        $user->cor_cli = $_REQUEST['cor_cli'];
         $this->model->Actualizar($user);
         header('Location:?c=web&a=crud');
     }
 
     public function Eliminar()
     {
-        $this->model->Eliminar($_REQUEST['id_art']);
-        header('Location: index.php?c=producto');
+        $this->model->Eliminar($_REQUEST['id_cli']);
+        header('Location: ?c=web&a=crud');
     }
    
 }

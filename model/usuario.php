@@ -66,18 +66,24 @@ class usuario
                         Privilegios::User->get()
                     )
                 );
-            $usuario_id = $this->pdo->lastInsertId();
-
-            $rol_id = 1;
-            $sqlClientexRol = "INSERT INTO clientexrol (cli_id, rol_id) VALUES (?, ?)";
-            $stmtClientexRol = $this->pdo->prepare($sqlClientexRol);
-            $stmtClientexRol->execute(array($usuario_id, $rol_id));
         } catch (Exception $e) {
             die($e->getMessage());
         }
     }
 
-
+    public function almacenar ($id_cli)
+	{
+		try {
+			//Sentencia SQL para selección de datos utilizando
+			//la cláusula Where para especificar el nit_pro del proveedor.
+			$stm = $this->pdo->prepare("SELECT * FROM cliente WHERE id_cli = ?");
+			//Ejecución de la sentencia SQL utilizando el parámetro nit_pro.
+			$stm->execute(array($id_cli));
+			return $stm->fetch(PDO::FETCH_OBJ);
+		} catch (Exception $e) {
+			die($e->getMessage());
+		}
+	}
 
     function obtenerRolIdPorClienteId($cliente_id)
     {
@@ -151,21 +157,25 @@ class usuario
         }
     }
 
-    public function Actualizar($data)
+    public function Actualizar($user)
     {
         try {
             $sql = 'UPDATE cliente SET
-                nom_art = ?,
-                 pre_art = ?,
-                des_art = ?
+                nom_cli = ?,             
+                ape_cli = ?,             
+                user_cli = ?,                
+                cor_cli = ?,                         
+                pri_cli = ?          
                 WHERE id_cli = ?';
             $this->pdo->prepare($sql)
                 ->execute(
                     array(
-                        $data->nom_art,
-                        $data->pre_art,
-                        $data->des_art,
-                        $data->id_cli
+                        $user->nom_cli,
+                        $user->ape_cli,
+                        $user->user_cli,
+                        $user->cor_cli,
+                        $user->pri_cli,
+                        $user->id_cli
                     )
                 );
         } catch (Exception $e) {

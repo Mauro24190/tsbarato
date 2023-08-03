@@ -23,7 +23,7 @@
 </head>
 
 <body>
-    <header>
+    <header id="header">
         <nav class="navbar navbar-expand-lg navbar-light bg-dark d-flex justify-content-center">
             <div class="container-sm">
                 <a class="navbar-brand" href="#">
@@ -31,8 +31,7 @@
                     <div class="container_index">
                         <!--  INICIO VENTANA FLOTANTE CATEGORIAS -->
                         <div id="ventana" class="trans">
-                            <div class="ventana_header"
-                                style="background-color: #FF8119; height: 75px; display: flex; align-items: center; ">
+                            <div class="ventana_header" style="background-color: #FF8119; height: 75px; display: flex; align-items: center; ">
                                 <div style="margin-left: 1.5rem;">
                                     <img style="width: 80px;" src="img_logos/logoproyecto.png" alt="">
                                 </div>
@@ -45,8 +44,7 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <p style="cursor: pointer; color: aliceblue; margin-left: 90px; font-size: 25pt  ; margin-top: 1rem; font-family: 'Open Sans', sans-serif; ;  "
-                                        id="cerrar">X</p>
+                                    <p style="cursor: pointer; color: aliceblue; margin-left: 90px; font-size: 25pt  ; margin-top: 1rem; font-family: 'Open Sans', sans-serif; ;  " id="cerrar">X</p>
                                 </div>
                             </div>
                             <!-- LINKS VENTANA FLOTANTE CATEGORIAS -->
@@ -88,7 +86,8 @@
                                             <div>
                                                 <p>Aseo</p>
                                             </div>
-                                            <dx|iv style="padding-left: 174px;"><i class="bi bi-caret-right-fill"></i></div>
+                                            <dx|iv style="padding-left: 174px;"><i class="bi bi-caret-right-fill"></i>
+                                        </div>
                                     </a></button>
                                 <button type="button" class="btn w-100"><a href="index.php?c=web&a=bebidas">
                                         <div style="display: flex;">
@@ -125,9 +124,7 @@
                     </div>
                 </a>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
@@ -136,21 +133,33 @@
                         <button class="btn btn-success me-md-3" type="submit"><i class="bi bi-search"></i></button>
                     </form>
                     <ul class="navbar-nav ml-lg-auto">
-                        <li class="nav-item ">
+
+                        <?php
+
+                        if (checksession()) {
+                            if (Privilegios::User->get() & $_SESSION["pri_cli"] == Privilegios::User->get()) {
+                                echo "";
+                            } else {
+                                echo ' <li class="nav-item ">
 
 
-                            <a class="nav-link active text-light me-md-3" aria-current="page" href="?c=producto">
-                                <i class="bi bi-house-gear-fill"></i><br>Administrador
-                            </a>
-                        </li>
+                                <a class="nav-link active text-light me-md-3" aria-current="page" href="?c=producto">
+                                    <i class="bi bi-house-gear-fill"></i><br>Administrador
+                                </a>
+                            </li>';
+                            }
+                        } else {
+                            echo "";
+                        }
+
+                        ?>
                         <li class="nav-item ">
                             <a class="nav-link active text-light me-md-3" aria-current="page" href="?c=web&a=carrito">
                                 <i class="bi bi-cart3"></i><br>Mi carrito
                             </a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link active text-light me-md-3" aria-current="page"
-                                href="<?= isset($_SESSION['nombreUsuario']) ? "?c=usuario&a=mostrarVista" : "?c=web&a=ingreso" ?>">
+                            <a class="nav-link active text-light me-md-3" aria-current="page" href="<?= isset($_SESSION['nombreUsuario']) ? "?c=usuario&a=mostrarVista" : "?c=web&a=ingreso" ?>">
                                 <i class="bi bi-person-circle"></i><br>
                                 <p>
                                     <?= isset($_SESSION['nombreUsuario']) ? $_SESSION['nombreUsuario'] : "Mi Cuenta" ?>
@@ -163,18 +172,15 @@
                         </a>
                     </li> -->
                         <li class="nav-item">
-                            <span id="abrir3" style="cursor: pointer;" class="nav-link active text-light me-md-3"
-                                aria-current="page" href="?c=producto">
+                            <span id="abrir3" style="cursor: pointer;" class="nav-link active text-light me-md-3" aria-current="page" href="?c=producto">
                                 <i class="bi bi-bell"></i><br>Notificaciones
                             </span>
                         </li>
                         <!-- INICIIO VENTANA DE NOTIFICACIONES -->
                         <div id="ventana3" class="notificaciones-container">
                             <div class="notificacion-header">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="70" height="30" fill="currentColor"
-                                    class="bi bi-bell-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
+                                <svg xmlns="http://www.w3.org/2000/svg" width="70" height="30" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
+                                    <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
                                 </svg>
                                 <h1>NOTIFICACIONES</h1>
                                 <button id="cerrar3" class="close-btn">&times;</button>
@@ -224,8 +230,7 @@
                         <!-- FIN VENTANA FLOTANTE NOTIFICACIONES -->
 
                         <li class="nav-item">
-                            <span id="abri1" style="cursor:  pointer;" class="nav-link active text-light me-md-3"
-                                aria-current="page">
+                            <span id="abri1" style="cursor:  pointer;" class="nav-link active text-light me-md-3" aria-current="page">
                                 <i class="bi bi-question-circle"></i><br>Ayuda
                             </span>
                         </li>
@@ -233,10 +238,8 @@
 
                         <!-- INICIO VENTANA FLOTANTE AYUDA -->
                         <div class="notificacion-container">
-                            <svg id="cerrar1" xmlns="http://www.w3.org/2000/svg" width="35" height="35"
-                                fill="currentColor" class="bi bi-x-lg close" viewBox="0 0 16 16">
-                                <path
-                                    d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
+                            <svg id="cerrar1" xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-x-lg close" viewBox="0 0 16 16">
+                                <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
                             </svg>
 
                             <div class="fila-noti">
@@ -273,6 +276,6 @@
             </div>
         </nav>
     </header>
-    <main class="d-grid">
+    <main class="d-grid" id="main">
         <script src="assets/js/ventanas.js"></script>
         <script src="view/main.js"></script>
