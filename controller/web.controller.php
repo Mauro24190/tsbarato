@@ -72,7 +72,21 @@ class WebController{
 
 
 
-
+    function restablecerContraseña(){
+        plantilla("cuenta/reestablecercontra.php");
+    }
+    function preguntasfrecuentes(){
+        plantilla("ayuda/preguntasf.php");
+    }
+    function contacto(){
+        plantilla("ayuda/contacto.php");
+    }
+    function escribenos(){
+        plantilla("ayuda/escribenos.php");
+    }
+    function gestionpedido(){
+        plantilla("ayuda/gestionpedido.php");
+    }
 
 
 

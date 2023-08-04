@@ -249,19 +249,19 @@
                                     <div ><h2>Centro de Ayuda</h2><br>
                                     </div>
                                     <div class="boton1">
-                                    <button class="form-floating mb-3 border-0 "><a href="view/ayuda/preguntasf.html">
+                                    <button class="form-floating mb-3 border-0 "><a href="?c=web&a=preguntasfrecuentes">
                                         <h5>Preguntas frecuentes</h5><br></button>
                                     </div>
                                     <div class="boton2">
-                                    <button class="border-0 btn form-floating mb-3"><a href="view/ayuda/Contacto.html">
+                                    <button class="border-0 btn form-floating mb-3"><a href="?c=web&a=contacto">
                                         <h5>Contacto</h5><br></button>
                                     </div></a>
                                     <div class="boton4">
-                                    <button class="border-0 btn form-floating mb-3"><a href="view/ayuda/Escribenos.html">
+                                    <button class="border-0 btn form-floating mb-3"><a href="?c=web&a=escribenos">
                                         <h5>Escribenos</h5><br></button>
                                     </div></a>
                                     <div class="boton5">
-                                    <button class="border-0 form-floating mb-3"><a href="view/ayuda/gestionpedido.html">
+                                    <button class="border-0 form-floating mb-3"><a href="?c=web&a=gestionpedido">
                                         <h5>¿Como gestionar mi pedido?</h5><br></button>
                                     </div></a>
                                 </main>
