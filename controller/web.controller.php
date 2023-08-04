@@ -79,11 +79,22 @@ class WebController{
 
 
     function crud(){
+        if (!checksession()) {
+            redirect("?c=error&a=page&code=403");
+        }
+
+        if ((Privilegios::Admin->get() & $_SESSION["pri_cli"]) != Privilegios::Admin->get()) {
+            redirect("?c=error&a=page&code=403");
+        }
+
         plantilla("admin/usuarios.php",[
             "listaUser" => $this->user->Tabla()
         ]);
     }
 
+    function crudEditar(){
+        plantilla("admin/editar.php");
+    }
 
 
 
