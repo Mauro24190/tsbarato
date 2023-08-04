@@ -101,14 +101,14 @@ a{
   /* INICIO VENTANA DE HE ¿OLVIDADO MI CONTRASEÑA? */
   
   .ventana {
-    width: 450px;
+    width: 400px;
     height: 450px;
-    background-color: #00ffdd7e;
-    border: 1px solid #ccc;
+    background-color: #ffffff70;
+    border: 1px solid #ffffff00;
     padding: 20px;
     margin: 50px auto;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
+    border-radius: 20px;
   }
   
   .img-noti {
@@ -131,8 +131,8 @@ a{
   text-align: center;
 }
 
-body {
-  background-image: url(https://media.informabtl.com/wp-content/uploads/2016/09/bigstock-supermarket-103018157.jpg);
+.calito {
+  background-image: url(https://s2.glbimg.com/7-hknclnun_oevh51dxuplLsLdg=/e.glbimg.com/og/ed/f/original/2015/09/28/supermercado.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
