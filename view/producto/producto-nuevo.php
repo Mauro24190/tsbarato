@@ -45,9 +45,8 @@ form-control" placeholder="Ingrese nombre producto" data-validacion-tipo="requer
 
         <div class="form-group">
             <label>Imagen del Producto </label>
-
-
             <input type="file" style="margin-bottom:30px;" name="imagen" class="form-control" />
+            
         </div>
         <div class="form-group">
             <label>Precio Unitario</label>
