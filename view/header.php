@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <title>Tienda Super Barato</title>
     <meta charset="utf-8" />
