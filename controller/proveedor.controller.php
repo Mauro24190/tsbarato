@@ -42,36 +42,61 @@ class ProveedorController
   //Método que registrar al modelo un nuevo proveedor.
   public function Guardar()
   {
+   if (
+     $_REQUEST['nit_pro'] == "" ||
+     $_REQUEST['rzs_pro'] == "" ||
+     $_REQUEST['cor_pro'] == "" ||
+     $_REQUEST['dir_pro'] == "" ||
+     $_REQUEST['cel_pro'] == "" 
+     ) {
+      redirect("?c=proveedor&a=Nuevo", "Error-Por favor llenar todos los campos");   
+    }else if (!filter_var($_REQUEST["cor_pro"], FILTER_VALIDATE_EMAIL)) {
+      redirect("?c=proveedor&a=Nuevo", "Error-Correo Electronico Invalido");
+    }else if (!is_numeric($_REQUEST["cel_pro"])) {
+      redirect("?c=proveedor&a=Nuevo", "Error-El Número de Celular Solo Puede Contener Valores Numericos");
+    }else if (!is_numeric($_REQUEST["nit_pro"])) {
+      redirect("?c=proveedor&a=Nuevo", "Error-Un NIT Solo Puede Contener Números");
+    }elseif (strlen($_REQUEST["nit_pro"]) < 9 || strlen($_REQUEST["nit_pro"]) > 9 ) {
+      redirect("?c=proveedor&a=Nuevo", "Error-Un NIT consta de 9 digitos númericos");
+    }
+    else {
     $pvd = new proveedor();
-    //Captura de los datos del formulario (vista)
+    
     $pvd->nit_pro = $_REQUEST['nit_pro'];
     $pvd->rzs_pro = $_REQUEST['rzs_pro'];
     $pvd->cor_pro = $_REQUEST['cor_pro'];
     $pvd->dir_pro = $_REQUEST['dir_pro'];
     $pvd->cel_pro = $_REQUEST['cel_pro'];
-    //Registro al modelo proveedor.
+ 
     $this->model->Registrar($pvd);
-    //header() es usado para enviar encabezados HTTP sin formato.
-    //”Location:” No solamente envía el encabezado al navegador, sino que 
-    //también devuelve el código de status (302) REDIRECT al 
-    //navegador
-    header('Location: ?c=proveedor');
+
+    redirect("?c=proveedor", "Exito-Nuevo Proveedor Registrado");
+   }
   }
-  //Método que modifica el modelo de un proveedor.
+  
   public function Editar()
   {
+    $pvd = new proveedor();
+    $pvd->nit_pro = $_REQUEST['nit_pro'];
+   if (!filter_var($_REQUEST["cor_pro"], FILTER_VALIDATE_EMAIL)) {
+    redirect("?c=proveedor&a=Crud&nit=$pvd->nit_pro", "Error-Correo Electronico Invalido");
+   }else if (!is_numeric($_REQUEST["cel_pro"])) {
+    redirect("?c=proveedor&a=Crud&nit=$pvd->nit_pro", "Error-El Número de Celular Solo Puede Contener Valores Numericos");
+  }else {
     $pvd = new proveedor();
     $pvd->nit_pro = $_REQUEST['nit_pro'];
     $pvd->rzs_pro = $_REQUEST['rzs_pro'];
     $pvd->dir_pro = $_REQUEST['dir_pro'];
     $pvd->cel_pro = $_REQUEST['cel_pro'];
     $this->model->Actualizar($pvd);
-    header('Location: ?c=proveedor');
+    redirect('?c=proveedor', "Exito-Proveedor Actulizado");
+   }
+   
+
   }
-  //Método que elimina la tupla proveedor con el NIT_nit_pro dado.
   public function Eliminar()
   {
     $this->model->Eliminar($_REQUEST['nit_pro']);
-    header('Location: ?c=proveedor');
+    redirect('?c=proveedor', "Exito-Proveedor Eliminado");
   }
-} //no borrar ya que es la llave que cierra el class.
+} 

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-07-2023 a las 14:39:32
--- Versión del servidor: 10.4.24-MariaDB
--- Versión de PHP: 7.4.29
+-- Tiempo de generación: 03-08-2023 a las 18:44:10
+-- Versión del servidor: 10.4.27-MariaDB
+-- Versión de PHP: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -35,7 +35,7 @@ CREATE TABLE `articulo` (
   `pre_art` int(7) DEFAULT NULL COMMENT 'precio del articulo individual',
   `img_art` varchar(255) NOT NULL COMMENT 'dirrecion de la imagen',
   `cat_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `articulo`
@@ -51,7 +51,8 @@ INSERT INTO `articulo` (`id_art`, `nom_art`, `cod_art`, `des_art`, `pre_art`, `i
 (7, '', '', '', 0, 'ci', NULL),
 (8, '', '', '', 0, 'ci', NULL),
 (9, '', '', '', 0, 'ci', NULL),
-(20, 'dsadasd', '5471', 'dsaadsfdwdefqikgyuwdgfiyugewujfhuiwreyafvctryeicfytgwrtv7kficdafcsarctasrtgqatce5yhgesfthyeujhytgfeartyhujikuolipo´0ñolobfvdgrhytuhu', 0, 'ci', 3);
+(20, 'dsadasd', '5471', 'dsaadsfdwdefqikgyuwdgfiyugewujfhuiwreyafvctryeicfytgwrtv7kficdafcsarctasrtgqatce5yhgesfthyeujhytgfeartyhujikuolipo´0ñolobfvdgrhytuhu', 0, 'ci', 3),
+(46, 'Jugo', '45415241', 'Jugo hit', 1000, 'ci', 4);
 
 -- --------------------------------------------------------
 
@@ -62,7 +63,7 @@ INSERT INTO `articulo` (`id_art`, `nom_art`, `cod_art`, `des_art`, `pre_art`, `i
 CREATE TABLE `categoria` (
   `id_cat` int(11) NOT NULL COMMENT 'id del articulo',
   `nom_cat` varchar(255) DEFAULT NULL COMMENT 'titulo de la categoria'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `categoria`
@@ -76,7 +77,6 @@ INSERT INTO `categoria` (`id_cat`, `nom_cat`) VALUES
 (7, 'lacteos'),
 (8, 'medicina'),
 (9, 'panaderia'),
-(10, 'plantilla '),
 (11, 'vegetales');
 
 -- --------------------------------------------------------
@@ -95,26 +95,17 @@ CREATE TABLE `cliente` (
   `cel_cli` varchar(10) DEFAULT NULL COMMENT 'numero de contacto del cliente',
   `pas_cli` varchar(255) DEFAULT NULL COMMENT 'contraseña del cliente',
   `ciu_cli` varchar(255) DEFAULT NULL COMMENT 'ciudad de residencia del cliente',
-  `dir_cli` varchar(255) DEFAULT NULL COMMENT 'direccion de residencia del cliente'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `dir_cli` varchar(255) DEFAULT NULL COMMENT 'direccion de residencia del cliente',
+  `pri_cli` int(11) NOT NULL COMMENT 'Privilegios del cliente\r\n'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `cliente`
 --
 
-INSERT INTO `cliente` (`id_cli`, `nom_cli`, `user_cli`, `ape_cli`, `fch_cli`, `cor_cli`, `cel_cli`, `pas_cli`, `ciu_cli`, `dir_cli`) VALUES
-(1, 'Julian', 'guanki', 'Muñoz Garcia', '2004-07-20', 'jm65726@gmail.com', '3117813045', 'paloma20', 'La Plata', 'Cra 5 # 5-38');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `clientexrol`
---
-
-CREATE TABLE `clientexrol` (
-  `cli_id` int(11) NOT NULL,
-  `rol_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+INSERT INTO `cliente` (`id_cli`, `nom_cli`, `user_cli`, `ape_cli`, `fch_cli`, `cor_cli`, `cel_cli`, `pas_cli`, `ciu_cli`, `dir_cli`, `pri_cli`) VALUES
+(61, 'Ejemplo', 'Priv', 'cambios', '2023-08-01', 'jm@gmail.com', '3117813045', '$2y$10$JT6JYQ36UMTZrWrNInQ54OOkm2BDshHlXgo3defcGhBOOPQ8WJVP.', NULL, 'alla', 2),
+(63, 'Julian', 'user', 'Muñoz', '2023-08-01', 'jm@gmail.com', '3117505835', '$2y$10$lbEzL0b36LDNDFrYFkQJ0O1R1WO5G1QDRr/9ABdO/jc5r/9YJqwcK', NULL, 'alla', 1);
 
 -- --------------------------------------------------------
 
@@ -127,7 +118,7 @@ CREATE TABLE `producto` (
   `codigo` varchar(255) NOT NULL,
   `nombre` varchar(255) NOT NULL,
   `descripcion` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `producto`
@@ -156,7 +147,7 @@ CREATE TABLE `proveedor` (
   `nit_pro` varchar(255) NOT NULL COMMENT 'numero de identificación tributaria del proveedor ',
   `rut_pro` varchar(255) DEFAULT NULL COMMENT 'registro unico tributario del proveedor',
   `dir_pro` varchar(255) DEFAULT NULL COMMENT 'direccion del proveedor'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `proveedor`
@@ -176,7 +167,7 @@ INSERT INTO `proveedor` (`id_pro`, `rzs_pro`, `cor_pro`, `cel_pro`, `nit_pro`, `
 CREATE TABLE `proveedorxarticulo` (
   `art_id` int(11) NOT NULL,
   `pro_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -187,7 +178,7 @@ CREATE TABLE `proveedorxarticulo` (
 CREATE TABLE `rol` (
   `id_rol` int(11) NOT NULL COMMENT 'id del rol ',
   `nom_rol` varchar(255) NOT NULL COMMENT 'nombre del rol '
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `rol`
@@ -219,13 +210,6 @@ ALTER TABLE `categoria`
 --
 ALTER TABLE `cliente`
   ADD PRIMARY KEY (`id_cli`);
-
---
--- Indices de la tabla `clientexrol`
---
-ALTER TABLE `clientexrol`
-  ADD KEY `cli_id` (`cli_id`),
-  ADD KEY `rol_id` (`rol_id`);
 
 --
 -- Indices de la tabla `producto`
@@ -260,7 +244,7 @@ ALTER TABLE `rol`
 -- AUTO_INCREMENT de la tabla `articulo`
 --
 ALTER TABLE `articulo`
-  MODIFY `id_art` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id del articulo', AUTO_INCREMENT=46;
+  MODIFY `id_art` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id del articulo', AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT de la tabla `categoria`
@@ -272,7 +256,7 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id_cli` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Id del cliente', AUTO_INCREMENT=2;
+  MODIFY `id_cli` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Id del cliente', AUTO_INCREMENT=64;
 
 --
 -- AUTO_INCREMENT de la tabla `producto`
@@ -301,13 +285,6 @@ ALTER TABLE `rol`
 --
 ALTER TABLE `articulo`
   ADD CONSTRAINT `articulo_ibfk_1` FOREIGN KEY (`cat_id`) REFERENCES `categoria` (`id_cat`);
-
---
--- Filtros para la tabla `clientexrol`
---
-ALTER TABLE `clientexrol`
-  ADD CONSTRAINT `clientexrol_ibfk_1` FOREIGN KEY (`cli_id`) REFERENCES `cliente` (`id_cli`),
-  ADD CONSTRAINT `clientexrol_ibfk_2` FOREIGN KEY (`rol_id`) REFERENCES `rol` (`id_rol`);
 
 --
 -- Filtros para la tabla `proveedorxarticulo`

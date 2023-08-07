@@ -19,6 +19,11 @@
                 class="form-control" data-validacion-tipo="requerido|min:100" />
         </div>
         <div class="form-group">
+            <label>Correo electronico</label>
+            <input type="text" style="margin-bottom:30px;" name="cor_pro" value="<?php echo $pvd->cor_pro; ?>"
+                class="form-control" data-validacion-tipo="requerido|min:100" />
+        </div>
+        <div class="form-group">
             <label>Dirección</label>
             <input type="text" style="margin-bottom:30px;" name="dir_pro" value="<?php echo $pvd->dir_pro; ?>"
                 class="form-control" place- holder="Ingrese dirección proveedor"

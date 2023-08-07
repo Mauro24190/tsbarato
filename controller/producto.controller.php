@@ -5,9 +5,11 @@ require_once 'model/categorias.php';
 class ProductoController
 {
     private $model;
+    private $plantilla;
     public function __CONSTRUCT()
     {
         $this->model = new articulo();
+        // $this->plantilla = new articulo();
     }
     //Llamado plantilla principal
     public function Index()
@@ -45,11 +47,11 @@ class ProductoController
             $_REQUEST['des_art'] == "" ||
             $_REQUEST['cod_art'] == ""
         ) {
-            setcookie("notificacion", "Todos los campos deben ser llenados", time() + 5, "/");
-            header("location:?c=producto");
+            setcookie("notificacion", "Error-Todos los campos deben ser llenados", time() + 5, "/");
+            header("location:?c=producto&a=Nuevo");
         }
-        else if (strlen($_REQUEST['des_art']) > 20) {
-            setcookie("notificacion", "Descripcion maxima de 20 caracteres", time() + 5, "/");
+        else if (strlen($_REQUEST['des_art']) > 120) {
+            setcookie("notificacion", "Error-Descripcion maxima de 120 caracteres", time() + 5, "/");
             header("location:?c=producto&a=Nuevo");
         } else {
             $prod = new articulo();
@@ -59,7 +61,7 @@ class ProductoController
             $prod->pre_art = $_REQUEST['pre_art'];
             $prod->des_art = $_REQUEST['des_art'];
             $prod->cod_art = $_REQUEST['cod_art'];
-            setcookie("notificación", "Exito al guardar", time() + 5, "/");
+            setcookie("notificación", "Exito-Exito al guardar", time() + 5, "/");
             $this->model->Registrar($prod);
             header('Location:?c=producto&a=Nuevo');
             
@@ -84,4 +86,23 @@ class ProductoController
         $this->model->Eliminar($_REQUEST['id_art']);
         header('Location: index.php?c=producto');
     }
-} //no eliminar esta llave ya que cierra el class. 
+
+
+    public function buscar(){
+        $articuloBuscado = $_GET["articulo"];
+
+        $articulos = $this->model->buscarArticulo($articuloBuscado);
+       
+        if (!$this->model->existeArticulo($articuloBuscado)) {
+            redirect("?", "Error-Producto no Existe");
+        }elseif($articuloBuscado == ""){
+            redirect("?", "Error-Campo Vacio");
+        }
+
+        plantilla("producto/producto-buscar.php", [
+            "articuloBuscado" => $this->model->buscarArticulo($articuloBuscado)
+        ]);
+        
+       
+    }
+}

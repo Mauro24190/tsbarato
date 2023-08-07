@@ -20,8 +20,9 @@
     <link rel="stylesheet" href="assets/css/carrito.css">
     <link rel="icon" href="logo proyecto.png" type="image/x-icon">
 </head>
+
 <body>
-    <header>
+    <header id="header">
         <nav class="navbar navbar-expand-lg navbar-light bg-dark d-flex justify-content-center">
             <div class="container-sm">
                 <a class="navbar-brand" href="#">
@@ -29,8 +30,7 @@
                     <div class="container_index">
                         <!--  INICIO VENTANA FLOTANTE CATEGORIAS -->
                         <div id="ventana" class="trans">
-                            <div class="ventana_header"
-                                style="background-color: #FF8119; height: 75px; display: flex; align-items: center; ">
+                            <div class="ventana_header" style="background-color: #FF8119; height: 75px; display: flex; align-items: center; ">
                                 <div style="margin-left: 1.5rem;">
                                     <img style="width: 80px;" src="img_logos/logoproyecto.png" alt="">
                                 </div>
@@ -43,114 +43,174 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <p style="cursor: pointer; color: aliceblue; margin-left: 90px; font-size: 25pt  ; margin-top: 1rem; font-family: 'Open Sans', sans-serif; ;  "
-                                        id="cerrar">X</p>
+                                    <p style="cursor: pointer; color: aliceblue; margin-left: 90px; font-size: 25pt  ; margin-top: 1rem; font-family: 'Open Sans', sans-serif; ;  " id="cerrar">X</p>
                                 </div>
                             </div>
                             <!-- LINKS VENTANA FLOTANTE CATEGORIAS -->
                             <div class="ventana_cuerpo">
-                                <button type="button" class="btn w-100"><a href="../Productos/VEGETALES/index.html">
+                                <button type="button" class="btn w-100"><a href="index.php?c=web&a=frutasverduras">
                                         <div style="display: flex;">
                                             <div>
                                                 <p>Frutas y verduras</p>
                                             </div>
-                                            <div style="padding-left: 51px;">></div>
+                                            <div style="padding-left: 51px;"><i class="bi bi-caret-right-fill"></i>
+                                            </div>
                                         </div>
                                     </a></button>
-                                <button type="button" class="btn w-100"><a href="../Productos/CARNICOS/index.html">
+                                <button type="button" class="btn w-100"><a href="index.php?c=web&a=carnicos">
                                         <div style="display: flex;">
                                             <div>
                                                 <p>Carnicos</p>
                                             </div>
-                                            <div style="padding-left: 139px;">></div>
+                                            <div style="padding-left: 139px;"><i class="bi bi-caret-right-fill"></i>
+                                            </div>
                                         </div>
                                     </a></button>
-                                <button type="button" class="btn w-100"><a href="../Productos/LACTEOS/index.html">
+                                <button type="button" class="btn w-100"><a href="index.php?c=web&a=lacteos">
                                         <div style="display: flex;">
                                             <div>
                                                 <p>Lacteos</p>
                                             </div>
-                                            <div style="padding-left: 146px;">></div>
+                                            <div style="padding-left: 146px;"><i class="bi bi-caret-right-fill"></i>
+                                            </div>
                                         </div>
                                     </a></button>
-                                <button type="button" class="btn w-100"><a href="../Productos/DESPENSA/index.html">
+                                <button type="button" class="btn w-100"><a href="index.php?c=web&a=despensa">
                                         <div style="display: flex;">
                                             <div>
                                                 <p>Despensa y Snacks</p>
                                             </div>
-                                            <div style="padding-left: 49px;">></div>
+                                            <div style="padding-left: 49px;"><i class="bi bi-caret-right-fill"></i>
+                                            </div>
                                         </div>
                                     </a></button>
-                                <button type="button" class="btn w-100"><a href="../Productos/ASEO/index.html">
+                                <button type="button" class="btn w-100"><a href="index.php?c=web&a=aseo">
                                         <div style="display: flex;">
                                             <div>
                                                 <p>Aseo</p>
                                             </div>
-                                            <dx|iv style="padding-left: 174px;">>
+                                            <dx|iv style="padding-left: 174px;"><i class="bi bi-caret-right-fill"></i>
                                         </div>
-                                        <button type="button" class="btn w-100"><a
-                                                href="../Productos/BEBIDAS/index.html">
-                                                <div style="display: flex;">
-                                                    <div>
-                                                        <p>Bebidas</p>
-                                                    </div>
-                                                    <div style="padding-left: 144px;">></div>
-                                                </div>
-                                            </a></button>
-                                        <button type="button" class="btn w-100"><a
-                                                href="../Productos/PANADERIA/index.html">
-                                                <div style="display: flex;">
-                                                    <div>
-                                                        <p>Panaderia</p>
-                                                    </div>
-                                                    <div style="padding-left: 125px;">></div>
-                                                </div>
-                                            </a></button>
-                                        <button type="button" class="btn w-100"><a
-                                                href="../Productos/MEDICINA/index.html">
-                                                <div style="display: flex;">
-                                                    <div>
-                                                        <p>Medicina</p>
-                                                    </div>
-                                                    <div style="padding-left: 135px;">></div>
-                                                </div>
-                                            </a></button>
+                                    </a></button>
+                                <button type="button" class="btn w-100"><a href="index.php?c=web&a=bebidas">
+                                        <div style="display: flex;">
+                                            <div>
+                                                <p>Bebidas</p>
+                                            </div>
+                                            <div style="padding-left: 144px;"><i class="bi bi-caret-right-fill"></i>
+                                            </div>
+                                        </div>
+                                    </a></button>
+                                <button type="button" class="btn w-100"><a href="index.php?c=web&a=panaderia">
+                                        <div style="display: flex;">
+                                            <div>
+                                                <p>Panaderia</p>
+                                            </div>
+                                            <div style="padding-left: 125px;"><i class="bi bi-caret-right-fill"></i>
+                                            </div>
+                                        </div>
+                                    </a></button>
+                                <button type="button" class="btn w-100"><a href="index.php?c=web&a=medicina">
+                                        <div style="display: flex;">
+                                            <div>
+                                                <p>Medicina</p>
+                                            </div>
+                                            <div style="padding-left: 135px;"><i class="bi bi-caret-right-fill"></i>
+                                            </div>
+                                        </div>
+                                    </a></button>
                             </div>
                         </div>
                     </div>
                     <div>
                         <a class="d-flex align-items-center" href="?">
-                            <img src="logo proyecto.png" class="logoheader" style="">
+                            <img src="logo proyecto.png" class="logoheader">
                             <p class="ms-3" style="color: white;">Tienda<br> Super Barato</p>
                         </a>
                     </div>
                 </a>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-                    <form class="d-flex my-2 my-lg-0">
-                        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+                    <form class="d-flex my-2 my-lg-0" method="get" id="search" action="?c=producto&a=buscar">
+                        <input class="form-control me-2" name="articulo" type="search" placeholder="Buscar productos" aria-label="Buscar">
                         <button class="btn btn-success me-md-3" type="submit"><i class="bi bi-search"></i></button>
                     </form>
+                    <script>
+                        const form = document.querySelector("#navbarSupportedContent").children[0];
+                        form.addEventListener("submit", (e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+
+                            const input = form.querySelector("input");
+                            location.href = "?c=producto&a=buscar&articulo=" + input.value
+                        })
+                    </script>
                     <ul class="navbar-nav ml-lg-auto">
+
+                        <?php
+
+                        if (checksession()) {
+                            if (Privilegios::User->get() & $_SESSION["pri_cli"] == Privilegios::User->get()) {
+                                echo "";
+                            } else {
+                                echo ' <li class="nav-item ">
+
+
+                                <a class="nav-link active text-light me-md-3" aria-current="page" href="?c=producto">
+                                    <i class="bi bi-house-gear-fill"></i><br>Administrador
+                                </a>
+                            </li>';
+                            }
+                        } else {
+                            echo "";
+                        }
+
+                        ?>
+                        <?php
+
+                        if (checksession()) {
+                            if (Privilegios::User->get() & $_SESSION["pri_cli"] == Privilegios::User->get()) {
+                        ?>
+                                <li class="nav-item ">
+                                    <a class="nav-link active text-light me-md-3" aria-current="page" href="?c=web&a=carrito">
+                                        <i class="bi bi-cart3"></i><br>Mi carrito
+                                    </a>
+                                </li>
+                            <?php
+                            }
+                        } else {
+                            ?>
+                            <li class="nav-item ">
+                                <a class="nav-link active text-light me-md-3" aria-current="page" href="?c=web&a=carrito">
+                                    <i class="bi bi-cart3"></i><br>Mi carrito
+                                </a>
+                            </li>
+                        <?php
+                        }
+
+                        ?>
+
                         <li class="nav-item ">
-                            <a class="nav-link active text-light me-md-3" aria-current="page" href="?c=producto">
-                                <i class="bi bi-house-gear-fill"></i><br>Administrador
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link active text-light me-md-3" aria-current="page" href="?c=web&a=carrito">
-                                <i class="bi bi-cart3"></i><br>Mi carrito
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link active text-light me-md-3" aria-current="page"
-                                href="<?= checksession() ? "?c=web&a=perfil" : "?c=web&a=ingreso" ?>">
-                                <i class="bi bi-person-circle"></i><br>Mi cuenta
+                            <a class="nav-link active text-light me-md-3" aria-current="page" href="<?= isset($_SESSION['nombreUsuario']) ? "?c=usuario&a=mostrarVista" : "?c=web&a=ingreso" ?>">
+                                <i class="bi bi-person-circle"></i><br>
+                                <p>
+                                    <?php
+
+                                    if (checksession()) {
+                                        if (Privilegios::User->get() & $_SESSION["pri_cli"] == Privilegios::User->get()) {
+                                            print($_SESSION['nombreUsuario']);
+                                        } else {
+                                            echo "Lista de usuarios";
+                                        }
+                                    } else {
+                                        echo "Mi cuenta";
+                                    }
+
+                                    ?>
+                                </p>
                             </a>
                         </li>
                         <!-- <li class="nav-item ">
@@ -158,20 +218,36 @@
                             <i class="bi bi-truck"></i><br>Envíos
                         </a>
                     </li> -->
-                        <li class="nav-item">
-                            <span id="abrir3" style="cursor: pointer;" class="nav-link active text-light me-md-3"
-                                aria-current="page" href="?c=producto">
-                                <i class="bi bi-bell"></i><br>Notificaciones
-                            </span>
-                        </li>
+                        <?php
+
+                        if (checksession()) {
+                            if (Privilegios::User->get() & $_SESSION["pri_cli"] == Privilegios::User->get()) {
+
+
+                        ?>
+                                <li class="nav-item">
+                                    <span id="abrir3" data-target="ventana3" style="cursor: pointer;" class="nav-link active text-light me-md-3" aria-current="page" href="?c=producto">
+                                        <i class="bi bi-bell"></i><br>Notificaciones
+                                    </span>
+                                </li>
+                            <?php
+                            }
+                        } else {
+                            ?>
+                            <li class="nav-item">
+                                <span id="abrir3" data-target="ventana3"  style="cursor: pointer;" class="nav-link active text-light me-md-3" aria-current="page" href="?c=producto">
+                                    <i class="bi bi-bell"></i><br>Notificaciones
+                                </span>
+                            </li>
+                        <?php
+                        }
+                        ?>
 
                         <!-- INICIIO VENTANA DE NOTIFICACIONES -->
-                        <div id="ventana3" class="notificaciones-container">
+                        <div id="ventana3" data-ventana class="notificaciones-container">
                             <div class="notificacion-header">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="70" height="30" fill="currentColor"
-                                    class="bi bi-bell-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
+                                <svg xmlns="http://www.w3.org/2000/svg" width="70" height="30" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
+                                    <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
                                 </svg>
                                 <h1>NOTIFICACIONES</h1>
                                 <button id="cerrar3" class="close-btn">&times;</button>
@@ -221,48 +297,77 @@
                         <!-- FIN VENTANA FLOTANTE NOTIFICACIONES -->
 
                         <li class="nav-item">
-                            <span id="abri1" style="cursor:  pointer;" class="nav-link active text-light me-md-3"
-                                aria-current="page">
+                            <span id="abri1" data-target="ventana1" style="cursor:  pointer;" class="nav-link active text-light me-md-3" aria-current="page">
                                 <i class="bi bi-question-circle"></i><br>Ayuda
                             </span>
                         </li>
 
 
+
                         <!-- INICIO VENTANA FLOTANTE AYUDA -->
-                        <div class="notificacion-container">
-                            <svg id="cerrar1" xmlns="http://www.w3.org/2000/svg" width="35" height="35"
-                                fill="currentColor" class="bi bi-x-lg close" viewBox="0 0 16 16">
-                                <path
-                                    d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
+                        <div id="ventana1" data-ventana class="notificacion-container">
+                            <svg id="cerrar1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x-lg close" viewBox="0 0 16 16">
+                                <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
                             </svg>
 
                             <div class="fila-noti">
-                                <IMG class="img_noti" SRC="IMG/logo proyecto.png" ALIGN=RIGHT WIDTH=75 HEIGHT=50>
+                                <IMG class="img_noti" SRC="logo proyecto.png"></div>
                                 <main>
-                                    <h1>Centro de Ayuda</h1>
-                                    <p>Preguntas Frecuentes</p>
-                                    <p>Politicas de cambios y devoluciones</p>
-                                    <p>Solicitu de Garantia</p>
-                                    <p>Contacto</p>
-                                    <p>Cambia tu producto facil</p>
-                                    <p>Almacenes</p>
-                                    <p>Escribenos</p>
-                                    <p>¿Como gestionar mi pedido?</p>
-                                    <p>Actualizar mis datos</p>
+                                    <div ><h2>Centro de Ayuda</h2><br>
+                                    </div>
+                                    <div class="boton1">
+                                    <button class="form-floating mb-3 border-0 "><a href="?c=web&a=preguntasfrecuentes">
+                                        <h5>Preguntas frecuentes</h5><br></button>
+                                    </div>
+                                    <div class="boton2">
+                                    <button class="border-0 btn form-floating mb-3"><a href="?c=web&a=contacto">
+                                            <h5>Contacto</h5><br></button>
+                                </div></a>
+                                <div class="boton4">
+                                    <button class="border-0 btn form-floating mb-3"><a href="?c=web&a=escribenos">
+                                        <h5>Escribenos</h5><br></button>
+                                    </div></a>
+                                    <div class="boton5">
+                                    <button class="border-0 form-floating mb-3"><a href="?c=web&a=gestionpedido">
+                                        <h5>¿Como gestionar mi pedido?</h5><br></button>
+                                    </div></a>
                                 </main>
                             </div>
                         </div>
                         <!-- FIN VENTANA FLOTANTE AYUDA -->
                         <li class="nav-item ">
-                            <a class="nav-link active text-light me-md-3" aria-current="page" href="#">
-                                <i class="bi bi-box-arrow-right"></i><br>Cerrar Sesion
-                            </a>
+                            <?php
+                            if (isset($_SESSION["nombreUsuario"])) {
+                                ?>
+                                <a id="cerrar-sesion" class="nav-link active text-light me-md-3" aria-current="page" href="?c=usuario&a=Cerrar">
+                                    <i class="bi bi-box-arrow-right"></i><br>Cerrar Sesion
+                                </a>
+
+                                <script>
+                                    const cerrarSession =document.querySelector("#cerrar-sesion");
+
+                                    cerrarSession.addEventListener("click", (e) => {
+                                        e.preventDefault();
+                                        e.stopPropagation();
+
+                                        if (!confirm("Estas seguro que deseas cerrar sesión?")) {
+                                            return;
+                                        }
+
+                                        location.href =cerrarSession.href;
+                                    })  
+                                </script>
+
+                                <?php
+                            }
+                            ?>
+
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <main class="d-grid">
-        <script src="assets/js/ventanas.js"></script>
+    <main class="d-grid" id="main">
         <script src="view/main.js"></script>
+        <script src="assets/js/ventanas.js"></script>

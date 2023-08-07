@@ -4,8 +4,10 @@ require_once 'libraries/helper.php';
 require_once 'model/database.php';
 
 
+
 $controller = 'body';
 
+session_start();
 
 if (!isset($_REQUEST['c'])) {
 

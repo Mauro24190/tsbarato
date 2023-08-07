@@ -1,4 +1,5 @@
 <?php
+
 class articulo
 {
 	//Atributo para conexión a SGBD
@@ -98,5 +99,145 @@ class articulo
 			die($e->getMessage());
 		}
 	}
+
+	public function listarAseo()
+	{
+		try {
+			$result = array();
+			$stm = $this->pdo->prepare('SELECT * FROM articulo WHERE cat_id = 3');
+			$stm->execute();
+
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		} catch (Exception $e) {
+			die($e->getMessage());
+		}
+	}
+	public function listarbebidas()
+	{
+		try {
+			$result = array();
+			$stm = $this->pdo->prepare('SELECT * FROM articulo WHERE cat_id = 4');
+			$stm->execute();
+
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		} catch (Exception $e) {
+			die($e->getMessage());
+		}
+	}
+	public function listarfrutasverduras()
+	{
+		try {
+			$result = array();
+			$stm = $this->pdo->prepare('SELECT * FROM articulo WHERE cat_id = 11');
+			$stm->execute();
+
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		} catch (Exception $e) {
+			die($e->getMessage());
+		}
+	}
+	public function listarcarnicos()
+	{
+		try {
+			$result = array();
+			$stm = $this->pdo->prepare('SELECT * FROM articulo WHERE cat_id = 5');
+			$stm->execute();
+
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		} catch (Exception $e) {
+			die($e->getMessage());
+		}
+	}
+	public function listarlacteos()
+	{
+		try {
+			$result = array();
+			$stm = $this->pdo->prepare('SELECT * FROM articulo WHERE cat_id = 7');
+			$stm->execute();
+
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		} catch (Exception $e) {
+			die($e->getMessage());
+		}
+	}
+	public function listardespensa()
+	{
+		try {
+			$result = array();
+			$stm = $this->pdo->prepare('SELECT * FROM articulo WHERE cat_id = 6');
+			$stm->execute();
+
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		} catch (Exception $e) {
+			die($e->getMessage());
+		}
+	}
+	public function listarpanaderia()
+	{
+		try {
+			$result = array();
+			$stm = $this->pdo->prepare('SELECT * FROM articulo WHERE cat_id = 9');
+			$stm->execute();
+
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		} catch (Exception $e) {
+			die($e->getMessage());
+		}
+	}
+	public function listarmedicina()
+	{
+		try {
+			$result = array();
+			$stm = $this->pdo->prepare('SELECT * FROM articulo WHERE cat_id = 8');
+			$stm->execute();
+
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		} catch (Exception $e) {
+			die($e->getMessage());
+		}
+	}
+
+	public function buscarArticulo($articuloBuscado){
+
+		try {
+			$result = array();
+			$stm = $this->pdo->prepare('SELECT * FROM articulo WHERE nom_art LIKE ?');
+			$articuloBuscado = '%' . $articuloBuscado . '%';
+			$stm->execute([$articuloBuscado]);
+
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		} catch (Exception $e) {
+			die($e->getMessage());
+		}
+
+	}
+
+	public function existeArticulo($articuloBuscado)
+    {
+		try {
+			
+		$result = array();
+        // $sql = 'SELECT COUNT(*) as total FROM articulo WHERE nom_art LIKE ?';
+
+        $statement = $this->pdo->prepare("SELECT COUNT(*) as total FROM articulo WHERE nom_art LIKE ?");
+		$articuloBuscado = '%' . $articuloBuscado . '%';
+        $statement->execute([$articuloBuscado]);
+
+		$resultado = $statement->fetch(PDO::FETCH_ASSOC);
+        return $resultado['total'] > 0;
+
+	// return $statement->fetchAll(PDO::FETCH_OBJ);
+
+		} catch (Exception $e) {
+			die($e->getMessage());
+		}
+
+       
+     
+    }
+
+
+
+
 
 }
