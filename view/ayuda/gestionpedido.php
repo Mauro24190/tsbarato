@@ -7,7 +7,7 @@
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
             data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
             aria-controls="panelsStayOpen-collapseTwo">
-            <strong>Paso 1</strong>
+            <strong>Paso <i class="bi bi-1-circle-fill"></i></strong>
           </button>
         </h2>
         <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
@@ -23,7 +23,7 @@
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
             data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
             aria-controls="panelsStayOpen-collapseThree">
-            <strong>Paso 2</strong>
+            <strong>Paso <i class="bi bi-2-circle-fill"></i></strong>
           </button>
         </h2>
         <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
@@ -39,7 +39,7 @@
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
             data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false"
             aria-controls="panelsStayOpen-collapseFour">
-            <strong>Paso 3</strong>
+            <strong>Paso <i class="bi bi-3-circle-fill"></i></strong>
           </button>
         </h2>
         <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
@@ -56,7 +56,7 @@
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
             data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false"
             aria-controls="panelsStayOpen-collapseFive">
-            <strong>Paso 4</strong>
+            <strong>Paso <i class="bi bi-4-circle-fill"></i></strong>
           </button>
         </h2>
         <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse">

@@ -5,8 +5,8 @@
           
             <div class="accordion-item">
               <h2 class="accordion-header">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                    <strong>¿Cuáles son los horarios de atención?</strong>
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne">
+                    <strong><i class="bi bi-calendar-check" style="color:#009BFF; font-size: 20px; padding-right: 15px;"></i>¿Cuáles son los horarios de atención?</strong>
                 </button>
               </h2>
               <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
@@ -19,7 +19,7 @@
             <div class="accordion-item">
               <h2 class="accordion-header">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-                  <strong>¿Dónde se encuentra ubicada la tienda?</strong>
+                  <strong><i class="bi bi-geo-alt-fill" style="color:#CE2A2F; font-size: 20px; padding-right: 15px;"></i>¿Dónde se encuentra ubicada la tienda?</strong>
                 </button>
               </h2>
               <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
@@ -32,7 +32,7 @@
             <div class="accordion-item">
               <h2 class="accordion-header">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                  <strong>¿ Cuáles son los métodos de pago aceptados?</strong>
+                  <strong><i class="bi bi-credit-card" style="color:#005FE9; font-size: 20px; padding-right: 15px;"></i>¿Cuáles son los métodos de pago aceptados?</strong>
                 </button>
               </h2>
               <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
@@ -51,7 +51,7 @@
             <div class="accordion-item">
                 <h2 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
-                    <strong>¿Ofrecen servicios de entrega a domicilio?</strong>
+                    <strong><i class="bi bi-truck" style="color:; font-size: 20px; padding-right: 15px;"></i>¿Ofrecen servicios de entrega a domicilio?</strong>
                   </button>
                 </h2>
                 <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
@@ -64,7 +64,7 @@
               <div class="accordion-item">
                 <h2 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false" aria-controls="panelsStayOpen-collapseFive">
-                    <strong>¿Cuál es el tiempo de entrega a domicilio?</strong>
+                    <strong><i class="bi bi-clock" style="color:; font-size: 20px; padding-right: 15px;"></i>¿Cuál es el tiempo de entrega a domicilio?</strong>
                   </button>
                 </h2>
                 <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse">
@@ -77,7 +77,7 @@
               <div class="accordion-item">
                 <h2 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false" aria-controls="panelsStayOpen-collapseSix">
-                    <strong>¿ Cuál es su política de precios y ofertas especiales?</strong>
+                    <strong><i class="bi bi-shield-shaded" style="color:; font-size: 20px; padding-right: 15px;"></i>¿Cuál es su política de precios y ofertas especiales?</strong>
                   </button>
                 </h2>
                 <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse">
