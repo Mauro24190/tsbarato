@@ -12,7 +12,7 @@
                     <input type="submit" value="Ingresar">
                     
                 </form>
-                <a href="?c=web&a=perfil">¿Has olvidado tu contraseña?</a>
+                <a href="?c=web&a=restablecerContraseña">¿Has olvidado tu contraseña?</a>
                     <p>
                         <a href="?c=web&a=registro">Registrar</a>
             </div>

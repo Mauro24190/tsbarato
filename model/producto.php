@@ -1,4 +1,5 @@
 <?php
+
 class articulo
 {
 	//Atributo para conexión a SGBD
@@ -195,5 +196,9 @@ class articulo
 			die($e->getMessage());
 		}
 	}
+
+
+
+
 
 }

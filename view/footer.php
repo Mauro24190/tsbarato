@@ -42,7 +42,22 @@
 include_once "view/toast/toast.php"
 
 ?>
-<script src="assets/js/global.js"></script>
+<script>
+
+(async () => {
+    function mainresize() {
+        var main = document.querySelector("#main");
+        var header = document.querySelector("#header");
+        var footer = document.querySelector("#footer");
+        var size = header.clientHeight + footer.clientHeight;
+        main.classList.add("hola");
+        main.style.setProperty("min-height", "calc(100vh - " + size + "px)")
+    }
+    mainresize();
+    window.addEventListener("resize", () => mainresize)
+})();
+
+</script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 
