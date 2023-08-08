@@ -162,7 +162,19 @@
                             <a class="nav-link active text-light me-md-3" aria-current="page" href="<?= isset($_SESSION['nombreUsuario']) ? "?c=usuario&a=mostrarVista" : "?c=web&a=ingreso" ?>">
                                 <i class="bi bi-person-circle"></i><br>
                                 <p>
-                                    <?= isset($_SESSION['nombreUsuario']) ? $_SESSION['nombreUsuario'] : "Mi Cuenta" ?>
+                                <?php
+                                      
+                                        if (checksession()){
+                                            if(Privilegios::User->get() & $_SESSION["pri_cli"] == Privilegios::User->get()){
+                                                print($_SESSION['nombreUsuario']);
+                                            }else{
+                                                echo "Lista de usuarios";
+                                            }
+                                        } else{
+                                            echo "Mi cuenta";
+                                        }
+
+                                    ?>
                                 </p>
                             </a>
                         </li>
@@ -266,16 +278,15 @@
                                     </div></a>
                                 </main>
                             </div>
-                        </div>
                         <!-- FIN VENTANA FLOTANTE AYUDA -->
                         <li class="nav-item ">
                             <?php
                             if (isset($_SESSION["nombreUsuario"])) {
-                                echo ' <a class="nav-link active text-light me-md-3" aria-current="page" href="?c=usuario&a=Cerrar">
+                                echo '<a class="nav-link active text-light me-md-3" aria-current="page" href="?c=usuario&a=Cerrar">
                                     <i class="bi bi-box-arrow-right"></i><br>Cerrar Sesion
                                 </a>';
                             } else {
-                                echo "no";
+                                echo "";
                             }
                             ?>
 
