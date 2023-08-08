@@ -5,9 +5,11 @@ require_once 'model/categorias.php';
 class ProductoController
 {
     private $model;
+    private $plantilla;
     public function __CONSTRUCT()
     {
         $this->model = new articulo();
+        $this->plantilla = new articulo();
     }
     //Llamado plantilla principal
     public function Index()
@@ -84,4 +86,13 @@ class ProductoController
         $this->model->Eliminar($_REQUEST['id_art']);
         header('Location: index.php?c=producto');
     }
-} //no eliminar esta llave ya que cierra el class. 
+
+
+    public function buscar(){
+        $articuloBuscado = $_GET["articulo"];
+
+        $articulos = $this->model->buscarArticulo($articuloBuscado);
+
+       plantilla("producto/producto-buscar.php");
+    }
+}

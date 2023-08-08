@@ -128,10 +128,20 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-                    <form class="d-flex my-2 my-lg-0">
-                        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+                    <form class="d-flex my-2 my-lg-0" method="get" id="search" action="?c=producto&a=buscar">
+                        <input class="form-control me-2" name="articulo" type="search" placeholder="Buscar" aria-label="Buscar">
                         <button class="btn btn-success me-md-3" type="submit"><i class="bi bi-search"></i></button>
                     </form>
+                    <script>
+                        const form = document.querySelector("#navbarSupportedContent").children[0];
+                        form.addEventListener("submit", (e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+
+                            const input = form.querySelector("input");
+                            location.href = "?c=producto&a=buscar&articulo=" + input.value
+                        })
+                    </script>
                     <ul class="navbar-nav ml-lg-auto">
 
                         <?php

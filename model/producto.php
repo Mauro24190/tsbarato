@@ -197,6 +197,21 @@ class articulo
 		}
 	}
 
+	public function buscarArticulo($articuloBuscado){
+
+		try {
+			$result = array();
+			$stm = $this->pdo->prepare('SELECT * FROM articulo WHERE nom_art LIKE ?');
+			$articuloBuscado = '%' . $articuloBuscado . '%';
+			$stm->execute([$articuloBuscado]);
+
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		} catch (Exception $e) {
+			die($e->getMessage());
+		}
+
+	}
+
 
 
 
