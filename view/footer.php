@@ -21,6 +21,20 @@
                     Servicio al cliente: 3117505835</p>
             </div>
         </div>
+        <div class="container-lg">
+            <div class="footer-column">
+                <div><img src="assets/img_footer/facebook.png" class="logofooter" style=""></div>
+            </div>
+            <div class="footer-column">
+                <div><img src="assets/img_footer/whatsapp.png" class="logofooter" style=""></div>
+            </div>
+            <div class="footer-column">
+                <div><img src="assets/img_footer/instagram.png" class="logofooter" style=""></div>
+            </div>
+            <div class="footer-column">
+                <div><img src="assets/img_footer/gmail.png" class="logofooter" style=""></div>
+            </div>
+        </div>
     </nav>
     <!--<div class="bg-dark">
     <div class="container-sm">
