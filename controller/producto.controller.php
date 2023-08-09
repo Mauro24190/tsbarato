@@ -9,7 +9,7 @@ class ProductoController
     public function __CONSTRUCT()
     {
         $this->model = new articulo();
-        $this->plantilla = new articulo();
+        // $this->plantilla = new articulo();
     }
     //Llamado plantilla principal
     public function Index()
@@ -92,7 +92,10 @@ class ProductoController
         $articuloBuscado = $_GET["articulo"];
 
         $articulos = $this->model->buscarArticulo($articuloBuscado);
+       
 
-       plantilla("producto/producto-buscar.php");
+       plantilla("producto/producto-buscar.php", [
+        "articuloBuscado" => $this->model->buscarArticulo($articuloBuscado)
+    ]);
     }
 }

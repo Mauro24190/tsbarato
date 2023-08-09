@@ -200,5 +200,9 @@ class UsuarioController
         $this->model->Eliminar($_REQUEST['id_cli']);
         header('Location: ?c=web&a=crud');
     }
+
+    public function perfil(){
+        
+    }
    
 }

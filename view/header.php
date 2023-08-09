@@ -140,7 +140,7 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
                     <form class="d-flex my-2 my-lg-0" method="get" id="search" action="?c=producto&a=buscar">
-                        <input class="form-control me-2" name="articulo" type="search" placeholder="Buscar" aria-label="Buscar">
+                        <input class="form-control me-2" name="articulo" type="search" placeholder="Buscar productos" aria-label="Buscar">
                         <button class="btn btn-success me-md-3" type="submit"><i class="bi bi-search"></i></button>
                     </form>
                     <script>
@@ -306,7 +306,6 @@
                                     </div></a>
                                 </main>
                             </div>
-                        </div>
                         <!-- FIN VENTANA FLOTANTE AYUDA -->
                         <li class="nav-item ">
                             <?php
