@@ -204,12 +204,7 @@
                         <!-- INICIIO VENTANA DE NOTIFICACIONES -->
                         <div id="ventana3" class="notificaciones-container">
                             <div class="notificacion-header">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="70" height="30" fill="currentColor"
-                                    class="bi bi-bell-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
-                                </svg>
-                                <h1>NOTIFICACIONES</h1>
+                                <h1>Notificaciones</h1>
                                 <button id="cerrar3" class="close-btn">&times;</button>
                             </div>
                             <div class="contenedor">
@@ -279,7 +274,7 @@
                                     <div ><h2>Centro de Ayuda</h2><br>
                                     </div>
                                     <div class="boton1">
-                                    <button class="form-floating mb-3 border-0 "><a href="?c=web&a=preguntasfrecuentes">
+                                    <button class="border-0 btn form-floating mb-3"><a href="?c=web&a=preguntasfrecuentes">
                                         <h5>Preguntas frecuentes</h5><br></button>
                                     </div>
                                     <div class="boton2">
@@ -291,7 +286,7 @@
                                         <h5>Escribenos</h5><br></button>
                                     </div></a>
                                     <div class="boton5">
-                                    <button class="border-0 form-floating mb-3"><a href="?c=web&a=gestionpedido">
+                                    <button class="border-0 btn form-floating mb-3"><a href="?c=web&a=gestionpedido">
                                         <h5>¿Como gestionar mi pedido?</h5><br></button>
                                     </div></a>
                                 </main>

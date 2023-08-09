@@ -1,6 +1,7 @@
 <main class="container-lg">
     <link rel="stylesheet" href="">
-    <h1 class="page-header" style="margin-bottom: 25px; margin-top: 25px;">Frutas y verduras</h1>
+    <h1 class="page-header text-center text-white"
+    style="margin: 20px; padding: 20px; background: rgba(0, 108, 248, 0.603); border-radius: 20px; ">Frutas y verduras</h1>
     <nav class="navbar navbar-light bg-light">
         <div class="well well-sm text-right">
             <a class="btn btn-primary" href="?c=proveedor">Ver Proveedores</a>

@@ -1,7 +1,14 @@
+<style>
+body {
+  background-image:url(assets/img_ventanas/frutas.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+</style>
 <body><br>
   <div class="container-sm">
     <div class="accordion" id="accordionPanelsStayOpenExample">
-
       <div class="accordion-item">
         <h2 class="accordion-header">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
