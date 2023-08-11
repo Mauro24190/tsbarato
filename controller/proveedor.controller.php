@@ -94,10 +94,9 @@ class ProveedorController
    
 
   }
-  //Método que elimina la tupla proveedor con el NIT_nit_pro dado.
   public function Eliminar()
   {
     $this->model->Eliminar($_REQUEST['nit_pro']);
     redirect('?c=proveedor', "Exito-Proveedor Eliminado");
   }
-} //no borrar ya que es la llave que cierra el class.
+} 
