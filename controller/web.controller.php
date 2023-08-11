@@ -26,7 +26,9 @@ class WebController{
         plantilla("cuenta/registro.php");
     }
     function perfil(){
-        plantilla("cuenta/perfil.php");
+        plantilla("cuenta/perfil.php",[
+            "userProfile" =>$this->user->Profile()
+        ]);
     }
     function aseo(){
         plantilla("categorias/aseo.php", [

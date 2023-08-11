@@ -205,10 +205,10 @@ class usuario
 	{
 		try {
 			$result = array();
-			$stm = $this->pdo->prepare('SELECT * FROM cliente 
+			$stm = $this->pdo->prepare('SELECT * FROM cliente WHERE id_cli = ? 
             
             ');
-			$stm->execute();
+			$stm->execute( array($_SESSION['cliente_id']));
 
 			return $stm->fetchAll(PDO::FETCH_OBJ);
 		} catch (Exception $e) {

@@ -93,9 +93,14 @@ class ProductoController
 
         $articulos = $this->model->buscarArticulo($articuloBuscado);
        
-
-       plantilla("producto/producto-buscar.php", [
-        "articuloBuscado" => $this->model->buscarArticulo($articuloBuscado)
-    ]);
+        if ($this->model->existeArticulo($articuloBuscado)) {
+            plantilla("producto/producto-buscar.php", [
+                "articuloBuscado" => $this->model->buscarArticulo($articuloBuscado)
+            ]);
+        }else{
+            redirect("?", "Error-Producto no Existe");
+        }
+        
+       
     }
 }
