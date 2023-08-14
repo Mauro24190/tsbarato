@@ -1,4 +1,11 @@
-
+<style>
+body {
+  background-image:url(assets/img_ventanas/frutas.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+</style>
 <body><br>
     <div class="container-sm">
         <div class="accordion" id="accordionPanelsStayOpenExample">
@@ -6,7 +13,7 @@
             <div class="accordion-item">
               <h2 class="accordion-header">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne">
-                    <strong><i class="bi bi-calendar-check" style="color:#009BFF; font-size: 20px; padding-right: 15px;"></i>¿Cuáles son los horarios de atención?</strong>
+                    <strong><img src="assets/iconos/calendario.png" style="width: 20px;height: 20px; margin-right: 15px;">¿Cuáles son los horarios de atención?</strong>
                 </button>
               </h2>
               <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
@@ -19,7 +26,7 @@
             <div class="accordion-item">
               <h2 class="accordion-header">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-                  <strong><i class="bi bi-geo-alt-fill" style="color:#CE2A2F; font-size: 20px; padding-right: 15px;"></i>¿Dónde se encuentra ubicada la tienda?</strong>
+                  <strong><img src="assets/iconos/google-maps.png" style="width: 20px;height: 20px; margin-right: 15px;">¿Dónde se encuentra ubicada la tienda?</strong>
                 </button>
               </h2>
               <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
@@ -32,7 +39,7 @@
             <div class="accordion-item">
               <h2 class="accordion-header">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                  <strong><i class="bi bi-credit-card" style="color:#005FE9; font-size: 20px; padding-right: 15px;"></i>¿Cuáles son los métodos de pago aceptados?</strong>
+                  <strong><img src="assets/iconos/tarjeta.png" style="width: 20px;height: 20px; margin-right: 15px;">¿Cuáles son los métodos de pago aceptados?</strong>
                 </button>
               </h2>
               <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
@@ -51,7 +58,7 @@
             <div class="accordion-item">
                 <h2 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
-                    <strong><i class="bi bi-truck" style="color:; font-size: 20px; padding-right: 15px;"></i>¿Ofrecen servicios de entrega a domicilio?</strong>
+                    <strong><img src="assets/iconos/envios.png" style="width: 20px;height: 20px; margin-right: 15px;">¿Ofrecen servicios de entrega a domicilio?</strong>
                   </button>
                 </h2>
                 <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
@@ -64,7 +71,7 @@
               <div class="accordion-item">
                 <h2 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false" aria-controls="panelsStayOpen-collapseFive">
-                    <strong><i class="bi bi-clock" style="color:; font-size: 20px; padding-right: 15px;"></i>¿Cuál es el tiempo de entrega a domicilio?</strong>
+                    <strong><img src="assets/iconos/reloj.png" style="width: 20px;height: 20px; margin-right: 15px;">¿Cuál es el tiempo de entrega a domicilio?</strong>
                   </button>
                 </h2>
                 <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse">
@@ -77,7 +84,7 @@
               <div class="accordion-item">
                 <h2 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false" aria-controls="panelsStayOpen-collapseSix">
-                    <strong><i class="bi bi-shield-shaded" style="color:; font-size: 20px; padding-right: 15px;"></i>¿Cuál es su política de precios y ofertas especiales?</strong>
+                    <strong><img src="assets/iconos/politicas.png" style="width: 20px;height: 20px; margin-right: 15px;">¿Cuál es su política de precios y ofertas especiales?</strong>
                   </button>
                 </h2>
                 <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse">

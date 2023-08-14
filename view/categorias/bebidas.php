@@ -1,5 +1,6 @@
 <main class="container-lg">
-    <h1 class="page-header" style="margin-bottom: 25px; margin-top: 25px;">Bebidas</h1>
+<h1 class="page-header text-center text-white"
+    style="margin: 20px; padding: 20px; background: rgba(0, 108, 248, 0.603); border-radius: 20px; ">Bebidas</h1>
     <div class="container-producto container-fluid">
         <?php foreach ($listaProductos as $r): ?>
             <div class="popo">

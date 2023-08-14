@@ -312,29 +312,28 @@
                             </svg>
 
                             <div class="fila-noti">
-                                <IMG class="img_noti" SRC="logo proyecto.png">
-                            </div>
-                            <main>
-                                <div>
-                                    <h2>Centro de Ayuda</h2><br>
-                                </div>
-                                <div class="boton1">
+                                <IMG class="img_noti" SRC="logo proyecto.png"></div>
+                                <main>
+                                    <div ><h2>Centro de Ayuda</h2><br>
+                                    </div>
+                                    <div class="boton1">
                                     <button class="form-floating mb-3 border-0 "><a href="?c=web&a=preguntasfrecuentes">
-                                            <h5>Preguntas frecuentes</h5><br></button>
-                                </div>
-                                <div class="boton2">
+                                        <h5>Preguntas frecuentes</h5><br></button>
+                                    </div>
+                                    <div class="boton2">
                                     <button class="border-0 btn form-floating mb-3"><a href="?c=web&a=contacto">
                                             <h5>Contacto</h5><br></button>
                                 </div></a>
                                 <div class="boton4">
                                     <button class="border-0 btn form-floating mb-3"><a href="?c=web&a=escribenos">
-                                            <h5>Escribenos</h5><br></button>
-                                </div></a>
-                                <div class="boton5">
+                                        <h5>Escribenos</h5><br></button>
+                                    </div></a>
+                                    <div class="boton5">
                                     <button class="border-0 form-floating mb-3"><a href="?c=web&a=gestionpedido">
-                                            <h5>¿Como gestionar mi pedido?</h5><br></button>
-                                </div></a>
-                            </main>
+                                        <h5>¿Como gestionar mi pedido?</h5><br></button>
+                                    </div></a>
+                                </main>
+                            </div>
                         </div>
                         <!-- FIN VENTANA FLOTANTE AYUDA -->
                         <li class="nav-item ">
