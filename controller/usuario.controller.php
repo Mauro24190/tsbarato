@@ -208,5 +208,29 @@ class UsuarioController
     public function perfil(){
         
     }
+
+    public function getByUser() {
+        $user = $_GET["user"];
+        
+        $users = $this->usuario->getByUser($user);
+        $newArray = [];
+        foreach($users as $value) {
+            $privilegios = [];
+            if ((Privilegios::Master->get() & $value->pri_cli) == Privilegios::Master->get()) {
+                array_push($privilegios, "Maestro");
+            }
+            if ((Privilegios::Admin->get() & $value->pri_cli) == Privilegios::Admin->get()) {
+                array_push($privilegios, "Administrador");
+            }
+            if ((Privilegios::User->get() & $value->pri_cli) == Privilegios::User->get()) {
+                array_push($privilegios, "Usuario");
+            }
+            $value->pri_cli = $privilegios;
+            unset($value->pas_cli);
+            array_push($newArray, $value);
+        }
+
+        echo json_encode($newArray);
+    }
    
 }
