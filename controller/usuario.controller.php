@@ -141,6 +141,10 @@ class UsuarioController
                 redirect("?c=web&a=registro", "Error-Extensión de la Contraseña Minima de 8 Caracteres, Además Debe Contener Minino una Mayucusla");
             } else if (strtotime($_REQUEST["fch_cli"]) >= strtotime($today)) {
                 redirect("?c=web&a=registro", "Error-La fecha debe ser anterior a la de hoy");
+            } else if( preg_match('/[0-9]/', $_REQUEST['nom_cli'])){
+                redirect("?c=web&a=registro", "Error-Un Nombre No Puede Contener Números");
+            } else if(preg_match('/[0-9]/', $_REQUEST['nom_cli'])){
+                redirect("?c=web&a=registro", "Error-Un Apellido No Puede Contener Números");
             } else {
                 $this->model->Registro($user);
                 redirect("?", "Exito-Registro de usuario exitoso");
@@ -153,7 +157,7 @@ class UsuarioController
     function Cerrar()
     {
         session_destroy();
-        redirect("?");
+        redirect("?", "Exito-Sesión cerrada");
     }
 
     
@@ -199,6 +203,10 @@ class UsuarioController
     {
         $this->model->Eliminar($_REQUEST['id_cli']);
         header('Location: ?c=web&a=crud');
+    }
+
+    public function perfil(){
+        
     }
    
 }

@@ -74,10 +74,7 @@ class usuario
     public function almacenar ($id_cli)
 	{
 		try {
-			//Sentencia SQL para selección de datos utilizando
-			//la cláusula Where para especificar el nit_pro del proveedor.
 			$stm = $this->pdo->prepare("SELECT * FROM cliente WHERE id_cli = ?");
-			//Ejecución de la sentencia SQL utilizando el parámetro nit_pro.
 			$stm->execute(array($id_cli));
 			return $stm->fetch(PDO::FETCH_OBJ);
 		} catch (Exception $e) {
@@ -203,4 +200,19 @@ class usuario
     //             die($e->getMessage());
     //         }
     //     }
+
+    public function Profile()
+	{
+		try {
+			$result = array();
+			$stm = $this->pdo->prepare('SELECT * FROM cliente WHERE id_cli = ? 
+            
+            ');
+			$stm->execute( array($_SESSION['cliente_id']));
+
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		} catch (Exception $e) {
+			die($e->getMessage());
+		}
+	}
 }

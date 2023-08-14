@@ -197,6 +197,33 @@ class articulo
 		}
 	}
 
+	public function buscarArticulo($articuloBuscado){
+
+		try {
+			$result = array();
+			$stm = $this->pdo->prepare('SELECT * FROM articulo WHERE nom_art LIKE ?');
+			$articuloBuscado = '%' . $articuloBuscado . '%';
+			$stm->execute([$articuloBuscado]);
+
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		} catch (Exception $e) {
+			die($e->getMessage());
+		}
+
+	}
+
+	public function existeArticulo($articuloBuscado)
+    {
+        $sql = 'SELECT COUNT(*) as total FROM articulo WHERE nom_art = :nom_art';
+        $statement = $this->pdo->prepare($sql);
+        $statement->bindParam(':nom_art', $articuloBuscado);
+        $statement->execute();
+
+        $resultado = $statement->fetch(PDO::FETCH_ASSOC);
+        return $resultado['total'] > 0;
+     
+    }
+
 
 
 
