@@ -340,11 +340,27 @@
                         <li class="nav-item ">
                             <?php
                             if (isset($_SESSION["nombreUsuario"])) {
-                                echo '<a class="nav-link active text-light me-md-3" aria-current="page" href="?c=usuario&a=Cerrar">
+                                ?>
+                                <a id="cerrar-sesion" class="nav-link active text-light me-md-3" aria-current="page" href="?c=usuario&a=Cerrar">
                                     <i class="bi bi-box-arrow-right"></i><br>Cerrar Sesion
-                                </a>';
-                            } else {
-                                echo "";
+                                </a>
+
+                                <script>
+                                    const cerrarSession =document.querySelector("#cerrar-sesion");
+
+                                    cerrarSession.addEventListener("click", (e) => {
+                                        e.preventDefault();
+                                        e.stopPropagation();
+
+                                        if (!confirm("Estas seguro que deseas cerrar sesión?")) {
+                                            return;
+                                        }
+
+                                        location.href =cerrarSession.href;
+                                    })  
+                                </script>
+
+                                <?php
                             }
                             ?>
 

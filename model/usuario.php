@@ -215,4 +215,14 @@ class usuario
 			die($e->getMessage());
 		}
 	}
+
+    public function getByUser($texto) {
+        try {
+            $stmt = $this->pdo->prepare("SELECT * FROM cliente WHERE user_cli LIKE ?");
+            $stmt->execute(["%" . $texto . "%"]);
+            return $stmt->fetchAll(PDO::FETCH_OBJ);
+        } catch (PDOException $ex) {
+            return false;    
+        }
+    }
 }
