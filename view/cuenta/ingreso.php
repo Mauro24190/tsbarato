@@ -1,3 +1,10 @@
+<style>
+body {
+  background-image:url(assets/img_ventanas/ingreso.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
 <main>
     <div class="login-container ">
         <div class="container py-4">
