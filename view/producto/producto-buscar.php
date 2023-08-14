@@ -34,12 +34,27 @@
                             </div>
                         </div>
                         <div>
-                            <td>
-                                <a href="?c=producto&a=Crud&id_art=<?php echo $r->id_art; ?>"><button type="button" class="btn btn-success"><i class="bi bi-pencil-fill"></i></button></a>
-                            </td>
-                            <td>
-                                <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=producto&a=Eliminar&id_art=<?php echo $r->id_art; ?>"><button type="button" class="btn btn-danger"><i class="bi bi-trash-fill"></i></button></a>
-                            </td>
+                        <?php
+                            if (checksession()){
+                                if(Privilegios::User->get() & $_SESSION["pri_cli"] == Privilegios::User->get()){
+                                    echo "";
+                                }else{
+                            }
+                                
+                                   ?>
+                                    <td>
+                        <a href="?c=producto&a=Crud&id_art=<?php echo $r->id_art; ?>"><button type="button"
+                                class="btn btn-success"><i class="bi bi-pencil-fill"></i></button></a>
+                    </td>
+                    <td>
+                        <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');"
+                            href="?c=producto&a=Eliminar&id_art=<?php echo $r->id_art; ?>"><button type="button"
+                            class="btn btn-danger"><i class="bi bi-trash-fill"></i></button></a>
+                    </td>
+                                
+                            <?php
+                                }
+                                ?>
                         </div><br>
                     </div>
                 </div>

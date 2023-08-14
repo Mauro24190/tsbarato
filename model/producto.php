@@ -214,13 +214,25 @@ class articulo
 
 	public function existeArticulo($articuloBuscado)
     {
-        $sql = 'SELECT COUNT(*) as total FROM articulo WHERE nom_art = :nom_art';
-        $statement = $this->pdo->prepare($sql);
-        $statement->bindParam(':nom_art', $articuloBuscado);
-        $statement->execute();
+		try {
+			
+		$result = array();
+        // $sql = 'SELECT COUNT(*) as total FROM articulo WHERE nom_art LIKE ?';
 
-        $resultado = $statement->fetch(PDO::FETCH_ASSOC);
+        $statement = $this->pdo->prepare("SELECT COUNT(*) as total FROM articulo WHERE nom_art LIKE ?");
+		$articuloBuscado = '%' . $articuloBuscado . '%';
+        $statement->execute([$articuloBuscado]);
+
+		$resultado = $statement->fetch(PDO::FETCH_ASSOC);
         return $resultado['total'] > 0;
+
+	// return $statement->fetchAll(PDO::FETCH_OBJ);
+
+		} catch (Exception $e) {
+			die($e->getMessage());
+		}
+
+       
      
     }
 

@@ -8,8 +8,8 @@
     <div>
         <div class="mb-3">
             <form id="cosito" action="#" class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Buscar Usuario" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Buscar Usuario</button>
+                <input class="form-control me-2" type="search" placeholder="Buscar Por Nombre de Usuario" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Buscar</button>
             </form>
         </div>
         <div>

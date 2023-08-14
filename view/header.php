@@ -227,7 +227,7 @@
 
                         ?>
                                 <li class="nav-item">
-                                    <span id="abrir3" style="cursor: pointer;" class="nav-link active text-light me-md-3" aria-current="page" href="?c=producto">
+                                    <span id="abrir3" data-target="ventana3" style="cursor: pointer;" class="nav-link active text-light me-md-3" aria-current="page" href="?c=producto">
                                         <i class="bi bi-bell"></i><br>Notificaciones
                                     </span>
                                 </li>
@@ -236,7 +236,7 @@
                         } else {
                             ?>
                             <li class="nav-item">
-                                <span id="abrir3" style="cursor: pointer;" class="nav-link active text-light me-md-3" aria-current="page" href="?c=producto">
+                                <span id="abrir3" data-target="ventana3"  style="cursor: pointer;" class="nav-link active text-light me-md-3" aria-current="page" href="?c=producto">
                                     <i class="bi bi-bell"></i><br>Notificaciones
                                 </span>
                             </li>
@@ -245,7 +245,7 @@
                         ?>
 
                         <!-- INICIIO VENTANA DE NOTIFICACIONES -->
-                        <div id="ventana3" class="notificaciones-container">
+                        <div id="ventana3" data-ventana class="notificaciones-container">
                             <div class="notificacion-header">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="70" height="30" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
                                     <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
@@ -298,7 +298,7 @@
                         <!-- FIN VENTANA FLOTANTE NOTIFICACIONES -->
 
                         <li class="nav-item">
-                            <span id="abri1" style="cursor:  pointer;" class="nav-link active text-light me-md-3" aria-current="page">
+                            <span id="abri1" data-target="ventana1" style="cursor:  pointer;" class="nav-link active text-light me-md-3" aria-current="page">
                                 <i class="bi bi-question-circle"></i><br>Ayuda
                             </span>
                         </li>
@@ -306,7 +306,7 @@
 
 
                         <!-- INICIO VENTANA FLOTANTE AYUDA -->
-                        <div class="notificacion-container">
+                        <div id="ventana1" data-ventana class="notificacion-container">
                             <svg id="cerrar1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x-lg close" viewBox="0 0 16 16">
                                 <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
                             </svg>
@@ -371,5 +371,5 @@
         </nav>
     </header>
     <main class="d-grid" id="main">
-        <script src="assets/js/ventanas.js"></script>
         <script src="view/main.js"></script>
+        <script src="assets/js/ventanas.js"></script>
