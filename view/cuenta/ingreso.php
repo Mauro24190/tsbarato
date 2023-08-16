@@ -1,6 +1,6 @@
 <style>
 body {
-  background-image:url(assets/img_ventanas/ingreso.jpg);
+  background-image:url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y291bnRyeXNpZGV8ZW58MHx8MHx8fDA%3D&w=1000&q=80");
   background-repeat: no-repeat;
   background-size: cover;
 }
