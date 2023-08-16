@@ -38,9 +38,7 @@
                             if (checksession()){
                                 if(Privilegios::User->get() & $_SESSION["pri_cli"] == Privilegios::User->get()){
                                     echo "";
-                                }else{
-                            }
-                                
+                                }else{                            
                                    ?>
                                     <td>
                         <a href="?c=producto&a=Crud&id_art=<?php echo $r->id_art; ?>"><button type="button"
@@ -53,6 +51,9 @@
                     </td>
                                 
                             <?php
+                                }
+                                }else {
+                                    echo "";
                                 }
                                 ?>
                         </div><br>
