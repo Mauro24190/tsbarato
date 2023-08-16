@@ -53,7 +53,12 @@ class ProductoController
         else if (strlen($_REQUEST['des_art']) > 120) {
             setcookie("notificacion", "Error-Descripcion maxima de 120 caracteres", time() + 5, "/");
             header("location:?c=producto&a=Nuevo");
-        } else {
+        } else if ($_REQUEST['pre_art'] <= 0){
+            redirect("?c=producto&a=Nuevo", "Error-Precio no Valido");
+        } else if (!is_numeric($_REQUEST['cod_art'])){
+            redirect("?c=producto&a=Nuevo", "Error-El Codigo Solo Puede Tener Números");
+        } 
+        else {
             $prod = new articulo();
             $prod->nit = $_REQUEST['id_pro'];
             $prod->cat_id = $_REQUEST['cat_id'];
