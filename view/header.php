@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="assets/diseño.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/carrito.css">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css" />
     <!-- <link rel="stylesheet" href="assets/js/jquery-ui/jquery-ui.min.css" /> -->

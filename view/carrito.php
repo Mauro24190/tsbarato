@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="assets/css/carrito.css">
-<section class="h-100 h-custom" style="background-color: #d2c9ff;">
+<section class="h-100 h-custom" style="background-color: #A2A4AA;">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-12">
@@ -27,7 +27,7 @@
                     <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
                       <button class="btn btn-link px-2"
                         onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                        <i class="fas fa-minus"></i>
+                        <i class="bi bi-dash"></i>
                       </button>
 
                       <input id="form1" min="0" name="quantity" value="1" type="number"
@@ -35,14 +35,14 @@
 
                       <button class="btn btn-link px-2"
                         onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                        <i class="fas fa-plus"></i>
+                        <i class="bi bi-plus"></i>
                       </button>
                     </div>
                     <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
                       <h6 class="mb-0">€ 44.00</h6>
                     </div>
                     <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                      <a href="#!" class="text-muted"><i class="fas fa-times"></i></a>
+                      <a href="#!" class="text-muted"><i class="bi bi-x"></i></a>
                     </div>
                   </div>
 
@@ -113,26 +113,25 @@
                       <a href="#!" class="text-muted"><i class="fas fa-times"></i></a>
                     </div>
                   </div>
-
                   <hr class="my-4">
 
                   <div class="pt-5">
                     <h6 class="mb-0"><a href="#!" class="text-body"><i
-                          class="fas fa-long-arrow-alt-left me-2"></i>Back to shop</a></h6>
+                          class="fas fa-long-arrow-alt-left me-2"></i>Volver a la tienda</a></h6>
                   </div>
                 </div>
               </div>
               <div class="col-lg-4 bg-grey">
                 <div class="p-5">
-                  <h3 class="fw-bold mb-5 mt-2 pt-1">Summary</h3>
+                  <h3 class="fw-bold mb-5 mt-2 pt-1">Resumen de la compra</h3>
                   <hr class="my-4">
 
                   <div class="d-flex justify-content-between mb-4">
-                    <h5 class="text-uppercase">items 3</h5>
+                    <h5 class="text-uppercase">Productos 3</h5>
                     <h5>€ 132.00</h5>
                   </div>
 
-                  <h5 class="text-uppercase mb-3">Shipping</h5>
+                  <h5 class="text-uppercase mb-3">Envío</h5>
 
                   <div class="mb-4 pb-2">
                     <select class="select">
@@ -155,12 +154,12 @@
                   <hr class="my-4">
 
                   <div class="d-flex justify-content-between mb-5">
-                    <h5 class="text-uppercase">Total price</h5>
+                    <h5 class="text-uppercase">Precio total</h5>
                     <h5>€ 137.00</h5>
                   </div>
 
                   <button type="button" class="btn btn-dark btn-block btn-lg"
-                    data-mdb-ripple-color="dark">Register</button>
+                    data-mdb-ripple-color="dark">Registro</button>
 
                 </div>
               </div>
