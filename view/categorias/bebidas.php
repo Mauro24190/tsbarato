@@ -1,8 +1,7 @@
 <main class="container-lg">
-<h1 class="page-header text-center text-white"
-    style="margin: 20px; padding: 20px; background: rgba(0, 108, 248, 0.603); border-radius: 20px; ">Bebidas</h1>
+    <h1 class="page-header text-center text-white" style="margin: 20px; padding: 20px; background: rgba(0, 108, 248, 0.603); border-radius: 20px; ">Bebidas</h1>
     <div class="container-producto container-fluid">
-        <?php foreach ($listaProductos as $r): ?>
+        <?php foreach ($listaProductos as $r) : ?>
             <div class="popo">
                 <div class="pipi">
                     <div class="producto_item">
@@ -36,27 +35,25 @@
                             </div>
                         </div>
                         <div>
-                        <?php
-                            if (checksession()){
-                                if(Privilegios::User->get() & $_SESSION["pri_cli"] == Privilegios::User->get()){
+                            <?php
+                            if (checksession()) {
+                                if (Privilegios::User->get() & $_SESSION["pri_cli"] == Privilegios::User->get()) {
                                     echo "";
-                                }else{
-                            }
-                                
-                                   ?>
+                                } else {
+
+
+                            ?>
                                     <td>
-                        <a href="?c=producto&a=Crud&id_art=<?php echo $r->id_art; ?>"><button type="button"
-                                class="btn btn-success"><i class="bi bi-pencil-fill"></i></button></a>
-                    </td>
-                    <td>
-                        <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');"
-                            href="?c=producto&a=Eliminar&id_art=<?php echo $r->id_art; ?>"><button type="button"
-                            class="btn btn-danger"><i class="bi bi-trash-fill"></i></button></a>
-                    </td>
-                                
+                                        <a href="?c=producto&a=Crud&id_art=<?php echo $r->id_art; ?>"><button type="button" class="btn btn-success"><i class="bi bi-pencil-fill"></i></button></a>
+                                    </td>
+                                    <td>
+                                        <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=producto&a=Eliminar&id_art=<?php echo $r->id_art; ?>"><button type="button" class="btn btn-danger"><i class="bi bi-trash-fill"></i></button></a>
+                                    </td>
+
                             <?php
                                 }
-                                ?>
+                            }
+                            ?>
                         </div><br>
                     </div>
                 </div>
