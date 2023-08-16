@@ -334,7 +334,6 @@
                                     </div></a>
                                 </main>
                             </div>
-                        </div>
                         <!-- FIN VENTANA FLOTANTE AYUDA -->
                         <li class="nav-item ">
                             <?php
