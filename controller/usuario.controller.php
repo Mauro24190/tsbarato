@@ -232,5 +232,13 @@ class UsuarioController
 
         echo json_encode($newArray);
     }
+
+    public function cambioContra(){
+        $user = new usuario();
+        $user->oldpass = $_REQUEST['oldpass'];
+        $user->newpass1 = $_REQUEST['newpass1'];
+        $user->newpass2 = $_REQUEST['newpass2'];
+        $this->model->cambioContra($user);
+    }
    
 }

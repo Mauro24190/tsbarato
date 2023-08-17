@@ -297,11 +297,29 @@
 
                         <!-- FIN VENTANA FLOTANTE NOTIFICACIONES -->
 
-                        <li class="nav-item">
+
+                        <?php 
+                            if(checksession()){
+                                if (Privilegios::User->get() & $_SESSION["pri_cli"] == Privilegios::User->get()) {
+                                    ?>
+                                    <li class="nav-item">
                             <span id="abri1" data-target="ventana1" style="cursor:  pointer;" class="nav-link active text-light me-md-3" aria-current="page">
                                 <i class="bi bi-question-circle"></i><br>Ayuda
                             </span>
                         </li>
+                        <?php
+                                }
+                            }else{
+                                ?>
+                                   <li class="nav-item">
+                            <span id="abri1" data-target="ventana1" style="cursor:  pointer;" class="nav-link active text-light me-md-3" aria-current="page">
+                                <i class="bi bi-question-circle"></i><br>Ayuda
+                            </span>
+                        </li>
+                        <?php
+                            }
+                        ?>
+                        
 
 
 

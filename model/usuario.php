@@ -12,6 +12,9 @@ class usuario
     public $user_cli;
     public $id_cli;
     public $pri_cli;
+    public $newpass1;
+    public $newpass2;
+    public $oldpass;
 
     private $pdo;
     public function __CONSTRUCT()
@@ -223,6 +226,23 @@ class usuario
             return $stmt->fetchAll(PDO::FETCH_OBJ);
         } catch (PDOException $ex) {
             return false;    
+        }
+    }
+
+    public function cambioContra(){
+        try {
+            $sql = 'UPDATE cliente SET
+                pas_cli = ?,                     
+                WHERE id_cli = ?';
+            $this->pdo->prepare($sql)
+                ->execute(
+                    array(
+                        $_REQUEST['pas_cli'],
+                        $_SESSION['cliente_id']
+                    )
+                );
+        } catch (Exception $e) {
+            die($e->getMessage());
         }
     }
 }

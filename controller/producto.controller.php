@@ -66,9 +66,11 @@ class ProductoController
             $prod->pre_art = $_REQUEST['pre_art'];
             $prod->des_art = $_REQUEST['des_art'];
             $prod->cod_art = $_REQUEST['cod_art'];
-            setcookie("notificación", "Exito-Exito al guardar", time() + 5, "/");
+           
             $this->model->Registrar($prod);
-            header('Location:?c=producto&a=Nuevo');
+            // setcookie("notificación", "Exito-Exito al guardar", time() + 5, "/");
+            // header('Location:?c=producto&a=Nuevo');
+            redirect("?c=producto&a=Nuevo", "Exito-Producto Agregado");
             
         }
 
