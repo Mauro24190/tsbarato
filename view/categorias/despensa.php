@@ -1,3 +1,4 @@
+
 <main class="container-lg">
     <h1 class="page-header text-center text-white" style="margin: 20px; padding: 20px; background: rgba(0, 108, 248, 0.603); border-radius: 20px; ">Despensa</h1>
     <div class="container-producto container-fluid">
