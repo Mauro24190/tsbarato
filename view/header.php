@@ -247,15 +247,12 @@
                         <!-- INICIIO VENTANA DE NOTIFICACIONES -->
                         <div id="ventana3" data-ventana class="notificaciones-container">
                             <div class="notificacion-header">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="70" height="30" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
-                                    <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
-                                </svg>
-                                <h1>NOTIFICACIONES</h1>
+                            <i class="bi bi-caret-right-fill campana"></i><h3>Notificaciones</h3>
                                 <button id="cerrar3" class="close-btn">&times;</button>
                             </div>
                             <div class="contenedor">
                                 <div class="filas_noti">
-                                    <div><img src="IMG/MEDICINA.png" alt=""></div>
+                                    <div><img src="assets/img_categorias/farmaciaa.png" alt=""></div>
                                     <div>
                                         <p>Lleva tus productos de toda la linea farmaceutica con un 40% de descuenro en
                                             las
@@ -264,7 +261,7 @@
                                     </div>
                                 </div>
                                 <div class="filas_noti">
-                                    <div><img src="IMG/CARNICOS.png" alt=""></div>
+                                    <div><img src="assets/img_categorias/carnicos.png" alt=""></div>
                                     <div>
                                         <p>Aprovecha las super ofertas que tenemos en carnicos para ti!
                                             Obten un 20% de descuento en carbes llevando mas de 6kg.</p>
@@ -272,7 +269,7 @@
                                 </div>
                                 <div class="filas_noti">
                                     <div>
-                                        <img src="IMG/ASEO.png" alt="">
+                                        <img src="assets/img_categorias/aseoo.png" alt="">
                                     </div>
                                     <div>
                                         <p>¡Que esperas para aprovechar estos productos de limpieza y tener tu hogar
@@ -281,7 +278,7 @@
                                     </div>
                                 </div>
                                 <div class="filas_noti">
-                                    <div><img src="IMG/GASEOSA.png" alt=""></div>
+                                    <div><img src="assets/img_categorias/bebidas.png" alt=""></div>
                                     <div>
                                         <p>¡Grandes descuentos en bebidas y refrescantes! Obten un 50% de descuento en
                                             las

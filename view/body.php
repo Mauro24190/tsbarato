@@ -87,33 +87,40 @@
   </div>
   <div class="categoriainicio">
     <div>
-      <img src="assets/img_categorias/despensa.png" class="img-fluid imgcategoria">
+      <a href="index.php?c=web&a=despensa">
+      <img src="assets/img_categorias/despensa.png" class="img-fluid imgcategoria"></a>
       <p class="textcategoria">Despensa</p>
     </div>
     <div>
-      <img src="assets/img_categorias/frutasverduras.png" class="img-fluid imgcategoria">
+      <a href="index.php?c=web&a=frutasverduras">
+      <img src="assets/img_categorias/frutasverduras.png" class="img-fluid imgcategoria"></a>
       <p class="textcategoria">Frutas y verdudras</p>
     </div>
     <div>
-      <img src="assets/img_categorias/farmaciaa.png" class="img-fluid imgcategoria">
+      <a href="index.php?c=web&a=medicina">
+      <img src="assets/img_categorias/farmaciaa.png" class="img-fluid imgcategoria"></a>
       <p class="textcategoria">Farmacia</p>
     </div>
     <div>
-      <img src="assets/img_categorias/lacteo.png" class="img-fluid imgcategoria">
+      <a href="index.php?c=web&a=lacteos">
+      <img src="assets/img_categorias/lacteo.png" class="img-fluid imgcategoria"></a>
       <p class="textcategoria">Lacteos</p>
     </div>
   </div>
   <div class="categoriainicio">
     <div>
-      <img src="assets/img_categorias/carnicos.png" class="img-fluid imgcategoria">
+      <a href="index.php?c=web&a=carnicos">
+      <img src="assets/img_categorias/carnicos.png" class="img-fluid imgcategoria"></a>
       <p class="textcategoria">Carnicos</p>
     </div>
     <div>
-      <img src="assets/img_categorias/aseoo.png" class="img-fluid imgcategoria">
+      <a href="index.php?c=web&a=aseo">
+      <img src="assets/img_categorias/aseoo.png" class="img-fluid imgcategoria"></a>
       <p class="textcategoria">Aseo</p>
     </div>
     <div>
-      <img src="assets/img_categorias/bebidas.png" class="img-fluid imgcategoria">
+      <a href="index.php?c=web&a=bebidas">
+      <img src="assets/img_categorias/bebidas.png" class="img-fluid imgcategoria"></a>
       <p class="textcategoria">Bebidas</p>
     </div>
   </div>
