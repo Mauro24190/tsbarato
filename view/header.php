@@ -247,8 +247,7 @@
                         <!-- INICIIO VENTANA DE NOTIFICACIONES -->
                         <div id="ventana3" data-ventana class="notificaciones-container">
                             <div class="notificacion-header">
-                            <i class="bi bi-caret-right-fill campana"></i><h3>Notificaciones</h3>
-                                <button id="cerrar3" class="close-btn">&times;</button>
+                            <i class="bi bi-caret-right-fill campana" id="cerrar3" class="close-btn"></i><h3>Notificaciones</h3>
                             </div>
                             <div class="contenedor">
                                 <div class="filas_noti">

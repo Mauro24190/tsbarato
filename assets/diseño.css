@@ -42,11 +42,24 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
 .ventana_cuerpo p {
   text-decoration: none;
   color: rgb(0, 0, 0);
+  font-size: 16px; /* Tamaño de fuente adecuado */
+  margin: 10px 0; /* Espacio entre botones */
+}
+.ventana_cuerpo .btn {
+  width: 100%;
+}
+.ventana_cuerpo .btn i {
+  margin-left: auto; /* Mover icono al final del botón */
 }
 
 .ventana_cuerpo>div>div:nth-child(2) {
@@ -64,46 +77,40 @@
 button>a {
   text-decoration: none;
   color: #FF8119;
-
 }
 button>a:hover{
   color: rgb(24, 90, 255);
 }
-/* FIN VENTANA FLOTANTE CATEGORIAS */
-/*responsive menu*/
-@media (max-width: 800px) {
-  #ventana {
-    width: 50%;
-    /* Otros estilos... */
+
+
+
+
+
+@media (max-width: 767px) {
+  .ventana {
+      width: 100%;
+      left: 0;
+      top: 50px; /* Ajusta el valor según sea necesario */
+      height: auto;
   }
-  
-  .ventana_cuerpo {
-    flex-direction: column;
-    /* Otros estilos... */
+
+  .ventana_cuerpo p {
+      font-size: 14px;
+      margin: 5px 0;
   }
-  
-  .menucategoria {
-    width: 100%;
-    /* Otros estilos... */
+
+  .ventana_cuerpo .btn {
+      width: auto;
+      text-align: left; /* Alinea el texto a la izquierda */
   }
-  .titlemain{
-    margin-left: auto;
-    margin-right: auto;
-    color: rgb(255, 255, 255); 
-    font-size: 20px;
-    font-family: serif;
-    font-weight: bold;
-  }
-  .menucategoria{
-    display: flex;
-    font-size: 14px;
-    padding-left: 10%;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: black;
-    padding-top: 5px;
+
+  .ventana_cuerpo .btn i {
+      margin-left: 10px; /* Espacio entre el texto y el icono */
   }
 }
+
 /* FIN VENTANA FLOTANTE CATEGORIAS */
+
 
 
 /* productos */
