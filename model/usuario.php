@@ -120,6 +120,15 @@ class usuario
      
     }
 
+    public function existeContra()
+    {
+        $statement = $this->pdo->prepare('SELECT pas_cli FROM cliente WHERE id_cli = ?');
+        $statement->execute(array($_SESSION["cliente_id"]));
+
+        return $statement->fetchAll(PDO::FETCH_OBJ);
+        // return $resultado['total'] > 0;
+     
+    }
 
 
     public function Tabla()
