@@ -120,15 +120,15 @@ class usuario
      
     }
 
-    public function existeContra()
-    {
-        $statement = $this->pdo->prepare('SELECT pas_cli FROM cliente WHERE id_cli = ?');
-        $statement->execute(array($_SESSION["cliente_id"]));
+    // public function existeContra()
+    // {
+    //     $statement = $this->pdo->prepare('SELECT pas_cli FROM cliente WHERE id_cli = ?');
+    //     $statement->execute(array($_SESSION["cliente_id"]));
 
-        return $statement->fetchAll(PDO::FETCH_OBJ);
-        // return $resultado['total'] > 0;
+    //     return $statement->fetchAll(PDO::FETCH_OBJ);
+    //     // return $resultado['total'] > 0;
      
-    }
+    // }
 
 
     public function Tabla()
@@ -238,10 +238,26 @@ class usuario
         }
     }
 
-    public function cambioContra(){
-        $hashContrasena = password_hash($_REQUEST['confirnNewpass'], PASSWORD_DEFAULT);
+    public function existeContra()
+    {
+        $statement = $this->pdo->prepare('SELECT pas_cli FROM cliente WHERE id_cli = ?');
+        $statement->execute(array($_SESSION["cliente_id"]));
+        $result = $statement->fetch(PDO::FETCH_OBJ);
+    
+        if ($result) {
+            return $result->pas_cli;
+        } else {
+            return false;
+        }
+    }
+    
+    public function cambioContra($newPassword)
+    {
         try {
-            $sql = 'UPDATE cliente SET pas_cli = ?    WHERE id_cli = ?';
+            // Generar el hash de la nueva contraseña
+            $hashContrasena = password_hash($newPassword, PASSWORD_DEFAULT);
+    
+            $sql = 'UPDATE cliente SET pas_cli = ? WHERE id_cli = ?';
             $this->pdo->prepare($sql)
                 ->execute(
                     array(
