@@ -230,14 +230,13 @@ class usuario
     }
 
     public function cambioContra(){
+        $hashContrasena = password_hash($_REQUEST['confirnNewpass'], PASSWORD_DEFAULT);
         try {
-            $sql = 'UPDATE cliente SET
-                pas_cli = ?,                     
-                WHERE id_cli = ?';
+            $sql = 'UPDATE cliente SET pas_cli = ?    WHERE id_cli = ?';
             $this->pdo->prepare($sql)
                 ->execute(
                     array(
-                        $_REQUEST['pas_cli'],
+                        $hashContrasena,
                         $_SESSION['cliente_id']
                     )
                 );

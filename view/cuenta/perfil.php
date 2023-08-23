@@ -59,10 +59,10 @@
                             <div id="passChange" class="container" style="align-items: center; display: none; position: absolute; width: 500px; height: 300px;  z-index: 2; background-color: gray;">
                                 <h4>Cambio de Contraseña</h4>
                                 <h4 id="closeChange" style="cursor: pointer;">X</h4>
-                                <form class="d-flex " style="flex-direction: column;" action="?c=usario&a=cambioContra" method="get">
+                                <form class="d-flex row" style="flex-direction: column;" action="?c=usuario&a=cambioContra" method="post">
                                     <input name="oldpass" placeholder="Ingrese su Contraseña Actual" type="password">
-                                    <input class="mt-2" placeholder="Ingrese Contraseña Nueva" name="newpass1" type="password">
-                                    <input class="mt-2" placeholder="Repita la Contraseña Nueva" name="newpass2" type="password">
+                                    <input class="mt-2" placeholder="Ingrese Contraseña Nueva" name="newpass" type="password">
+                                    <input class="mt-2" placeholder="Repita la Contraseña Nueva" name="confirnNewpass" type="password">
                                     <input class="btn btn-success mt-2" type="submit" value="Guardar">
                                 </form>
                             </div>

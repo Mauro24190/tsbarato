@@ -235,10 +235,14 @@ class UsuarioController
 
     public function cambioContra(){
         $user = new usuario();
-        $user->oldpass = $_REQUEST['oldpass'];
-        $user->newpass1 = $_REQUEST['newpass1'];
-        $user->newpass2 = $_REQUEST['newpass2'];
-        $this->model->cambioContra($user);
+        $oldpass = $_REQUEST['oldpass'];
+        $newpass1 = $_REQUEST['newpass'];
+        $newpass2 = password_hash($_REQUEST['confirnNewpass'], PASSWORD_DEFAULT);
+        
+
+
+        $this->model->cambioContra();
+        redirect("?c=web&a=perfil");
     }
    
 }
