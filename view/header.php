@@ -313,7 +313,7 @@
                                     <div ><h2>Centro de Ayuda</h2><br>
                                     </div>
                                     <div class="boton1">
-                                    <button class="form-floating mb-3 border-0 "><a href="?c=web&a=preguntasfrecuentes">
+                                    <button class="border-0 btn form-floating mb-3"><a href="?c=web&a=preguntasfrecuentes">
                                         <h5>Preguntas frecuentes</h5><br></button>
                                     </div>
                                     <div class="boton2">
@@ -325,7 +325,7 @@
                                         <h5>Escribenos</h5><br></button>
                                     </div></a>
                                     <div class="boton5">
-                                    <button class="border-0 form-floating mb-3"><a href="?c=web&a=gestionpedido">
+                                    <button class="border-0 btn form-floating mb-3"><a href="?c=web&a=gestionpedido">
                                         <h5>¿Como gestionar mi pedido?</h5><br></button>
                                     </div></a>
                                 </main>
