@@ -232,5 +232,29 @@ class UsuarioController
 
         echo json_encode($newArray);
     }
+
+    public function cambioContra()
+{
+    $user = new usuario();
+    $oldpass = $_REQUEST['oldpass'];
+    $newpass1 = $_REQUEST['newpass'];
+    $newpass2 = $_REQUEST['confirnNewpass'];
+
+    // Obtener la contraseña actual almacenada en la base de datos
+    $storedPasswordHash = $this->model->existeContra();
+
+    // Verificar si la contraseña actual es válida
+    if (!password_verify($oldpass, $storedPasswordHash)) {
+        redirect("?c=web&a=perfil", "Error-La Contraseña Antigua No Es Correcta");
+    } elseif ($newpass1 !== $newpass2) {
+        redirect("?c=web&a=perfil", "Error-Las Contraseñas Nuevas No Coinciden");
+    } elseif (strlen($newpass2) < 8 || !preg_match('/[A-Z]/', $newpass2)) {
+        redirect("?c=web&a=perfil", "Error-Extensión de la Contraseña Mínima de 8 Caracteres y Debe Contener al Menos una Mayúscula");
+    } else {
+        // Cambiar la contraseña
+        $this->model->cambioContra($newpass2);
+        redirect("?c=web&a=perfil", "Exito-Contraseña Cambiada Exitosamente");
+    }
+}
    
 }
