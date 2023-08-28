@@ -254,7 +254,6 @@ class usuario
     public function cambioContra($newPassword)
     {
         try {
-            // Generar el hash de la nueva contraseña
             $hashContrasena = password_hash($newPassword, PASSWORD_DEFAULT);
     
             $sql = 'UPDATE cliente SET pas_cli = ? WHERE id_cli = ?';
