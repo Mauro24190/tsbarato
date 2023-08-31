@@ -120,16 +120,18 @@ class usuario
      
     }
 
-    // public function existeContra()
-    // {
-    //     $statement = $this->pdo->prepare('SELECT pas_cli FROM cliente WHERE id_cli = ?');
-    //     $statement->execute(array($_SESSION["cliente_id"]));
+    public function existeEmail($userEmail)
+    {
 
-    //     return $statement->fetchAll(PDO::FETCH_OBJ);
-    //     // return $resultado['total'] > 0;
+        $sql = 'SELECT COUNT(*) as total FROM cliente WHERE cor_cli = :cor_cli';
+        $statement = $this->pdo->prepare($sql);
+        $statement->bindParam(':cor_cli', $userEmail);
+        $statement->execute();
+
+        $resultado = $statement->fetch(PDO::FETCH_ASSOC);
+        return $resultado['total'] > 0;
      
-    // }
-
+    }
 
     public function Tabla()
     {
@@ -262,6 +264,24 @@ class usuario
                     array(
                         $hashContrasena,
                         $_SESSION['cliente_id']
+                    )
+                );
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
+
+    public function restablecerContra($newPassword, $userEmail)
+    {
+        try {
+            $hashContrasena = password_hash($newPassword, PASSWORD_DEFAULT);
+    
+            $sql = 'UPDATE cliente SET pas_cli = ? WHERE cor_cli = ?';
+            $this->pdo->prepare($sql)
+                ->execute(
+                    array(
+                        $hashContrasena,
+                        $userEmail 
                     )
                 );
         } catch (Exception $e) {

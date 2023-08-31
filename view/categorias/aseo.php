@@ -7,20 +7,20 @@
                     <div class="producto_item">
                         <div>
                             <p class="nomproducto">
-                                <?php echo $r->nom_art; ?>
+                                <span class="nombre" ><?php echo $r->nom_art; ?></span>
                             </p>
                         </div>
                         <div class="producto_img">
-                            <img src="" alt="">
+                            <img class="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5ZNXtajd7HdBZh9UAdv_WXUpFsTz4celhSg7jP4PRthlBZVZDh2lf2XKMxMTcCEXfa_w&usqp=CAU" alt="">
 
                         </div>
                         <div class="producto_precio">
                             <div>
-                                <p><i class="bi bi-currency-dollar"></i><?php echo $r->pre_art; ?></p>
+                                <p><i class="bi bi-currency-dollar"></i><span class="prize"><?php echo $r->pre_art; ?></span></p>
                             </div>
                         </div>
                         <div>
-                            <p class="descripcion_arti"><?php echo $r->des_art; ?></p>
+                            <p class="descripcion_arti"><span class="descripcion"><?php echo $r->des_art; ?></span></p>
                         </div>
                         <div>
                             <div class="producto_item_pie">
@@ -30,7 +30,7 @@
                             </div>
                             <div class="producto_item_btn">
                                 <div>
-                                    <button type="button"><i class="bi bi-cart3"></i>AGREGAR</button>
+                                    <button class="button" type="button"><i class="bi bi-cart3"></i>AGREGAR</button>
                                 </div>
                             </div>
                         </div>
@@ -40,8 +40,6 @@
                                 if (Privilegios::User->get() & $_SESSION["pri_cli"] == Privilegios::User->get()) {
                                     echo "";
                                 } else {
-
-
                             ?>
                                     <td>
                                         <a href="?c=producto&a=Crud&id_art=<?php echo $r->id_art; ?>"><button type="button" class="btn btn-success"><i class="bi bi-pencil-fill"></i></button></a>
@@ -63,3 +61,4 @@
 
     </table>
 </main>
+<script src="assets/js/carrito.js"></script>

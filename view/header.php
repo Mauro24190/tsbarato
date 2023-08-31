@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="view/main.js" />
     <link rel="stylesheet" href="assets/css/carrito.css">
     <link rel="icon" href="logo proyecto.png" type="image/x-icon">
+    <script src="assets/carrito.js"></script>
 </head>
 
 <body>
