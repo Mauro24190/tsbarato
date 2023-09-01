@@ -31,8 +31,18 @@
                             </p>
                         </div>
                         <div class="producto_img">
-                            <img src="" alt="">
+                            
+                            <?php 
+                            // Conexión a la base de datos (debes completar esta parte)
+                            $conexion = mysqli_connect("localhost:1002", "root", "", "tsbarato");
 
+                            // Obtener datos de la base de datos (debes completar esta parte)
+                            $query = "SELECT * FROM articulo WHERE id_art = 1";
+                            $result = mysqli_query($conexion, $query);
+                            
+                            while ($row = mysqli_fetch_assoc($result)) {
+                            echo '<img src="' . $r->imagen . '" alt="' .'" width="150">'; }?>
+                            
                         </div>
                         <div class="producto_precio">
                             <div>
