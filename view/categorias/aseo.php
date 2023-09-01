@@ -4,15 +4,14 @@
         <?php foreach ($listaProductos as $r) : ?>
             <div class="popo">
                 <div class="pipi">
-                    <div class="producto_item">
+                    <div class="producto_item" data-id="<?= $r->id_art ?>">
                         <div>
                             <p class="nomproducto">
                                 <span class="nombre" ><?php echo $r->nom_art; ?></span>
                             </p>
                         </div>
                         <div class="producto_img">
-                            <img class="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5ZNXtajd7HdBZh9UAdv_WXUpFsTz4celhSg7jP4PRthlBZVZDh2lf2XKMxMTcCEXfa_w&usqp=CAU" alt="">
-
+                            <img class="img" src="<?= "assets/img/carrito/empanada.jpg" ?>" alt="">
                         </div>
                         <div class="producto_precio">
                             <div>
