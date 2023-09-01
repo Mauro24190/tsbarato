@@ -14,7 +14,7 @@ productoItem.forEach((e) => {
       nombre: nombre.innerHTML,
       precio: prize.innerHTML,
       descripcion: descripcion.innerHTML,
-      img: img.getAttribute("src"),
+      img: img.innerHTML,
     };
 
     let cookie = getCookie("carrito");

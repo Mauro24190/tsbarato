@@ -19,8 +19,8 @@
                             $query = "SELECT * FROM articulo WHERE id_art = 1";
                             $result = mysqli_query($conexion, $query);
                             
-                            while ($row = mysqli_fetch_assoc($result)) {
-                            echo '<img src="' . $r->imagen . '" alt="' .'" width="150">'; }?>
+                            while ($row = mysqli_fetch_assoc($result)) { 
+                            echo '<img class="img" src="' . $r->imagen . '" alt="' .'" width="150">'; }?>
 
                         </div>
                         <div class="producto_precio">
