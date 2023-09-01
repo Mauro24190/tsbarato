@@ -6,8 +6,7 @@
         <li><a href="?c=producto"><button type="button" class="btn btn-warning">Productos</button></a></a></li>
         <li class="active" style="margin-left: 50px; margin-top: auto; margin-bottom: auto;">Nuevo Registro</li>
     </ol>
-    <form id="frm-producto" action="?c=producto&a=Guardar" method="post" enctype="multipart/
-form-data">
+    <form id="frm-producto" action="?c=producto&a=Guardar" method="POST" enctype="multipart/form-data">
         <div class="form-group">
             <label>Código Producto</label>
             <input type="text" style="margin-bottom:30px;" name="cod_art" value="" class="-
@@ -43,11 +42,18 @@ form-control" placeholder="Ingrese Código Producto" data-validacion-tipo="reque
 form-control" placeholder="Ingrese nombre producto" data-validacion-tipo="requerido|min:100" />
         </div>
 
+
+
+
         <div class="form-group">
-            <label>Imagen del Producto </label>
+            <label for="imagen">Imagen del Producto </label>
             <input type="file" style="margin-bottom:30px;" name="imagen" class="form-control" />
-            
         </div>
+        <input type="submit" value="Cargar Producto">
+
+
+
+
         <div class="form-group">
             <label>Precio Unitario</label>
             <input type="text" style="margin-bottom:30px;" name="pre_art" value="<?php echo $prod->pre_art; ?>" class="-

@@ -59,6 +59,10 @@ class ProductoController
             redirect("?c=producto&a=Nuevo", "Error-El Codigo Solo Puede Tener Números");
         } 
         else {
+            
+        }
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
             $prod = new articulo();
             $prod->nit = $_REQUEST['id_pro'];
             $prod->cat_id = $_REQUEST['cat_id'];
@@ -66,12 +70,35 @@ class ProductoController
             $prod->pre_art = $_REQUEST['pre_art'];
             $prod->des_art = $_REQUEST['des_art'];
             $prod->cod_art = $_REQUEST['cod_art'];
+            
            
-            $this->model->Registrar($prod);
             // setcookie("notificación", "Exito-Exito al guardar", time() + 5, "/");
             // header('Location:?c=producto&a=Nuevo');
-            redirect("?c=producto&a=Nuevo", "Exito-Producto Agregado");
-            
+
+            $imagenNombre = $_FILES["imagen"]["name"];
+            $imagenTemp = $_FILES["imagen"]["tmp_name"];
+            $imagenDestino = "imagenes/" . $imagenNombre;
+
+           
+            //tipo de extension de la imagen
+            $extension = pathinfo($_FILES["imagen"]["name"], PATHINFO_EXTENSION);
+
+            if ($extension != "jpg" && $extension != "png") {
+                redirect("?c=producto&a=Nuevo", "Error-Extensión no válida");
+            }
+
+            $prod->imagen = $imagenDestino;
+        
+            if (move_uploaded_file($imagenTemp, $imagenDestino)) {
+                if (!$this->model->Registrar($prod)) {
+                    redirect("?c=producto&a=Nuevo", "Error-No se registro el producto"); 
+                    unlink($imagenDestino);
+                }
+                redirect("?c=producto&a=Nuevo", "Exito-Producto agregado"); 
+                exit();
+            } else {
+                redirect("?c=producto&a=Nuevo", "Error-No se subio el producto"); 
+            }
         }
 
     }
