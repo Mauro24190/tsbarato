@@ -49,7 +49,6 @@ form-control" placeholder="Ingrese nombre producto" data-validacion-tipo="requer
             <label for="imagen">Imagen del Producto </label>
             <input type="file" style="margin-bottom:30px;" name="imagen" class="form-control" />
         </div>
-        <input type="submit" value="Cargar Producto">
 
 
 

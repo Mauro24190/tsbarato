@@ -17,6 +17,5 @@ productoItem.forEach((e)=>{
    })
    
 } )
-   // document.write(document.cookie);
-   document.write(document.cookie);
+
 
