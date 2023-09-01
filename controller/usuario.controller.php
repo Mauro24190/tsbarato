@@ -61,50 +61,8 @@ class UsuarioController
         }
     }
 
-
     function Registrar()
     {
-
-        // $today = date("Y-m-d");
-
-        // $user = new usuario();
-        // if (
-        //     $_REQUEST["nom_cli"] == "" ||
-        //     $_REQUEST["ape_cli"] == "" ||
-        //     $_REQUEST["cor_cli"] == "" ||
-        //     $_REQUEST["pas_cli"] == "" ||
-        //     $_REQUEST["fch_cli"] == "" ||
-        //     $_REQUEST["cel_cli"] == "" ||
-        //     $_REQUEST["user_cli"] == "" ||
-        //     $_REQUEST["dir_cli"] == ""
-        // ) {
-        //     redirect("?c=web&a=registro", "Error-Por favor llenar todos los campos");
-        // } else if (!filter_var($_REQUEST["cor_cli"], FILTER_VALIDATE_EMAIL)) {
-        //     redirect("?c=web&a=registro", "Error-Correo Electronico Invalido");
-        // } else if (!is_numeric($_REQUEST["cel_cli"])) {
-        //     redirect("?c=web&a=registro", "Error-El Número de Celular Solo Puede Contener Valores Numericos");
-        // } else if (strlen($_REQUEST["pas_cli"]) < 8 || !preg_match('`[A-Z]`', $_REQUEST["pas_cli"])) {
-        //     redirect("?c=web&a=registro", "Error-Extensión de la Contraseña Minima de 8 Caracteres, Además Debe Contener Minino una Mayucusla");
-        // } else if (strtotime($_REQUEST["fch_cli"]) >= strtotime($today)) {
-        //     redirect("?c=web&a=registro", "Error-La fecha debe ser anterior a la de hoy");
-        // }else {
-        //     $user->nom_cli = $_REQUEST["nom_cli"];
-        //     $user->ape_cli = $_REQUEST["ape_cli"];
-        //     $user->cor_cli = $_REQUEST["cor_cli"];
-        //     $user->pas_cli = password_hash($_REQUEST["pas_cli"], PASSWORD_DEFAULT);
-        //     $user->fch_cli = $_REQUEST["fch_cli"];
-        //     $user->cel_cli = $_REQUEST["cel_cli"];
-        //     $user->dir_cli = $_REQUEST["dir_cli"];
-        //     $user->user_cli = $_REQUEST["user_cli"];
-
-        //     $this->model->Registro($user);
-        //     redirect("?", "Exito-Registro de usuario exitoso");
-        // }if ($this->model->existeUsuario($user->user_cli)) {
-        //     redirect("?c=web&a=registro", "Error-Nombre de usuario ya existe");
-        // } else {
-        //     $this->model->Registro($user);
-        //     redirect("?", "Exito-Registro de usuario exitoso");
-        // }
 
         $today = date("Y-m-d");
 
@@ -240,10 +198,9 @@ class UsuarioController
     $newpass1 = $_REQUEST['newpass'];
     $newpass2 = $_REQUEST['confirnNewpass'];
 
-    // Obtener la contraseña actual almacenada en la base de datos
     $storedPasswordHash = $this->model->existeContra();
 
-    // Verificar si la contraseña actual es válida
+
     if (!password_verify($oldpass, $storedPasswordHash)) {
         redirect("?c=web&a=perfil", "Error-La Contraseña Antigua No Es Correcta");
     } elseif ($newpass1 !== $newpass2) {
@@ -251,10 +208,28 @@ class UsuarioController
     } elseif (strlen($newpass2) < 8 || !preg_match('/[A-Z]/', $newpass2)) {
         redirect("?c=web&a=perfil", "Error-Extensión de la Contraseña Mínima de 8 Caracteres y Debe Contener al Menos una Mayúscula");
     } else {
-        // Cambiar la contraseña
+    
         $this->model->cambioContra($newpass2);
         redirect("?c=web&a=perfil", "Exito-Contraseña Cambiada Exitosamente");
     }
+}
+public function recuperarPass(){
+    $userEmail = $_REQUEST["userEmail"];
+    $newpass = $_REQUEST["newPass"];
+    $confirPass = $_REQUEST["confirPass"];
+
+    if (!$this->model->existeEmail($userEmail)) {
+        redirect("?c=web&a=restablecerContraseña", "Error-El Correo Electronico Proporsionado no Existe");
+    } else {
+        if($newpass !== $confirPass){
+            redirect("?c=web&a=restablecerContraseña", "Error-Las Contraseñas Nuevas No Coinciden");
+        }elseif (strlen($confirPass) < 8 || !preg_match('/[A-Z]/', $confirPass)) {
+            redirect("?c=web&a=restablecerContraseña", "Error-Extensión de la Contraseña Mínima de 8 Caracteres y Debe Contener al Menos una Mayúscula");
+        } else {
+            $this->model->restablecerContra($confirPass, $userEmail);
+            redirect("?c=web&a=ingreso", "Exito-Contraseña Cambiada Exitosamente");
+        }
+}
 }
    
 }

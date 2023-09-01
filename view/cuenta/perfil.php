@@ -6,7 +6,7 @@
                         <div class="row g-0">
 
                             <div class="col-md-4 gradient-custom text-center text-black" style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
-                                <img src="https://w0.peakpx.com/wallpaper/568/84/HD-wallpaper-gatitos-gato-gatos-thumbnail.jpg" class="img-fluid my-5" style="width: 80px;" />
+                                <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcShBfwG6Zbx_3JwVJUQ4i8NPEbLcUJr0nspaZ9FK9SgQsNGdeQH" class="img-fluid my-5" style="width: 80px;" />
                                 <h5><?php
                                     foreach ($userProfile as $u) :
                                         echo $u->nom_cli;
