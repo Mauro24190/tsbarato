@@ -87,7 +87,7 @@ class ProductoController
                 redirect("?c=producto&a=Nuevo", "Error-Extensión no válida");
             }
 
-            $prod->imagen = $imagenDestino;
+            $prod->img_art = $imagenDestino;
         
             if (move_uploaded_file($imagenTemp, $imagenDestino)) {
                 if (!$this->model->Registrar($prod)) {
@@ -132,7 +132,6 @@ class ProductoController
         }elseif($articuloBuscado == ""){
             redirect("?", "Error-Campo Vacio");
         }
-
         plantilla("producto/producto-buscar.php", [
             "articuloBuscado" => $this->model->buscarArticulo($articuloBuscado)
         ]);

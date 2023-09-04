@@ -1,5 +1,4 @@
 var productoItem = document.querySelectorAll(".producto_item");
-console.log(productoItem);
 productoItem.forEach((e) => {
   var id = e.getAttribute("data-id");
   var btn = e.querySelector(".button");
@@ -14,7 +13,7 @@ productoItem.forEach((e) => {
       nombre: nombre.innerHTML,
       precio: prize.innerHTML,
       descripcion: descripcion.innerHTML,
-      img: img.innerHTML,
+      img: img.getAttribute("src"),
     };
 
     let cookie = getCookie("carrito");
