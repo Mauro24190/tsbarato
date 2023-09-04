@@ -5,6 +5,7 @@ class categoria
     private $pdo;
     //Atributos del objeto proveedor 
     public $nom_cat;
+
     //Método de conexión a SGBD.
     public function __CONSTRUCT()
     {
