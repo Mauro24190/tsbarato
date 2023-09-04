@@ -13,10 +13,10 @@
                         <div class="producto_img">
                         <?php 
                             // Conexión a la base de datos (debes completar esta parte)
-                            $conexion = mysqli_connect("localhost:3306", "root", "", "tsbarato");
+                            $conexion = mysqli_connect("localhost:1002", "root", "", "tsbarato");
 
                             // Obtener datos de la base de datos (debes completar esta parte)
-                            $query = "SELECT * FROM articulo WHERE id_art = 1";
+                            $query = "SELECT MAX(id_art) AS id FROM articulo";
                             $result = mysqli_query($conexion, $query);
                             
                             while ($row = mysqli_fetch_assoc($result)) {
