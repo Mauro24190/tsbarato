@@ -20,7 +20,7 @@
                             $result = mysqli_query($conexion, $query);
                             
                             while ($row = mysqli_fetch_assoc($result)) {
-                            echo '<img src="' . $r->imagen . '" alt="' .'" width="150">'; }?>
+                            echo '<img class="img" src="' . $r->img_art . '" alt="' .'" width="150">'; }?>
 
                         </div>
                         <div class="producto_precio">
@@ -69,7 +69,5 @@
             </div>
         <?php endforeach; ?>
     </div><br>
-
-    </table>
 </main>
 <script src="assets/js/carrito.js"></script>

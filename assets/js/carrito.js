@@ -1,5 +1,4 @@
 var productoItem = document.querySelectorAll(".producto_item");
-console.log(productoItem);
 productoItem.forEach((e) => {
   var id = e.getAttribute("data-id");
   var btn = e.querySelector(".button");

@@ -12,7 +12,7 @@ class articulo
 	public $cod_art;
 	public $pre_art;
 	public $des_art;
-	public $imagen;
+	public $img_art;
 	//Método de conexión a SGBD.
 	public function __CONSTRUCT()
 	{
@@ -92,7 +92,7 @@ class articulo
 						$data->cod_art,
 						$data->des_art,
 						$data->pre_art,
-						$data->imagen,
+						$data->img_art,
 						$data->cat_id
 					)
 				);
