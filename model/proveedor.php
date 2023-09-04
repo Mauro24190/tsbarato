@@ -10,6 +10,7 @@ class proveedor
 	public $dir_pro;
 	public $cel_pro;
 
+
 	//Método de conexión a SGBD.
 	public function __CONSTRUCT()
 	{
