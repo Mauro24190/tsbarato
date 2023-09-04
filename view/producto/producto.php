@@ -31,8 +31,18 @@
                             </p>
                         </div>
                         <div class="producto_img">
-                            <img src="" alt="">
+                            
+                            <?php 
+                            // Conexión a la base de datos (debes completar esta parte)
+                            $conexion = mysqli_connect("localhost:1002", "root", "", "tsbarato");
 
+                            // Obtener datos de la base de datos (debes completar esta parte)
+                            $query = "SELECT MAX(id_art) AS id FROM articulo";
+                            $result = mysqli_query($conexion, $query);
+                            
+                            while ($row = mysqli_fetch_assoc($result)) {
+                            echo '<img class="img" src="' . $r->img_art . '" alt="' .'" width="150">'; }?>
+                            
                         </div>
                         <div class="producto_precio">
                             <div>

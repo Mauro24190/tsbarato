@@ -12,6 +12,7 @@ class articulo
 	public $cod_art;
 	public $pre_art;
 	public $des_art;
+	public $img_art;
 	//Método de conexión a SGBD.
 	public function __CONSTRUCT()
 	{
@@ -82,7 +83,7 @@ class articulo
 	public function Registrar(articulo $data)
 	{
 		try {
-			$sql = 'INSERT INTO articulo (nom_art,cod_art,des_art,pre_art,img_art,cat_id)
+			$sql = 'INSERT INTO articulo (nom_art,cod_art,des_art,pre_art,imagen,cat_id)
  VALUES (?,?,?,?,?,?)';
 			$this->pdo->prepare($sql)
 				->execute(
@@ -91,12 +92,13 @@ class articulo
 						$data->cod_art,
 						$data->des_art,
 						$data->pre_art,
-						"ci",
+						$data->img_art,
 						$data->cat_id
 					)
 				);
+			return true;
 		} catch (Exception $e) {
-			die($e->getMessage());
+			return false;
 		}
 	}
 
@@ -197,7 +199,8 @@ class articulo
 		}
 	}
 
-	public function buscarArticulo($articuloBuscado){
+	public function buscarArticulo($articuloBuscado)
+	{
 
 		try {
 			$result = array();
@@ -213,28 +216,28 @@ class articulo
 	}
 
 	public function existeArticulo($articuloBuscado)
-    {
+	{
 		try {
-			
-		$result = array();
-        // $sql = 'SELECT COUNT(*) as total FROM articulo WHERE nom_art LIKE ?';
 
-        $statement = $this->pdo->prepare("SELECT COUNT(*) as total FROM articulo WHERE nom_art LIKE ?");
-		$articuloBuscado = '%' . $articuloBuscado . '%';
-        $statement->execute([$articuloBuscado]);
+			$result = array();
+			// $sql = 'SELECT COUNT(*) as total FROM articulo WHERE nom_art LIKE ?';
 
-		$resultado = $statement->fetch(PDO::FETCH_ASSOC);
-        return $resultado['total'] > 0;
+			$statement = $this->pdo->prepare("SELECT COUNT(*) as total FROM articulo WHERE nom_art LIKE ?");
+			$articuloBuscado = '%' . $articuloBuscado . '%';
+			$statement->execute([$articuloBuscado]);
 
-	// return $statement->fetchAll(PDO::FETCH_OBJ);
+			$resultado = $statement->fetch(PDO::FETCH_ASSOC);
+			return $resultado['total'] > 0;
+
+			// return $statement->fetchAll(PDO::FETCH_OBJ);
 
 		} catch (Exception $e) {
 			die($e->getMessage());
 		}
 
-       
-     
-    }
+
+
+	}
 
 	function traerProductosCarrito() {
 		$ids = explode(",", $_COOKIE["carrito"]);

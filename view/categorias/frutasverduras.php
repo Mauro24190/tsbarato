@@ -4,23 +4,31 @@
         <?php foreach ($listaProductos as $r) : ?>
             <div class="popo">
                 <div class="pipi">
-                    <div class="producto_item">
+                    <div class="producto_item" data-id="<?= $r->id_art ?>">
                         <div>
                             <p class="nomproducto">
-                                <?php echo $r->nom_art; ?>
+                                <span class="nombre" ><?php echo $r->nom_art; ?></span>
                             </p>
                         </div>
                         <div class="producto_img">
-                            <img src="" alt="">
+                        <?php 
+                            // Conexión a la base de datos (debes completar esta parte)
+                            $conexion = mysqli_connect("localhost:1002", "root", "", "tsbarato");
+
+                            $query = "SELECT MAX(id_art) AS id FROM articulo";
+                            $result = mysqli_query($conexion, $query);
+                            
+                            while ($row = mysqli_fetch_assoc($result)) {
+                            echo '<img class="img" src="' . $r->img_art . '" alt="' .'" width="150">'; }?>
 
                         </div>
                         <div class="producto_precio">
                             <div>
-                                <p><i class="bi bi-currency-dollar"></i><?php echo $r->pre_art; ?></p>
+                                <p><i class="bi bi-currency-dollar"></i><span class="prize"><?php echo $r->pre_art; ?></span></p>
                             </div>
                         </div>
                         <div>
-                            <p class="descripcion_arti"><?php echo $r->des_art; ?></p>
+                            <p class="descripcion_arti"><span class="descripcion"><?php echo $r->des_art; ?></span></p>
                         </div>
                         <div>
                             <div class="producto_item_pie">
@@ -30,7 +38,7 @@
                             </div>
                             <div class="producto_item_btn">
                                 <div>
-                                    <button type="button"><i class="bi bi-cart3"></i>AGREGAR</button>
+                                    <button class="button" type="button"><i class="bi bi-cart3"></i>AGREGAR</button>
                                 </div>
                             </div>
                         </div>
@@ -64,3 +72,4 @@
 
     </table>
 </main>
+<script src="assets/js/carrito.js"></script>

@@ -12,6 +12,9 @@ class usuario
     public $user_cli;
     public $id_cli;
     public $pri_cli;
+    public $newpass1;
+    public $newpass2;
+    public $oldpass;
 
     private $pdo;
     public function __CONSTRUCT()
@@ -117,7 +120,18 @@ class usuario
      
     }
 
+    public function existeEmail($userEmail)
+    {
 
+        $sql = 'SELECT COUNT(*) as total FROM cliente WHERE cor_cli = :cor_cli';
+        $statement = $this->pdo->prepare($sql);
+        $statement->bindParam(':cor_cli', $userEmail);
+        $statement->execute();
+
+        $resultado = $statement->fetch(PDO::FETCH_ASSOC);
+        return $resultado['total'] > 0;
+     
+    }
 
     public function Tabla()
     {
@@ -223,6 +237,55 @@ class usuario
             return $stmt->fetchAll(PDO::FETCH_OBJ);
         } catch (PDOException $ex) {
             return false;    
+        }
+    }
+
+    public function existeContra()
+    {
+        $statement = $this->pdo->prepare('SELECT pas_cli FROM cliente WHERE id_cli = ?');
+        $statement->execute(array($_SESSION["cliente_id"]));
+        $result = $statement->fetch(PDO::FETCH_OBJ);
+    
+        if ($result) {
+            return $result->pas_cli;
+        } else {
+            return false;
+        }
+    }
+    
+    public function cambioContra($newPassword)
+    {
+        try {
+            $hashContrasena = password_hash($newPassword, PASSWORD_DEFAULT);
+    
+            $sql = 'UPDATE cliente SET pas_cli = ? WHERE id_cli = ?';
+            $this->pdo->prepare($sql)
+                ->execute(
+                    array(
+                        $hashContrasena,
+                        $_SESSION['cliente_id']
+                    )
+                );
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
+
+    public function restablecerContra($newPassword, $userEmail)
+    {
+        try {
+            $hashContrasena = password_hash($newPassword, PASSWORD_DEFAULT);
+    
+            $sql = 'UPDATE cliente SET pas_cli = ? WHERE cor_cli = ?';
+            $this->pdo->prepare($sql)
+                ->execute(
+                    array(
+                        $hashContrasena,
+                        $userEmail 
+                    )
+                );
+        } catch (Exception $e) {
+            die($e->getMessage());
         }
     }
 }

@@ -1,15 +1,15 @@
+/*ventana de notificaciones*/
 a{
     text-decoration: none !important;
 }
 .notificaciones-container {
     position: fixed;
-    top: 5px;
-    right: 5px;
+    top: 7px;
+    right: 7px;
     width: 400px;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 1px;
-    box-shadow: 20px 2px 5px rgb(0, 0, 0.3);
+    background-color: rgb(245, 245, 245);
+    border-radius: 25px;
+    box-shadow: 20px 2px 5px rgba(0, 0, 0, 0.217);
     z-index: 9999;
     display: none;
   }
@@ -21,11 +21,12 @@ a{
     padding: 20px;
     background-color: #FF8119;
     border-bottom: 1px solid #ccc;
-    border-radius: 5px 5px 0 0;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
     height: 50px;
   }
-  .notificacion-header h1 {
-    margin: 0;
+  .notificacion-header h3 {
+    margin-right: 20%;
   }
   .close-btn {
     font-size: 50px;
@@ -46,11 +47,57 @@ a{
     border-radius: 70%;
   
   }
+  .campana{
+    font-size: 30px;
+  }
   .filas_noti{
     display: flex;
-    margin-left: 10%;
-  
+    margin: 5%;
   }
+/* Pantallas pequeñas, como teléfonos móviles */
+@media (max-width: 767px) {
+  .notificaciones-container {
+      width: 60%; /* Expandir al ancho completo */
+      top: 0; /* Mover hacia arriba */
+      right: 0; /* Mover hacia la derecha */
+      overflow-y: scroll; /* Agregar desplazamiento vertical */
+      max-height: 80%; /* Establecer una altura máxima para el desplazamiento */
+  }
+  .filas_noti {
+      flex-direction: column; /* Apilar contenido verticalmente */
+      text-align: center; /* Centrar texto */
+  }
+  .contenedor img {
+      float: none; /* Centrar imágenes */
+      margin: 0 auto; /* Centrar imágenes */
+  }
+}
+
+/* Pantallas medianas, como tablets */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .notificaciones-container {
+    width: 60%; /* Expandir al ancho completo */
+    top: 0; /* Mover hacia arriba */
+    right: 0; /* Mover hacia la derecha */
+    overflow-y: scroll; /* Agregar desplazamiento vertical */
+    max-height: 80%; /* Establecer una altura máxima para el desplazamiento */
+}
+.filas_noti {
+    flex-direction: column; /* Apilar contenido verticalmente */
+    text-align: center; /* Centrar texto */
+}
+.contenedor img {
+    float: none; /* Centrar imágenes */
+    margin: 0 auto; /* Centrar imágenes */
+}
+  /* Ajusta los estilos según sea necesario */
+}
+
+/* Pantallas grandes, escritorios */
+@media (min-width: 1024px) {
+  /* Estilos ya definidos en tu código original */
+}
+
 
   /* INICIO VENTANA FLOTANTE AYUDA */
 .close {
