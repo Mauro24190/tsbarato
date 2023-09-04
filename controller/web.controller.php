@@ -17,7 +17,9 @@ class WebController{
     }
 
     function carrito(){
-        plantilla("carrito.php");
+        plantilla("carrito.php", [
+            "productos" => $this->productos->traerProductosCarrito()
+        ]);
     }
     function ingreso(){
         plantilla("cuenta/ingreso.php");

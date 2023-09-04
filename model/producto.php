@@ -236,8 +236,12 @@ class articulo
      
     }
 
+	function traerProductosCarrito() {
+		$ids = explode(",", $_COOKIE["carrito"]);
 
+		$whereText = trim(str_repeat("id = ? OR", count($ids)), " OR");
 
-
+		"SELECT * FROM articulo WHERE $whereText";
+	}
 
 }

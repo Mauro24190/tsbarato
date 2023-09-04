@@ -1,3 +1,5 @@
+
+
 (async () => {
     function mainresize() {
         var main = document.querySelector("#main");
@@ -31,17 +33,5 @@ document.querySelector("#test").addEventListener("click", async () => {
             <td>${element.user_cli}</td>    
         </tr>
         `
-
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
     });
 })
