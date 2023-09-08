@@ -1,4 +1,4 @@
-<?php
+	<?php
 
 class articulo
 {
@@ -83,7 +83,7 @@ class articulo
 	public function Registrar(articulo $data)
 	{
 		try {
-			$sql = 'INSERT INTO articulo (nom_art,cod_art,des_art,pre_art,imagen,cat_id)
+			$sql = 'INSERT INTO articulo (nom_art,cod_art,des_art,pre_art,img_art,cat_id)
  VALUES (?,?,?,?,?,?)';
 			$this->pdo->prepare($sql)
 				->execute(
