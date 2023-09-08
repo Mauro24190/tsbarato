@@ -83,7 +83,7 @@ class articulo
 	public function Registrar(articulo $data)
 	{
 		try {
-			$sql = 'INSERT INTO articulo (nom_art,cod_art,des_art,pre_art,imagen,cat_id)
+			$sql = 'INSERT INTO articulo (nom_art,cod_art,des_art,pre_art,img_art,cat_id)
  VALUES (?,?,?,?,?,?)';
 			$this->pdo->prepare($sql)
 				->execute(
@@ -240,11 +240,16 @@ class articulo
 	}
 
 	function traerProductosCarrito() {
-		$ids = explode(",", $_COOKIE["carrito"]);
+		if(isset($_COOKIE["carrito"])){
+			$ids = explode(",", $_COOKIE["carrito"]);
 
-		$whereText = trim(str_repeat("id = ? OR", count($ids)), " OR");
-
-		"SELECT * FROM articulo WHERE $whereText";
+			$whereText = trim(str_repeat("id = ? OR", count($ids)), " OR");
+	
+			"SELECT * FROM articulo WHERE $whereText";
+		}
+	
 	}
+
+
 
 }
