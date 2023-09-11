@@ -17,7 +17,7 @@ const getCookie = (name) => {
     let cookies = []
 
     document.cookie.split("; ").forEach(e => {
-        let [key, value] = e.split("=")
+        let [key,  value] = e.split("=")
         cookies[key] = value
     })
     
@@ -27,3 +27,5 @@ const getCookie = (name) => {
 const saveCookie = (name, value) => { 
     document.cookie = name + "=" + JSON.stringify(value) + ";path=/"
 }
+
+

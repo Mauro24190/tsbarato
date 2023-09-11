@@ -22,7 +22,7 @@
 
           foreach (json_decode($_COOKIE["carrito"]) as $value) {
         ?>
-            <div class="card rounded-3 mb-4">
+            <div id="cardShopping" class="card rounded-3 mb-4">
               <div class="card-body p-4">
                 <div class="row d-flex justify-content-between align-items-center">
                   <div class="col-md-2 col-lg-2 col-xl-2">
@@ -45,7 +45,7 @@
                     <h5 class="mb-0" id="precio">$<?= $value->precio ?></h5>
                   </div>
                   <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                    <a href="#!" class="text-danger"><i class="fas fa-trash fa-lg"></i>Eliminar</a>
+                    <a href="#!" id="btnDelete" class="text-danger" data-product-id="<?= $value->id ?>"><i class="fas fa-trash fa-lg"></i>Eliminar</a>
                   </div>
                 </div>
               </div>
@@ -59,7 +59,7 @@
               <button type="button" class="btn btn-success btn-block btn-lg container-sm">Proceder al pago</button>
             </div>
             <div class="card-body">
-              <button type="button" class="btn btn-danger btn-block btn-lg container-sm">Borrar todo</button>
+              <button type="button" id="btnDeleteAll"  class="btn btn-danger btn-block btn-lg container-sm">Borrar todo</button>
             </div>
           <?php
         }
@@ -71,28 +71,48 @@
     </div>
   </div>
 </section>
-
+<script src="assets/js/carrito.js"></script>
 <script>
-function decrementQuantity(button) {
-  const input = button.parentNode.querySelector('input[type="number"]');
-  if (input.value > 0) {
-    input.value--;
+  function decrementQuantity(button) {
+    const input = button.parentNode.querySelector('input[type="number"]');
+    if (input.value > 0) {
+      input.value--;
+      updatePrice(input);
+    }
+  }
+
+  function incrementQuantity(button) {
+    const input = button.parentNode.querySelector('input[type="number"]');
+    input.value++;
     updatePrice(input);
   }
-}
-function incrementQuantity(button) {
-  const input = button.parentNode.querySelector('input[type="number"]');
-  input.value++;
-  updatePrice(input);
-}
-function updatePrice(input) {
-  const precioElement = input.closest('.row').querySelector('#precio');
-  const precioOriginal = parseFloat(input.getAttribute('data-precio'));
-  const cantidad = parseInt(input.value);
-  const nuevoPrecio = cantidad * precioOriginal;
-  precioElement.textContent = '$' + nuevoPrecio;
-}
 
+  function updatePrice(input) {
+    const precioElement = input.closest('.row').querySelector('#precio');
+    const precioOriginal = parseFloat(input.getAttribute('data-precio'));
+    const cantidad = parseInt(input.value);
+    const nuevoPrecio = cantidad * precioOriginal;
+    precioElement.textContent = '$' + nuevoPrecio;
 
+  }
+
+  function eliminarCarrito() {
+  document.cookie = "carrito=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+}
+var btnDeleteAll = document.querySelector("#btnDeleteAll")
+btnDeleteAll.addEventListener("click", function() {
+  var cardShopping = document.querySelectorAll("#cardShopping");
+
+  cardShopping.forEach((e) => {
+    e.classList.add("eliminar-animacion");
+    e.addEventListener("animationend", function() {
+      e.remove();
+      
+        eliminarCarrito();
+        location.reload();
+    });
+  });
+});
+   
 
 </script>

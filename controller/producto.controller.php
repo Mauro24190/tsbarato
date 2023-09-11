@@ -136,6 +136,8 @@ class ProductoController
             "articuloBuscado" => $this->model->buscarArticulo($articuloBuscado)
         ]);
         
+        
        
     }
+
 }
