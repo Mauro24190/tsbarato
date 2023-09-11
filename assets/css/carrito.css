@@ -32,3 +32,21 @@
     border-bottom-right-radius: 16px;
     }
     }
+
+
+    .eliminar-animacion {
+        animation-name: slideOutLeft;
+        animation-duration: 0.5s;
+        animation-timing-function: ease;
+      }
+      
+      @keyframes slideOutLeft {
+        0% {
+          transform: translateX(0);
+          opacity: 1;
+        }
+        100% {
+          transform: translateX(-100%);
+          opacity: 0;
+        }
+      }

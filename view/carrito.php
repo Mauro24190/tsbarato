@@ -22,9 +22,9 @@
 
           foreach (json_decode($_COOKIE["carrito"]) as $value) {
         ?>
-            <div class="card rounded-3 mb-4">
+            <div id="cardShopping" class="card rounded-3 mb-4">
               <div class="card-body p-4">
-                <div id="cardShopping" class="row d-flex justify-content-between align-items-center">
+                <div class="row d-flex justify-content-between align-items-center">
                   <div class="col-md-2 col-lg-2 col-xl-2">
                     <img src="<?= $value->img ?>" class="img-fluid rounded-3" alt="<?= $value->nombre ?>">
                   </div>
@@ -100,9 +100,19 @@
   document.cookie = "carrito=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 }
 var btnDeleteAll = document.querySelector("#btnDeleteAll")
-    btnDeleteAll.addEventListener("click", function(){
-      eliminarCarrito();
+btnDeleteAll.addEventListener("click", function() {
+  var cardShopping = document.querySelectorAll("#cardShopping");
+
+  cardShopping.forEach((e) => {
+    e.classList.add("eliminar-animacion");
+    e.addEventListener("animationend", function() {
+      e.remove();
+      
+        eliminarCarrito();
+        location.reload();
     });
-  
+  });
+});
+   
 
 </script>
