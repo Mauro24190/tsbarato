@@ -56,7 +56,7 @@
 
           <div class="card">
             <div class="card-body">
-              <button type="button" class="btn btn-success btn-block btn-lg container-sm">Proceder al pago</button>
+              <a href="?c=web&a=metododepago"><button type="button" class="btn btn-success btn-block btn-lg container-sm">Proceder al pago</button></a>
             </div>
             <div class="card-body">
               <button type="button" id="btnDeleteAll"  class="btn btn-danger btn-block btn-lg container-sm">Borrar todo</button>

@@ -21,6 +21,9 @@ class WebController{
             "productos" => $this->productos->traerProductosCarrito()
         ]);
     }
+    function metododepago(){
+        plantilla("metodopago.php");
+    }
     function ingreso(){
         plantilla("cuenta/ingreso.php");
     }
@@ -91,6 +94,7 @@ class WebController{
     function gestionpedido(){
         plantilla("ayuda/gestionpedido.php");
     }
+    
 
 
 
